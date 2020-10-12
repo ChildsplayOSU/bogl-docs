@@ -1,6 +1,6 @@
-title: Your awesome title
+title: BoGL Docs 
 lang: en
-description: Write an awesome description for your new site here
+description: BoGL Documentation 
 
 ## local method ##
 # theme: jekyll-rtd-theme
@@ -23,3 +23,8 @@ plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
+
+# Allows manual sorting of the sidebar link order
+readme_index:
+  with_frontmatter: true
+

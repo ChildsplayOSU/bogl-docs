@@ -1,0 +1,28 @@
+
+$primary-color: #DF013A;
+
+.header {
+  background: $primary-color;
+}
+
+.sidebar {
+  color: $primary-color;
+}
+
+body {
+  bottom: 500px;
+  color: green;
+  background: red;
+}
+
+.toctree {
+  color: $primary-color;
+}
+
+input.form-control {
+	border-color: #3E4538;
+}
+
+a.caption {
+  color: $primary-color !important;
+}
