@@ -318,7 +318,8 @@
                     file    : code,
                     prelude : "",
                     input   : cmd,
-                    buffer  : commandInput
+                    buffer  : commandInput,
+					programName : 'programName'
                 })
         }).then(function(res) {
           respStatus = res.status;
