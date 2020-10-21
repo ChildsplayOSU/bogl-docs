@@ -1,5 +1,6 @@
 ---
 sort: 3 # Order in the sidebar
+permalink: tutorials/old/:basename:output_ext
 ---
  
 # The (Simple) Game

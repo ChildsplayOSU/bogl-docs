@@ -1,5 +1,6 @@
 ---
-#sort: 7 # Order in the sidebar
+sort: 7 # Order in the sidebar
+#permalink: /tutorials/types
 ---
  
 # Understanding Types

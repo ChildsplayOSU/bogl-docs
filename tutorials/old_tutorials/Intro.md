@@ -1,5 +1,6 @@
 ---
 sort: 2 # Order in the sidebar
+permalink: tutorials/old/:basename:output_ext
 ---
 
 # Intro

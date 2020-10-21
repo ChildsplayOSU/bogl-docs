@@ -1,5 +1,6 @@
 ---
 sort: 4 # Order in the sidebar
+permalink: tutorials/old/:basename:output_ext
 ---
  
 # Your Second Function
