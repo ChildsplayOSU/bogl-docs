@@ -1,11 +1,9 @@
 ---
-sort: 7 # Order in the sidebar
+sort: 2 # Order in the sidebar
 #permalink: /tutorials/types
 ---
  
 # Understanding Types
-
-[Previous Tutorial](GettingStarted)
 
 Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.
 
