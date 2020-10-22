@@ -1,32 +1,3 @@
-
-$primary-color: #DF013A;
-
-.header {
-  background: $primary-color;
-}
-
-.sidebar {
-  color: $primary-color;
-}
-
-body {
-  bottom: 500px;
-  color: green;
-  background: red;
-}
-
-.toctree {
-  color: $primary-color;
-}
-
-input.form-control {
-	border-color: #3E4538;
-}
-
-a.caption {
-  color: $primary-color !important;
-}
-
 /*
  * Embedded BoGL Editor CSS
  * Written by Benjamin Wilson Friedman
@@ -97,7 +68,7 @@ a.caption {
   overflow: scroll;
   border-radius: 4px;
   padding: 4px;
-  transition: 0.3s;
+  transition 0.3s;
   opacity: 0.8;
 }
 
