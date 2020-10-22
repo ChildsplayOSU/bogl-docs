@@ -1,6 +1,7 @@
 title: BoGL Docs 
 lang: en
 description: BoGL Documentation 
+repository: Aidenjn/bogl-docs
 
 ## local method ##
 # theme: jekyll-rtd-theme
