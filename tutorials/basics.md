@@ -18,15 +18,13 @@ game SimplestProgram <br/>
 Sometimes it can be useful to include comments within your code. Anything written after a double dash `--` on a line will be interpreted as comment text, meaning that the interpreter will not interpret that text as BoGL code.
 Text can also be marked as comments if it is enclosed by curly bracket-dashes `{- comment text -}`.
 
-{% include code_module_template.html 
-content = "
--- Anything after double dashes is comment text<br/>
-game SimplestProgram -- even if code is on the same line.<br/>
-{-<br/>
-    Comments can be<br/>
-    on multiple lines<br/>
-	if they are enclosed inside<br/>
-    of curly bracket-dashes<br/>
--}<br/>
-"
-%}
+```
+-- Anything after double dashes is comment text
+game SimplestProgram -- even if code is on the same line.
+{-
+Comments can be
+on multiple lines
+if they are enclosed inside
+of curly bracket-dashes
+-}
+```
