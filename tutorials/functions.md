@@ -28,12 +28,13 @@ In this function, no matter the value of the parameter **x**, the output (return
 fOfx : Int
 fOfx = 2
 ```
-
 To create a function we need to write two things: A declaration and a definition.
 
-The first part of a function is it's declaration. The declaration is where the types of the function's parameters (if there are any) and return value are declared. You can write a function declaration by first writing out the function's name. Opposite of type names, function names must start with a lowercase letter. In the above example our type is named _fOfx_. After the name we write a colon `:`, which is followed by the parameter types (none in the above example), which are then followed by the output type. The above example takes no parameters, so it only needs its return type of `Int` declared.
+The first part of a function is it's declaration. The declaration is where the types of the function's parameters (if there are any) and the type of the function's return value are declared. You can write a function declaration by first writing out the function's name. Opposite of type names, function names must start with a lowercase letter. In the above example our type is named _fOfx_. After the name we write a colon `:`, which is followed by the parameter types (none in the above example), which are then followed by the output type. The above example takes no parameters, so it only needs its return type of `Int` declared.
 
 The second part of a function is its definition. The definition is where all the logic goes that is used to determine the output value. The definition starts with the same function name that was written in the declaration, and then followed by an equals sign `=`. After the equals sign is where the logic that determines the output value goes. The code written in the function definition can often span multiple lines.
+
+![Anatomy of a parameterless function](../imgs/functions-no-parameter-function-anatomy.jpg)
 
 Now that we know how to create a basic function that returns a value, lets go over how to make a function that takes parameters. We will start with another math function as an example.
 
@@ -45,5 +46,25 @@ f : Int -> Int
 f(x) = 2 * x
 ```
 
+![function with parameter anatomy](../imgs/functions-function-with-parameter-anatomy.jpg)
 
+Since there is now a parameter that influences the output of the function, it must be accounted for in the function declaration. Parameters are written before the output value and are always followed by an arrow `->`. Reading the above function declaration for the function _f_ we know that it takes an integer type value as it's parameter and returns a integer type value.
+The output value `2 * x` is what we call an [expression](https://en.wikipedia.org/wiki/Expression_%28computer_science%29). An expression is something that must be evaluated (like calculating 2 * 2) before it's value is determined. Function return values are often in the form of expressions, which we will cover in detail in the next tutorial. For now lets utilize what we have learned so far to make a function that takes a coin toss result as an input and outputs a first player.
 
+We will call this function _determineFirstPlayer_. It will take a _TossResult_ as a parameter and return a _FirstPlayer_. Here is it's function declaration:
+```
+determineFirstPlayer : TossResult -> FirstPlayer
+```
+
+Next we will define it's return value. For now we will define the return value to be _Rosa_.
+```
+determineFirstPlayer = Rosa
+```
+
+Together it will look like:
+```
+determineFirstPlayer : TossResult -> FirstPlayer
+determineFirstPlayer(result) = Rosa
+```
+
+You may notice that the _result_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the _result_ is Heads or Tails. In the next tutorial we will look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the parameter _result_'s value. 
