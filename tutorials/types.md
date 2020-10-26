@@ -150,6 +150,8 @@ type CanastaCard = Card & {Joker} -- Extended type
  
 Here are some of the things you are <span style="color:red">**not allowed**</span> to do with types in BoGL:
 ``` 
+type pastaSauce = {Alfredo, Marinara, Pesto} -- A type name must start with a capital letter.
+type PastaSauce = {alfredo, marinara, pesto} -- Value names must start with capital letters.
 type EmptyType = {} -- Every type needs at least one possible value.
 type OneValueTuple = (Int) -- Tuples need two or more possible values.
 type GamePiece = ChessPiece & ClueCharacter -- Types cannot be extended with types, only sets of possible values.
