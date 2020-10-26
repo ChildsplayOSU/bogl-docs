@@ -41,7 +41,14 @@ type TossResult = {Heads, Tails}
 
 ![analysis of declaring a type](../imgs/types-code-analysis.jpg)
 
-Think of a type as a classification. We, as the programmer, must specify what information is allowed to be classified as our type. Below are a few more examples of user defined types that do not pertain to coin results, just to nail down the concept of defining types!
+Think of a type as a classification. We, as the programmer, must specify what information is allowed to be classified as our type.
+For this example we will also be needing a type for the first player (the eventual output of this program).
+```
+type FirstPlayer = {Jack, Rosa}
+```
+We will return to this example in the [functions tutorial](./functions), where we will be able to utilize the TossResult type.
+
+Below are a few more examples of user defined types that do not pertain to coin results, just to nail down the concept of defining types!
 
 ```
 -- board game themed types
