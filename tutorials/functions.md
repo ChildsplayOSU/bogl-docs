@@ -36,7 +36,18 @@ The second part of a function is its definition. The definition is where all the
 
 ![Anatomy of a parameterless function](../imgs/functions-no-parameter-function-anatomy.jpg)
 
-Now that we know how to create a basic function that returns a value, lets go over how to make a function that takes parameters. We will start with another math function as an example.
+To actually utilize this function we must _call_ it. A function that has no parameters can be called by typing it's name. Try typing `fOfx` into the interpreter (right side text box) below and press enter. It should return the value `2`.
+
+{% include code_module_template.html 
+content = "
+game FunctionDemo <br/>
+<br/>
+fOfx : Int<br/>
+fOfx = 2<br/>
+"
+%}
+
+Now that we know how to create a basic function that returns a value, lets go over how to make a function that takes a parameter. We will start with another math function as an example.
 
 **_f(x)_ = 2x**
 
@@ -66,5 +77,7 @@ Together it will look like:
 determineFirstPlayer : TossResult -> FirstPlayer
 determineFirstPlayer(result) = Rosa
 ```
+
+To call a function that has a parameter you must first type the function's name, followed by parenthesis `()`. Inside of those parenthesis you must put a value that matches the type of the function's parameter. The function call `determineFirstPlayer(Heads)` will return the value `Rosa`.
 
 You may notice that the _result_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the _result_ is Heads or Tails. In the next tutorial we will look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the parameter _result_'s value. 
