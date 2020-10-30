@@ -4,7 +4,7 @@ description: BoGL Documentation
 repository: Aidenjn/bogl-docs
 
 ## local method ##
-theme: jekyll-rtd-theme
+#theme: jekyll-rtd-theme
 
 # debug:
 #   compress: false
@@ -12,7 +12,7 @@ theme: jekyll-rtd-theme
 #   shortcodes: true
 
 ## remote method ##
-#remote_theme: rundocs/jekyll-rtd-theme
+remote_theme: rundocs/jekyll-rtd-theme
 
 readme_index:
   with_frontmatter: true
