@@ -63,7 +63,7 @@ type ClueCharacter = {MissScarlett, ColonelMustard, MrsWhite, ReverendGreen, Mrs
 type ClassicIceCreamFlavor = {Vanilla, Chocolate, Strawberry}
 type WaterValveState = {Open, Closed}
 type StateOfMatter = {Solid, Liquid, Gas, Plasma}
-type VertebrateAnimal = {Mammal, Reptile, Amphibian, Bird, Fish} 
+type ClothingArticle = {Shirt, Pants, Hat, Shoe, Jacket, Scarf, Glove}
 {% endhighlight %}
 
 The examples seen above are what we call [enumerated types](https://en.wikipedia.org/wiki/Enumerated_type).
@@ -145,7 +145,7 @@ type Suit = {Spade, Heart, Diamond, Club}
 type ClassicIceCreamFlavor = {Vanilla, Chocolate, Strawberry}
 type WaterValveState = {Open, Closed}
 type StateOfMatter = {Solid, Liquid, Gas, Plasma}
-type VertebrateAnimal = {Mammal, Reptile, Amphibian, Bird, Fish} 
+type ClothingArticle = {Shirt, Pants, Hat, Shoe, Jacket, Scarf, Glove}
 type QuestionAnswer = {Yes} -- You are allowed to create a type that has only one possible value.
 
 -- Types based off of the built in types
