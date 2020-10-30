@@ -257,7 +257,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-rtd-theme (~> 2.0.9)
+  jekyll-rtd-theme
 
 BUNDLED WITH
    2.1.4
