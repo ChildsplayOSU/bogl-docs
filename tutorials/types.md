@@ -76,6 +76,13 @@ Numbers are useful! The possible values of the type `Int` are all integer values
 
 Sometimes we just need a binary value. The possible values of the type `Bool` are `True` and `False`.
 
+One more important thing to note about types is that they can be synonyms to other types (see examples below).
+
+{% highlight haskell %}
+type Score = Int -- Score is a synonym of Int, so its possible values are the same as Int.
+type ShirtColor = PlayerColor -- ShirtColor has the same possible values that PlayerColor (an earlier defined type) has.
+{% endhighlight %}
+
 <br/>
 ## Tuples
 Sometimes it can be useful to have a type that will consist of value pairs. Think of a grid coordinate that has an X and Y value.
@@ -97,8 +104,8 @@ Tuple types do not have to be only two values (despite how it sounds). Two is ju
 type Card = (Rank, Suit) -- Tuple consisting of two types
 type Hand = (Card, Card, Card, Card, Card) -- Tuple type that represents a five card hand. Consists of five Card types.
 
-type Points = Int -- Normal non-tuple type
-type Player = (PlayerColor, Hand, Points) -- Tuple type that represents a player in a card game. Consists of three different types.
+type Score = Int -- Normal non-tuple type
+type Player = (PlayerColor, Hand, Score) -- Tuple type that represents a player in a card game. Consists of three different types.
 ```
 
 <br/>
@@ -142,13 +149,13 @@ type QuestionAnswer = {Yes} -- You are allowed to create a type that has only on
 
 -- Types based off of the built in types
 type TrueFalseQuestionAnswer = Bool -- Possible values are True and False
-type Points = Int -- Possible values are any integer
+type Score = Int -- Possible values are any integer
 
 -- Tuple types
 type Coordinate = (Int, Int)
 type Card = (Rank, Suit) 
 type Hand = (Card, Card, Card, Card, Card) 
-type Player = (PlayerColor, Hand, Points) 
+type Player = (PlayerColor, Hand, Score) 
 
 -- Extended types
 type IceCreamFlavor = ClassicIceCreamFlavor & {Mint, BirthdayCake, BubbleGum, Coffee} -- Extended type
