@@ -4,7 +4,7 @@ description: BoGL Documentation
 repository: Aidenjn/bogl-docs
 
 ## local method ##
-#theme: jekyll-rtd-theme
+# theme: jekyll-rtd-theme
 
 # debug:
 #   compress: false
