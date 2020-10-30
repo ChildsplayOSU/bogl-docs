@@ -23,7 +23,6 @@
 <hr>
 
 <div class="copyright text-center text-gray" role="contentinfo">
-    <i class="fa fa-copyright"></i>
     <span class="time">
         {%- assign created_time = rest_created_at | date: "%Y" -%}
         {%- assign updated_time = rest_updated_at | date: "%Y" -%}
@@ -43,12 +42,9 @@
     {% unless site.url contains "rundocs.io" %}
         <br>
         <div class="generator">
-            Built with
-            <a href="https://jekyllrb.com" rel="noreferrer" target="_blank">Jekyll</a>
-            using a
-            <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="{% if site.remote_theme %}remote{% endif %} theme: jekyll-rtd-theme v{{ version }}">theme</a>
-            provided by
-            <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>.
+            This site is under construction!
+			Please send feedback and report bugs to
+			<a href="mailto: nelsonai@oregonstate.edu" rel="noreferrer" target="_blank">nelsonai@oregonstate.edu</a>.
         </div>
     {% endunless %}
 </div>
