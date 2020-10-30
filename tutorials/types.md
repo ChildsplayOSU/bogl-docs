@@ -123,11 +123,29 @@ type IceCreamFlavor = ClassicIceCreamFlavor & {Mint, BirthdayCake, BubbleGum, Co
 ![IceCreamFlavor](../imgs/types-IceCreamFlavor.jpg)
 Since IceCreamFlavor was created by extending ClassicIceCreamFlavor, its possible values consist of those that were in ClassicIceCreamFlavor (Vanilla, Chocolate, Strawberry) along with the new values that were defined (Mint, BirthdayCake, BubbleGum, Coffee).
 
-Here is another example. Not all card games use Jokers, but some (like [Canasta](https://en.wikipedia.org/wiki/Canasta)) do. We can create a new type that allows for normal cards plus Jokers by extending a previously defined Card type.
+<br/>
+#### Example: Canasta Card Game
+Not all card games use Jokers, but some (like [Canasta](https://en.wikipedia.org/wiki/Canasta)) do. We can create a new type that allows for normal cards plus Jokers by extending a previously defined Card type.
 
 {% highlight haskell %}
 type CanastaCard = Card & {Joker} -- Extended type
 {% endhighlight %}
+
+<br/>
+#### Example: A Hand of Cards
+The Hand type shown below represents five cards held in a hand. Lets assume the game being played has a five card limit.
+{% highlight haskell %}
+type Hand = (Card, Card, Card, Card, Card) -- Tuple type that represents a five card hand. Consists of five Card types.
+{% endhighlight %}
+What if we wanted the ability to represent not having a card? This could be because a card that was in our hand got played, taken by someone, or discarded. To represent the absence of cards in our hand, we could do something like this:
+
+{% highlight haskell %}
+type MaybeCard = Card & {Nothing}
+type Hand = (MaybeCard, MaybeCard, MaybeCard, MaybeCard, MaybeCard) -- Type representing a hand of cards. Consists of five potential cards.
+{% endhighlight %}
+
+
+
 
 <br/>
 ## Examples of Types
