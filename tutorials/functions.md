@@ -84,4 +84,27 @@ You may notice that the _result_ parameter is not being utilized, and that the o
 
 <br/>
 ## Functions with Multiple Parameters
-A function can have multiple parameters by using [tuples](./types.html#tuples).
+A function can have multiple parameters by using [tuples](./types.html#tuples). The function shown below takes two numbers and returns the result of adding them together.
+{% highlight haskell %}
+f : (Int, Int) -> Int
+f(a, b) = a + b
+{% endhighlight %}
+
+The amount of parameters is dependent on the amount of types held in the function's tuple parameter type.
+{% highlight haskell %}
+-- The function below adds six numbers together.
+f : (Int, Int, Int, Int, Int, Int) -> Int
+f(a, b, c, d, e, f) = a + b + c + d + e + f
+{% endhighlight %}
+
+You still need to specify parameter names when using a previously defined tuple.
+{% highlight haskell %}
+type NumPair = (Int, Int)
+
+-- The function below adds the two numbers inside of a NumPair together.
+f : NumPair -> Int
+f(a, b) = a + b; -- Still need to specify parameter names a and b 
+{% endhighlight %}
+
+
+
