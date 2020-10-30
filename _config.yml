@@ -12,7 +12,7 @@ repository: Aidenjn/bogl-docs
 #   shortcodes: true
 
 ## remote method ##
-remote_theme: rundocs/jekyll-rtd-theme
+# remote_theme: rundocs/jekyll-rtd-theme
 
 readme_index:
   with_frontmatter: true
@@ -25,6 +25,7 @@ plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
+  - github-pages
 
 # Allows manual sorting of the sidebar link order
 readme_index:
