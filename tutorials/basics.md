@@ -18,7 +18,7 @@ game SimplestProgram <br/>
 Sometimes it can be useful to include comments within your code. Anything written after a double dash `--` on a line will be interpreted as comment text, meaning that the interpreter will not interpret that text as BoGL code.
 Text can also be marked as comments if it is enclosed by curly bracket-dashes `{- comment text -}`.
 
-```
+{% highlight haskell %}
 -- Anything after double dashes is comment text
 game SimplestProgram -- even if code is on the same line.
 {-
@@ -27,4 +27,4 @@ on multiple lines
 if they are enclosed inside
 of curly bracket-dashes
 -}
-```
+{% endhighlight %}
