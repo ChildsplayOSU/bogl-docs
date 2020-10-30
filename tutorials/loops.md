@@ -1,8 +1,8 @@
 ---
-sort: 4 # Order in the sidebar
+sort: 7 # Order in the sidebar
 #permalink: /tutorials/expressions
 ---
  
-# Simple Expressions
+# Loops 
 
 :construction: Under construction :construction:
