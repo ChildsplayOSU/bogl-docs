@@ -6,7 +6,7 @@
   <div class="bogl"></div>
   <div class="left bogl-code" contenteditable="true">
 	  {% if page.content %}
-	  	{{ include.content }}
+	  	{{ include.content | newline_to_br }}
 	  {% endif %}
 
   </div>

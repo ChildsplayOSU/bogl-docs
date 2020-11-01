@@ -232,6 +232,8 @@
         e.preventDefault();
 
         let code = boglCode[x].innerHTML;
+		// replace -&gt; with ->
+        code = code.replaceAll(/-&gt;/gi, '->'); // Added by Aiden Nelson
         // replace <br> with linebreaks
         code = code.replaceAll(/<div><br><\/div>/gi, '\n');
         // replace <div> and </div> with nothing!
