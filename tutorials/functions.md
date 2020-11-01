@@ -39,11 +39,10 @@ The second part of a function is its definition. The definition is where all the
 To actually utilize this function we must _call_ it. A function that has no parameters can be called by typing it's name. Try typing `f` into the interpreter (right side text box) below and press enter. It should return the value `2`.
 
 {% include code_module_template.html 
-content = "
-game FunctionDemo <br/>
-<br/>
-f : Int<br/>
-f = 2<br/>
+content = "game FunctionDemo
+
+f : Int
+f = 2
 "
 %}
 
@@ -78,7 +77,19 @@ determineFirstPlayer : TossResult -> Player
 determineFirstPlayer(result) = Rosa
 {% endhighlight %}
 
-To call a function that has a parameter you must first type the function's name, followed by parenthesis `()`. Inside of those parenthesis you must put a value that matches the type of the function's parameter. The function call `determineFirstPlayer(Heads)` will return the value `Rosa`.
+To call a function that has a parameter you must first type the function's name, followed by parenthesis `()`. Inside of those parenthesis you must put a value that matches the type of the function's parameter. Try typing the function call `determineFirstPlayer(Heads)` into the interpreter below. It should return the value `Rosa`.
+
+{% include code_module_template.html 
+content = "game WhoGoesFirst
+
+type TossResult = {Heads, Tails}
+type Player = {Jack, Rosa}
+
+determineFirstPlayer : TossResult -> Player
+determineFirstPlayer(result) = Rosa
+"
+%}
+
 
 You may notice that the _result_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the _result_ is Heads or Tails. In the next tutorial we will look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the parameter _result_'s value. 
 

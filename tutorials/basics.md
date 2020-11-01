@@ -9,8 +9,7 @@ Welcome to BoGL, the Board Game Language! These tutorials will teach you the too
 ## Defining your Game
 Since BoGL is a game themed language, every BoGL program must begin with a game name. You can choose anything for this as long as it is a valid string (no weird characters), starts with a capital letter, and is preceeded by the keyword `Game`. Below is an example of the simplest program you can make in BoGL.
 {% include code_module_template.html 
-content = "
-game SimplestProgram <br/>
+content = "game SimplestProgram
 "
 %}
 
