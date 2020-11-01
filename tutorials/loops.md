@@ -5,6 +5,8 @@ sort: 7 # Order in the sidebar
 
 # Loops
 
+## Introduction
+
 Now that we have an idea of what `Input` is and how to use it, we're ready to start getting into the idea of *loops*. First, we'll start off with a breakdown of what a loop is, and then we'll explain how to implement it in BoGL.
 
 For starters, let's think of a situation we can use. There are many cases where a loop can be used. In ours we're going to think of summing up a bunch of numbers. Let's say our example is a board of 5 spaces, or a 1x5 board; so it's just 5 spaces all in a row. If each space can have a number, it might look something like `[4,1,9,5,10]`. If we wanted to calculate the sum, we would get 29. Now, the question is how do we calculate the sum?
@@ -28,6 +30,8 @@ sum = numbers!(1,1) + numbers!(1,2) + numbers!(1,3) + numbers!(1,4) + numbers!(1
 {% endhighlight %}
 
 This would work for our board of numbers, but what if it's 10 or 20 numbers? As you may be thinking, wow, that's going to be a lot of additions! It would be nice if there was a way to clean this up a bit, and to describe the process of *iterating* through all these numbers to sum them up. It turns out there is a way to do it, with loops!
+
+## How to write Loops
 
 So, first, how do we write loops? In BoGL, we do this with a **while** expression. After the `while`, we tell how long to loop for, something called the **condition**. This can be any expression, so long as it produces a `Bool`. As long as the value of the condition is True, the loop will keep running the **body**. The body indicates what we're doing every time we loop. Altogether, a `while` expression looks a bit like this:
 
@@ -68,6 +72,8 @@ while 5 <= 5 do (5+1, 19 + 10)
 (6,29)
 ```
 
+## Context for Loops
+
 Notice that the value of the body matches the type of the function that it is a part of. The body of a while loop must match the type of the context before it. In some cases this is a function, but in other cases this may be a let expression. For example:
 {% highlight haskell %}
 toZero : Int
@@ -106,10 +112,23 @@ infiniteLoop = let a = 10 in
 {% endhighlight %}
 Although it looks like we should be changing `a`, we can only change our immediate context, which is an `Int` named `b`. Every time we loop, the value of `a` will be 10, as it was before. Remember, when you're writing a loop *a while loop can only update the value of it's context, and nothing else*. If your loop is misbehaving, think carefully about whether you are updating the name associated with your context, or something else by accident.
 
+## Final Example
 
 Finally, let's improve our `sum` example from before to make it a bit easier to use. Instead of having to pass in the index, an initial total, and getting back a tuple of both of these at the end, we can add a couple functions to make it a simple `sum`.
 {% highlight haskell %}
--- asuming count, numbers, and the board type are all the same from before...
+game Loops
+
+type Board = Array(1,5) of Int
+
+count : Int
+count = 5
+
+numbers : Board
+numbers!(1,1) = 4
+numbers!(1,2) = 1
+numbers!(1,3) = 9
+numbers!(1,4) = 5
+numbers!(1,5) = 10
 
 -- A handy function to get the 2nd element
 -- of the tuple passed, which is the value we want.
