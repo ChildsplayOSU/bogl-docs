@@ -29,7 +29,13 @@ sumAll = numbers!(1,1) + numbers!(1,2) + numbers!(1,3) + numbers!(1,4) + numbers
 
 This would work for our board of numbers, but what if it's larger, what if it's 10 or 20 numbers? As you may be thinking now, wow, that's going to be a lot of additions! It would be nice if there was a way to clean this up a bit, and to describe the process of *iterating* through all these numbers until we're done. It turns out there is a way to do it, with loops!
 
-So, first, how do we write loops? Loops are declared using a **while** expression. After the word `while`, we give it a way to tell how long to loop for, formally called the **condition**. This will be in the form of a `Bool`, and as long as it's true, it will keep running what's called the **body**. The body is the next bit of a while, and it indicates what we're doing every time we loop. In this case, we want to express that idea of repeating until we have summed up all numbers. This can be expressed like so:
+So, first, how do we write loops? Loops are declared using a **while** expression. After the word `while`, we give it a way to tell how long to loop for, formally called the **condition**. This will be in the form of a `Bool`, and as long as it's true, it will keep running what's called the **body**. The body is the next bit of a while, and it indicates what we're doing every time we loop. Altogether, a while looks a bit like this:
+
+```
+while condition do body
+```
+
+In this case, we want our **while** to express the idea of repeating until we have summed up all numbers. An initial approach can be written like so:
 
 {% highlight haskell %}
 -- tells us how far we can go
@@ -51,9 +57,9 @@ sum : (Int,Int) -> (Int,Int)
 sum(x,total) = while x <= count do (x+1, total + numbers!(1,x))
 {% endhighlight %}
 
-Our above sum function has some important parts, so let's break those down.
+Our above sum function is a bit more complex than we were expecting perhaps, but we'll be able to simplify it to just `sum` when we get to the end. But first, there are some important parts we want to make sure you're familiar with, so let's break those down.
 
-First, why is it's signature of `(Int,Int)` to `(Int,Int)`? For this version, we're taking the starting index of where we want to sum from, and also the starting value of our sum. The reason we must do this will become clear in a moment. Our **while** has a condition of `x <= count`, so while x is less than or equal to the count, we will 'do' what is in the body. In turn, our body is `(x+1, total + numbers!(1,x))`, or more simply `(index forward one, our sum plus the number at this index)`.
+First, why is the signature `(Int,Int) -> (Int,Int)`? For this version, we're taking the starting index of where we want to sum from, and also the starting value of our sum. The reason we must do this will become clear in a moment. Our **while** has a condition of `x <= count`, so while x is less than or equal to the count, we will 'do' what is in the body. In turn, our body is `(x+1, total + numbers!(1,x))`, or more simply `(index forward one, our sum plus the number at this index)`.
 
 Notice that this matches the form of the function that while is a part of. The body of a while loop must match the type of the context before it. In some cases this is a function, but in other cases this may be a let expression, like:
 {% highlight haskell %}
@@ -63,7 +69,9 @@ toZero = let x = 10 in while x > 0 do x-1
 
 Notice here, the context that precedes the while is a **let** expression, with a type of **Int**. When you have more than one context, i.e. a function and a let, or multiple lets, the *last one before the while takes precedence*. For example consider the following program where the context is for `let z = True`, z being a `Bool`:
 {% highlight haskell %}
--- this will NOT work! The context is for a 'Bool'
+-- This will NOT work!
+-- The context of our while is for a 'Bool'
+-- Although we can use 'y', this while can only return True/False
 another : Int -> Int
 another(x) = let y = 20 in
              let z = True in
@@ -71,12 +79,26 @@ another(x) = let y = 20 in
 {% endhighlight %}
 Even though our while loop seems to be fine, properly using **y** as an `Int`, it is contained within the context of `let z = True`. This means that our while loop should produce exactly a `Bool` every time it does something. A fixed up version of our program above could be made by switching y and z.
 {% highlight haskell %}
--- this will work! The context is for an 'Int' as we expect now
+-- This will work!
+-- The context of our while is for an 'Int'
+-- We can use both z and y if we want,
+-- but our context, and all that we can change across loops, is 'y'
 another : Int -> Int
 another(x) = let z = True in
              let y = 20 in
              while y > 0 do y-1
 {% endhighlight %}
+
+To make an important point of the comments above, the only thing you can change is the value of your context, that's it. If we rewrite the loop above to this, we have a problem:
+{% highlight haskell %}
+-- this will loop forever, but bogl will stop you after a few seconds
+infiniteLoop : Int
+infiniteLoop = let a = 10 in
+               let b = 20 in
+               while a > 0 do a-1
+{% endhighlight %}
+Although it looks like we should be changing `a`, we can only change our immediate context, which is an `Int` named `b`. Every time we loop, the value of `a` will be 10, as it was before. So remember when you're writing a loop, *a while can only update the value of it's context, and nothing else*. If your loop is misbehaving, think carefully about whether you are updating the name associated with your context, or something else by accident.
+
 
 Finally, it is possible to take advantage of context to cleanup our example from before. Instead of having to pass in the index, and an initial result, and getting back a tuple of both of these at the end, we can add a couple functions to make it a simple `sum`.
 {% highlight haskell %}
