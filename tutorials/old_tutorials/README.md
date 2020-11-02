@@ -1,6 +1,7 @@
 ---
 #sort: 3 # Order in the sidebar
-permalink: /tutorials/old/
+#permalink: /tutorials/old/
+published: false
 ---
  
 # Old Tutorials
