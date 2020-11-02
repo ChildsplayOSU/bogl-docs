@@ -16,7 +16,7 @@ game WhoGoesFirst
 type Player = {Jack, Rosa}
 type TossResult = {Heads, Tails}
 
-coin : Int
+coin : TossResult
 coin = Heads
 {% endhighlight %}
 
@@ -70,7 +70,7 @@ determineFirstPlayer : TossResult -> Player
 determineFirstPlayer(coin) = Rosa
 {% endhighlight %}
 
-Try typing the function call `determineFirstPlayer(Heads)` into the interpreter below. It should return the value `Rosa`. You could also use `coin` as an argument for this function instead of `Heads`, since it's defined value is also Heads.
+Try typing the function call `determineFirstPlayer(Heads)` into the interpreter below. It should return the value `Rosa`. You could also use `coin` as an argument for this function instead of `Heads`, since it's defined value is of type TossResult.
 
 {% include code_module_template.html 
 content = "game WhoGoesFirst
@@ -78,7 +78,7 @@ content = "game WhoGoesFirst
 type TossResult = {Heads, Tails}
 type Player = {Jack, Rosa}
 
-coin : Int
+coin : TossResult
 coin = Heads
 
 determineFirstPlayer : TossResult -> Player
