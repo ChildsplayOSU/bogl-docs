@@ -27,13 +27,13 @@ Next we will capture the coin toss result. For this we are going to create a typ
 ![toss result variable type diagram](../imgs/types-tossresult-diagram.jpg)
 
 
-There are currently no defined types for a coin toss result (as there are for integers and booleans), so we will make one ourselves!
+There are currently no defined types for a coin toss result, so we will make one ourselves!
 The pieces of information we need to create our own type are: 
 
 * The name we want to call our type
 * The possible values of our type
 
-To define a type, we must first use the keyword `type` in our program, followed by the desired name for our type. It is required by the language that the first letter of this name is capitalized. We will then define what the possible values are for this type using the `=` operator, followed then by a list of the possible values, seperated by commas, and contained within `{}` brackets. These values will also be given desired names (with their first letters capitalized). It will end up looking like this:
+To define a type, we must first use the keyword `type` in our program, followed by the desired name for our type. It is required by the language that the first letter of this name be capitalized. We will then define what the possible values are for this type using the `=` operator, followed then by a list of the possible values, seperated by commas, and contained within `{}` brackets. These values will also be given desired names (with their first letters capitalized). It will end up looking like this:
 
 
 {% highlight haskell %}
@@ -49,7 +49,7 @@ type FirstPlayer = {Jack, Rosa}
 {% endhighlight %}
 We will return to this example in the [functions tutorial](./functions), where we will be able to utilize the TossResult type.
 
-Below are a few more examples of user defined types that do not pertain to coin results, just to nail down the concept of defining types!
+Below are a few more examples of user-defined types that do not pertain to coin results, just to nail down the concept of defining types!
 
 {% highlight haskell %}
 -- board game themed types
@@ -66,7 +66,7 @@ type StateOfMatter = {Solid, Liquid, Gas, Plasma}
 type ClothingArticle = {Shirt, Pants, Hat, Shoe, Jacket, Scarf, Glove}
 {% endhighlight %}
 
-The examples seen above are what we call [enumerated types](https://en.wikipedia.org/wiki/Enumerated_type).
+The examples seen above are what we call [enumeration types](https://en.wikipedia.org/wiki/Enumerated_type).
 There are also two other types built into BoGL: integers and booleans.
 
 {% highlight haskell %}
@@ -114,7 +114,7 @@ type Player = (PlayerColor, Hand, Score) -- Tuple type that represents a player 
 Something useful that we can do with types is extend them. An extended type is created by taking an existing type and adding more possible values to it.
 To create an extended type we must first define the name of the new type (just like creating a normal type), and then set it equal to the type we are extending, followed by an ampersand `&` and a new set of possible values surrounded by curly brackets `{}`. Below is an example of creating a new extended type (IceCreamFlavor) based off of an existing one (ClassicIceCreamFlavor).
 {% highlight haskell %}
-type ClassicIceCreamFlavor = {Vanilla, Chocolate, Strawberry} -- Regular enumerated type
+type ClassicIceCreamFlavor = {Vanilla, Chocolate, Strawberry} -- Regular enumeration type
 {% endhighlight %}
 ![ClassicIceCreamFlavor](../imgs/types-ClassicIceCreamFlavor.jpg)
 {% highlight haskell %}
@@ -122,6 +122,12 @@ type IceCreamFlavor = ClassicIceCreamFlavor & {Mint, BirthdayCake, BubbleGum, Co
 {% endhighlight %}
 ![IceCreamFlavor](../imgs/types-IceCreamFlavor.jpg)
 Since IceCreamFlavor was created by extending ClassicIceCreamFlavor, its possible values consist of those that were in ClassicIceCreamFlavor (Vanilla, Chocolate, Strawberry) along with the new values that were defined (Mint, BirthdayCake, BubbleGum, Coffee).
+It would also be possible to create a type for the new values first, and then use that type to create the extended IceCreamFlavor type.
+{% highlight haskell %}
+type ClassicIceCreamFlavor = {Vanilla, Chocolate, Strawberry} -- Regular enumeration type
+type NonClassicIceCreamFlavor = {Mint, BirthdayCake, BubbleGum, Coffee} -- Regular enumeration type
+type IceCreamFlavor = ClassicIceCreamFlavor & NonClassicIceCreamFlavor -- Extended type
+{% endhighlight %}
 
 <br/>
 #### Example: Canasta Card Game
@@ -151,7 +157,7 @@ type Hand = (MaybeCard, MaybeCard, MaybeCard, MaybeCard, MaybeCard) -- Type repr
 ## Examples of Types
 Here are some examples of defining types in BoGL:
 {% highlight haskell %}
--- Normal enumerated types
+-- Normal enumeration types
 type TossResult = {Heads, Tails}
 type CardSuit = {Diamond, Club, Heart, Spade}
 type PlayerColor = {Blue, Red, Green, Yellow}
@@ -179,6 +185,7 @@ type Player = (PlayerColor, Hand, Score)
 -- Extended types
 type IceCreamFlavor = ClassicIceCreamFlavor & {Mint, BirthdayCake, BubbleGum, Coffee} -- Extended type
 type CanastaCard = Card & {Joker} -- Extended type
+type GamePiece = ChessPiece & ClueCharacter -- Type extended with another type.
 {% endhighlight %}
  
 Here are some of the things you are <span style="color:red">**not allowed**</span> to do with types in BoGL:
@@ -187,7 +194,6 @@ type pastaSauce = {Alfredo, Marinara, Pesto} -- A type name must start with a ca
 type PastaSauce = {alfredo, marinara, pesto} -- Value names must start with capital letters.
 type EmptyType = {} -- Every type needs at least one possible value.
 type OneValueTuple = (Int) -- Tuples need two or more possible values.
-type GamePiece = ChessPiece & ClueCharacter -- Types cannot be extended with types, only sets of possible values.
 {% endhighlight %}
 
 [Next, we'll show you how the program can utilize the TossResult type we created to capture user input!]()
