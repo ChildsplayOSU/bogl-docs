@@ -1,11 +1,11 @@
 ---
-sort: 3 # Order in the sidebar
+sort: 4 # Order in the sidebar
 #permalink: /tutorials/functions
 ---
  
 # Functions
 
-:warning: Make sure that you have a solid understanding of [types](./types) before jumping into this tutorial.:warning:
+:warning: Make sure that you have a solid understanding of [types](./types) and [values](./values) before jumping into this tutorial.:warning:
 
 Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.
 
@@ -39,11 +39,10 @@ The second part of a function is its definition. The definition is where all the
 To actually utilize this function we must _call_ it. A function that has no parameters can be called by typing it's name. Try typing `f` into the interpreter (right side text box) below and press enter. It should return the value `2`.
 
 {% include code_module_template.html 
-content = "
-game FunctionDemo <br/>
-<br/>
-f : Int<br/>
-f = 2<br/>
+content = "game FunctionDemo
+
+f : Int
+f = 2
 "
 %}
 
@@ -59,15 +58,15 @@ f(x) = 2 * x
 
 ![function with parameter anatomy](../imgs/functions-function-with-parameter-anatomy.jpg)
 
-Since there is now a parameter that influences the output of the function, it must be accounted for in the function declaration. Parameters are written before the output value and are always followed by an arrow `->`. Reading the above function declaration for the function _f_ we know that it takes an integer type value as it's parameter and returns a integer type value.
-The output value `2 * x` is what we call an [expression](https://en.wikipedia.org/wiki/Expression_%28computer_science%29). An expression is something that must be evaluated (like calculating 2 * 2) before it's value is determined. A function returns the result of evaluating an expression. We will cover expressions in detail in the next tutorial. For now lets utilize what we have learned so far to make a function that takes a coin toss result as an input and outputs a first player.
+Since there is now a parameter that influences the output of the function, it must be accounted for in the function declaration (also known as the function's signature). Parameters are written before the output value and are always followed by an arrow `->`. Reading the above function declaration for the function _f_ we know that it takes an integer as it's parameter and returns an integer.
+`2 * x` is the function's defining [expression](https://en.wikipedia.org/wiki/Expression_%28computer_science%29). An expression is something that must be evaluated (like calculating 2 * 2) before it's value is determined. A function returns the result of evaluating an expression. We will cover expressions in more detail in the next tutorial. For now lets utilize what we have learned so far to make a function that takes a coin toss result as an input and outputs a first player.
 
 We will call this function _determineFirstPlayer_. It will take a _TossResult_ as a parameter and return a _Player_. Here is it's function declaration:
 {% highlight haskell %}
 determineFirstPlayer : TossResult -> Player
 {% endhighlight %}
 
-Next we will define it's return value. For now we will define the return value to be _Rosa_.
+Next we will create its defining expression. For now we will make this the value _Rosa_.
 {% highlight haskell %}
 determineFirstPlayer = Rosa
 {% endhighlight %}
@@ -75,12 +74,24 @@ determineFirstPlayer = Rosa
 Together it will look like:
 {% highlight haskell %}
 determineFirstPlayer : TossResult -> Player
-determineFirstPlayer(result) = Rosa
+determineFirstPlayer(coin) = Rosa
 {% endhighlight %}
 
-To call a function that has a parameter you must first type the function's name, followed by parenthesis `()`. Inside of those parenthesis you must put a value that matches the type of the function's parameter. The function call `determineFirstPlayer(Heads)` will return the value `Rosa`.
+To call a function that has a parameter you must first type the function's name, followed by parenthesis `()`. Inside of those parenthesis you must put a value that matches the type of the function's parameter. We call this value a *function argument*. Try typing the function call `determineFirstPlayer(Heads)` into the interpreter below. It should return the value `Rosa`.
 
-You may notice that the _result_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the _result_ is Heads or Tails. In the next tutorial we will look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the parameter _result_'s value. 
+{% include code_module_template.html 
+content = "game WhoGoesFirst
+
+type TossResult = {Heads, Tails}
+type Player = {Jack, Rosa}
+
+determineFirstPlayer : TossResult -> Player
+determineFirstPlayer(result) = Rosa
+"
+%}
+
+
+You may notice that the _coin_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the argument is Heads or Tails. In the [if/else tutorial](./conditional_logic) we will revisit this example and look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the argument provided to the _coin_ parameter. 
 
 <br/>
 ## Functions with Multiple Parameters
@@ -90,14 +101,14 @@ f : (Int, Int) -> Int
 f(a, b) = a + b
 {% endhighlight %}
 
-The amount of parameters is dependent on the amount of types held in the function's tuple parameter type.
+The number of parameters must correspond to the number of the function's parameter types.
 {% highlight haskell %}
 -- The function below adds six numbers together.
 f : (Int, Int, Int, Int, Int, Int) -> Int
 f(a, b, c, d, e, f) = a + b + c + d + e + f
 {% endhighlight %}
 
-You still need to specify parameter names when using a previously defined tuple.
+You still need to specify parameter names when using a previously defined tuple type.
 {% highlight haskell %}
 type NumPair = (Int, Int)
 

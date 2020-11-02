@@ -1,5 +1,5 @@
 ---
-sort: 5 # Order in the sidebar
+sort: 6 # Order in the sidebar
 #permalink: /tutorials/expressions
 ---
  
