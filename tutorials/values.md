@@ -29,7 +29,7 @@ The code above is a *value definition* for the value **x**, which we define as *
 
 The first line of a value definition is where the value's type is declared. You can write this by first writing out the name of the value. Opposite of type names, value names must start with a lowercase letter. In the above example our value is named _x_. After the name we write a colon `:`, which is followed by the value's type.
 
-The second line of value definition is where the value itself is defined. This line starts with the same value name that was written in the first line followed by an equals sign `=`. After the equals sign is where the logic that determines the value goes. Oftentimes this is simply a value, but can also be an [expression](./expressions) which we will cover in another tutorial.
+The second line of a value definition is where the value itself is defined. This line starts with the same value name that was written in the first line followed by an equals sign `=`. After the equals sign is where the logic that determines the value goes. Oftentimes this is simply a value, but can also be an [expression](./expressions) which we will cover in another tutorial.
 
 ![Anatomy of a value definition](../imgs/values-value-definition-anatomy.jpg)
 

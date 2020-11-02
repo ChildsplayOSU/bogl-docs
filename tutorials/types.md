@@ -196,4 +196,4 @@ type EmptyType = {} -- Every type needs at least one possible value.
 type OneValueTuple = (Int) -- Tuples need two or more possible values.
 {% endhighlight %}
 
-[Next, we'll show you how the program can utilize the TossResult type we created to capture user input!]()
+Next, we'll show you how BoGL can use types to define values!
