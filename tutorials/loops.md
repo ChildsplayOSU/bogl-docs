@@ -1,152 +1,126 @@
 ---
 sort: 7 # Order in the sidebar
-#permalink: /tutorials/expressions
+#permalink: /tutorials/loops
 ---
 
 # Loops
 
 ## Introduction
 
-Now that we have an idea of what `Input` is and how to use it, we're ready to start getting into the idea of *loops*. First, we'll start off with a breakdown of what a loop is, and then we'll explain how to implement it in BoGL.
+There are many tasks that require some form of repeated action, such as counting up to 10, calculating the factorial of a number, or slowly adding ingredients until the flavor is where you want it to be. These all let us perform an action for as long as a condition is satisfied. We could also perform each of these without loops, but only for a constant number of times. For example you may be counting to 10 from 3, 9 or -1000, and writing a function for each would be tedious. Similarly, if we want to calculate the factorial of any number, we're going to want a way to do this for any `x`, rather than writing all possible factorials out. For each of these, a `while` loop would help to solve our problem.
 
-For starters, let's think of a situation we can use. There are many cases where a loop can be used. In ours we're going to think of summing up a bunch of numbers. Let's say our example is a board of 5 spaces, or a 1x5 board; so it's just 5 spaces all in a row. If each space can have a number, it might look something like `[4,1,9,5,10]`. If we wanted to calculate the sum, we would get 29. Now, the question is how do we calculate the sum?
+## What are While Loops?
 
-If we wanted to do this in BoGL, we could write something like this:
-
-{% highlight haskell %}
-game Loops
-
-type Board = Array(1,5) of Int
-
-numbers : Board
-numbers!(1,1) = 4
-numbers!(1,2) = 1
-numbers!(1,3) = 9
-numbers!(1,4) = 5
-numbers!(1,5) = 10
-
-sum : Int
-sum = numbers!(1,1) + numbers!(1,2) + numbers!(1,3) + numbers!(1,4) + numbers!(1,5)
-{% endhighlight %}
-
-This would work for our board of numbers, but what if it's 10 or 20 numbers? As you may be thinking, wow, that's going to be a lot of additions! It would be nice if there was a way to clean this up a bit, and to describe the process of *iterating* through all these numbers to sum them up. It turns out there is a way to do it, with loops!
+A while loop is an expression in BoGL that takes two other expressions, a condition and a body. The condition is an expression that evaluates to a result of `Bool`. The body is an expression that is evaluated every time the condition evaluates to `True`. A while loop repeatedly evaluates the condition, and for each time that it is `True` it evaluates the body again. Once the condition evaluates to `False`, the while loop returns the last value produced by the body. If the condition evaluates to `False` on the first check, the body is never evaluated, and the value that was passed into the while loop is returned unchanged.
 
 ## How to write Loops
 
-So, first, how do we write loops? In BoGL, we do this with a **while** expression. After the `while`, we tell how long to loop for, something called the **condition**. This can be any expression, so long as it produces a `Bool`. As long as the value of the condition is True, the loop will keep running the **body**. The body indicates what we're doing every time we loop. Altogether, a `while` expression looks a bit like this:
+So, first, how do we write loops? In BoGL, we begin with a `while`. Following the `while` keyword, we give our **condition** expression. This can be any expression, so long as it produces a `Bool`, as mentioned before. After the condition you write in `do`, which indicates that the **body** expression will follow. The **body** expression is evaluated as long as the condition evaluates to `True`.
+
+In the case of counting up to 10, our condition would `x < 10` and our body would be `x + 1`. This means that so long as `x` is less than 10, our body will be evaluated, producing a new `x` with the value of `x+1` until our condition returns `False`. This looks like the following in BoGL.
 
 ![while loop, showing the condition and then the body](../imgs/while-loop.jpg)
 
-In this case, we want our **while** to express the idea of repeating until we have summed up all numbers. An initial approach can be written like so:
-
-{% highlight haskell %}
--- tells us how far we can go
-count : Int
-count = 5
-
--- our board of numbers to sum
-numbers : Board
-numbers!(1,1) = 4
-numbers!(1,2) = 1
-numbers!(1,3) = 9
-numbers!(1,4) = 5
-numbers!(1,5) = 10
-
--- our sum function, as a loop
--- takes the index to start, and the starting amount
--- returns where it stopped, and the new total
-sum : (Int,Int) -> (Int,Int)
-sum(x,total) = while x <= count do (x+1, total + numbers!(1,x))
-{% endhighlight %}
-
-Our above sum function is a bit more complex than we were expecting perhaps, but we'll be able to simplify it to just `sum` when we get to the end. However, first there are some important parts we want to make sure you're familiar with, so let's break those down.
-
-To begin, why is the signature `(Int,Int) -> (Int,Int)`? For this function, we're taking the starting index of where we want to sum from, and also the starting value of our sum. If we wanted to sum all the numbers starting at the first one, we would write in `sum(1,0)` for the first index and a starting sum of zero. The reason we must do this will become clear in a moment. Our **while** has a condition of `x <= count`. While `x` is less than or equal to `count`, we will 'do' what is in the body. In turn, our body is `(x+1, total + numbers!(1,x))`, or more simply `(index forward one, our sum plus the number at this index)`. If we were to step through each part of the loop, we would see something like:
+If we give a value of `x=7` to this while loop, we would get the following execution:
 
 ```
-while 1 <= 5 do (1+1, 0 + 4)
-while 2 <= 5 do (2+1, 4 + 1)
-while 3 <= 5 do (3+1, 5 + 9)
-while 4 <= 5 do (4+1, 14 + 5)
-while 5 <= 5 do (5+1, 19 + 10)
-(6,29)
+while 7 < 10 do 7 + 1
+while 8 < 10 do 8 + 1
+while 9 < 10 do 9 + 1
+10
 ```
+
+If we were to write this into a BoGL program, using functions, we could express this as the following. To try it out, you can run `count(0)` in the example below.
+
+{% include code_module_template.html
+content = "
+game Count<br/>
+<br/>
+count : Int -> Int<br/>
+count(x) = while x < 10 do x + 1
+"
+%}
+
+In the case where we call our function with a value greater than 10, like `count(15)`. We would get the same number back. Our condition `15 < 10` evaluates to `False`, and so the body is not evaluated. In this case, the while loop evaluates to the value of `x`.
 
 ## Context for Loops
 
-Notice that the value of the body matches the type of the function that it is a part of. The body of a while loop must match the type of the context before it. In some cases this is a function, but in other cases this may be a let expression. For example:
+Another example could be calculating the factorial of a number. Similar to our example above, we can produce this by counting, but in the other direction. However, there is an added problem of **context**. This is the immediate value that the while loop can change. There are two things that can set the context.
+
+The first, **functions** (like our example above), set the context to the parameter passed. If a function takes an `(Int,Bool)` pair, then the context of the following while is for that same `(Int,Bool)`.
+
 {% highlight haskell %}
-toZero : Int
-toZero = let x = 10 in while x > 0 do x-1
+-- counts to zero, and returns (0,b)
+-- Context is for an (Int,Bool) tuple named (i,b)
+f : (Int,Bool) -> (Int,Bool)
+f(i,b) = while i > 0 do (i-1,b)
 {% endhighlight %}
 
-Here the context is a **let** expression, with a type of **Int**. When you have more than one context, i.e. a function and a let, or multiple lets, the *last one before the while takes precedence*. For example consider the following program where the context is for `let z = True`, z being a `Bool`:
+The second, **let expressions**, set the context to the named value that precedes the while expression.
+
 {% highlight haskell %}
--- This will NOT work!
--- The context of our while is for a 'Bool'
--- Although we can use 'y', this while can only return True/False
-another : Int -> Int
-another(x) = let y = 20 in
-             let z = True in
-             while y > 0 do y-1
-{% endhighlight %}
-Even though our while loop seems to be fine, properly using **y** as an `Int`, it is contained within the context of `let z = True`. This means that our while loop should produce exactly a `Bool` every time it does something. By switching y and z, we can fix this problem.
-{% highlight haskell %}
--- This will work!
--- The context of our while is for an 'Int'
--- We can use both z and y if we want,
--- but our context, and all that we can change across loops, is 'y'
-another : Int -> Int
-another(x) = let z = True in
-             let y = 20 in
-             while y > 0 do y-1
+-- Context is for an Int named 'x'
+a : Int
+a = let x = 5 in while x < 20 do x * 2
 {% endhighlight %}
 
-To make an important point of the comments above regarding while loops, the only thing you can change is the value of your context, that's it. If we rewrite the loop above to the following, we have a problem:
+If you mix these, the rule is that the last one takes effect. Although the names from other contexts can be used, the type that the while produces must match that of the last context. Consider the following example:
+
 {% highlight haskell %}
--- this will loop forever until bogl stops you
-infiniteLoop : Int
-infiniteLoop = let a = 10 in
-               let b = 20 in
-               while a > 0 do a-1
+game Ex
+
+f : (Int,Bool) -> Bool         -- 1st context, (Int,Bool) named (i,b)
+f(i,b) = let x = True in       -- 2nd context, Bool named x
+         let z = 5 in          -- final context, Int named z
+         while z > 0 do z - 1  -- and so our while produces an Int, only changing 'z'
 {% endhighlight %}
-Although it looks like we should be changing `a`, we can only change our immediate context, which is an `Int` named `b`. Every time we loop, the value of `a` will be 10, as it was before. Remember, when you're writing a loop *a while loop can only update the value of it's context, and nothing else*. If your loop is misbehaving, think carefully about whether you are updating the name associated with your context, or something else by accident.
 
-## Final Example
+Keep in mind that if you have multiple contexts of the same type, you may only change the value of the most recent context. If you are not careful about this you can introduce an infinite loop by using a name in the condition that never changes.
 
-Finally, let's improve our `sum` example from before to make it a bit easier to use. Instead of having to pass in the index, an initial total, and getting back a tuple of both of these at the end, we can add a couple functions to make it a simple `sum`.
 {% highlight haskell %}
-game Loops
+game Ex
 
-type Board = Array(1,5) of Int
+-- this will loop infinitely
+-- as the condition is on a value that never changes.
+-- x will always be 1.
+infinite : Int
+infinite = let x = 1 in -- 1st context is x of Int
+           let y = 2 in -- 2nd context is y of Int
+           while x > 0 do x - 1 -- the type is correct, but only y will update when we loop!
+{% endhighlight %}
 
-count : Int
-count = 5
+To remedy the situation above, we could change our while loop to update and check `y` instead. This is the only value we can change, as it is in the closest context to the while loop.
 
-numbers : Board
-numbers!(1,1) = 4
-numbers!(1,2) = 1
-numbers!(1,3) = 9
-numbers!(1,4) = 5
-numbers!(1,5) = 10
+## Loops with Tuples
 
--- A handy function to get the 2nd element
--- of the tuple passed, which is the value we want.
--- Ignores the 1st element, and gives back the 2nd
+In some cases you may need to use a tuple to allow a loop to properly accumulate some value. Take for example `factorial`. If we want to take `x!`, we need to both count from `x` to 1 and store the product of all the numbers along the way. We can achieve this using a tuple of `(Int,Int)`. In our example the tuple will represent `(Number,Product)`, where `Number` is the number we are taking the factorial of, and `Product` is our current product. Our while loop should have a condition of `x > 1`. While this is true, we want to decrement our number by 1 and multiply our product by this number.
+
+{% highlight haskell %}
+game Factorial
+-- factorial takes (Number,Product)
+-- ex. (5,1)
+-- Our product must always start at 1 to produce the correct result
+
+factorial : (Int,Int) -> (Int,Int)
+factorial(num,prod) = while num > 1 do (num - 1, prod * num)
+{% endhighlight %}
+
+Now this example is a bit cumbersome, as we have to type in `factorial(5,1)`, and we get back `(1,120)`. We probably want to run `factorial(5)` and just get `120` on by itself. To do this, we can write an additional function to return the second element of a tuple. This will allow us to get the final product out of the result. To simplify the input, we can use what we learned about context before to allow our function to take a single Int.
+
+{% highlight haskell %}
+game Factorial
+
+-- get the 2nd element
 snd : (Int,Int) -> Int
-snd(first,second) = second
+snd(a,b) = b
 
--- the complex sum from before
--- which we can use in another function,
--- along with our 'snd' function above
-complexsum : (Int,Int) -> (Int,Int)
-complexsum(x,total) = while x <= count do (x+1, total + numbers!(1,x))
+-- takes a num and 1, and returns the 2nd element of the while result
+factComplex : (Int,Int) -> Int
+factComplex(num,prod) = snd(while num > 1 do (num - 1, prod * num))
 
--- a handy sum that calls our
--- complexsum with the appropriate parameters,
--- and returns the 2nd value in the tuple we get from it
-sum : Int
-sum = snd(complexsum(1,0))
+-- our new factorial function w/ a single parameter
+factorial : Int -> Int
+factorial(num) = factComplex(num,1)
 {% endhighlight %}
 
-Now typing in `sum` will sum all the values on our board, immediately giving us the 29 we were looking for with no fuss. As you may be thinking, you can use this style of carrying something called *state* in your loops to allow them to work while updating a value over each iteration. When the loop is done, you can use handy functions like the `snd` I wrote above to extract the part you care about. If you wrote it the other way around, so the value you wanted was the first element in the tuple, you could write an `fst` function that returns the first element instead.
+By using a second function, we can use the context of another function to simplify what we need to pass to `factorial`.

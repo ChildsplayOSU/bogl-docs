@@ -238,6 +238,9 @@
         code = code.replaceAll(/(?:<div>)|(?:<\/div>)/gi, '\n');
         // cleanup leftover <br> tags
         code = code.replaceAll(/<br>/gi, '\n');
+        // fix &gt; &lt; tags
+        code = code.replaceAll(/&gt;/gi, '>');
+        code = code.replaceAll(/&lt;/gi, '<');
 
         let respStatus = 0;
 
@@ -266,9 +269,8 @@
         } else if(cmd.match(/help/i)) {
           updateResults(results[x], "Help<br/><br/>\
           This is a tiny version of the BoGL editor.<br/><br/>\
-          - <a href=\"https://bogl.engr.oregonstate.edu/\" target=\"_blank\">Full BoGL Editor</a><br/>\
-          - <a href=\"https://the-code-in-sheep-s-clothing.github.io/Spiel-Lang/\" target=\"_blank\">Website</a><br/>\
-          - <a href=\"https://the-code-in-sheep-s-clothing.github.io/Spiel-Lang/Tutorials/All.md\" target=\"_blank\">Tutorials</a>");
+          - <a href=\"https://bogl.engr.oregonstate.edu/\" target=\"_blank\">BoGL Editor</a><br/>\
+          - <a href=\"https://bogl.engr.oregonstate.edu/tutorials/\" target=\"_blank\">Tutorials</a>");
           return;
 
         }
