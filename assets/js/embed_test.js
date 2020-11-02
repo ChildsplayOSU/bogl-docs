@@ -232,16 +232,15 @@
         e.preventDefault();
 
         let code = boglCode[x].innerHTML;
-		// replace -&gt; with ->
-        code = code.replaceAll(/-&gt;/gi, '->'); // Added by Aiden Nelson
+		    // replace &gt; with >
+        code = code.replaceAll(/&gt;/gi, '>'); // Added by Aiden Nelson
         // replace <br> with linebreaks
         code = code.replaceAll(/<div><br><\/div>/gi, '\n');
         // replace <div> and </div> with nothing!
         code = code.replaceAll(/(?:<div>)|(?:<\/div>)/gi, '\n');
         // cleanup leftover <br> tags
         code = code.replaceAll(/<br>/gi, '\n');
-        // fix &gt; &lt; tags
-        code = code.replaceAll(/&gt;/gi, '>');
+        // also fix &lt tags
         code = code.replaceAll(/&lt;/gi, '<');
 
         let respStatus = 0;
