@@ -61,14 +61,17 @@ a = let x = 5 in while x < 20 do x * 2
 
 If you mix these, the rule is that the last one takes effect. Although the names from other contexts can be used, the type that the while produces must match that of the last context. Consider the following example:
 
-{% highlight haskell %}
-game Ex
+:construction: Under construction :construction:
 
-f : (Int,Bool) -> Bool         -- 1st context, (Int,Bool) named (i,b)
-f(i,b) = let x = True in       -- 2nd context, Bool named x
-         let z = 5 in          -- final context, Int named z
-         while z > 0 do z - 1  -- and so our while produces an Int, only changing 'z'
-{% endhighlight %}
+
+<!-- {% highlight haskell %} -->
+<!--game Ex-->
+
+<!--f : (Int,Bool) -> Bool         -- 1st context, (Int,Bool) named (i,b)-->
+<!--f(i,b) = let x = True in       -- 2nd context, Bool named x-->
+<!--         let z = 5 in          -- final context, Int named z-->
+<!--         while z > 0 do z - 1  -- and so our while produces an Int, only changing 'z'-->
+<!--{% endhighlight %}-->
 
 Keep in mind that if you have multiple contexts of the same type, you may only change the value of the most recent context. If you are not careful about this you can introduce an infinite loop by using a name in the condition that never changes.
 
