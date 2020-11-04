@@ -87,7 +87,7 @@ determineFirstPlayer(coinSide) = Rosa
 %}
 
 
-You may notice that the _coinSide_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the argument is Heads or Tails. In the [if/else tutorial](./conditional_logic) we will revisit this example and look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the argument provided to the _coinSide_ parameter. 
+You may notice that the _coinSide_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the argument is Heads or Tails. In the [if/else tutorial](./conditional_statements) we will revisit this example and look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the argument provided to the _coinSide_ parameter. 
 
 <br/>
 ## Functions with Multiple Parameters
