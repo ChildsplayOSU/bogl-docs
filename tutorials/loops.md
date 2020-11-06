@@ -1,5 +1,5 @@
 ---
-sort: 8 # Order in the sidebar
+sort: 9 # Order in the sidebar
 #permalink: /tutorials/loops
 ---
 

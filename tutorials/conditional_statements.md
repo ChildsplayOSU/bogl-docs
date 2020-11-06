@@ -8,7 +8,7 @@ sort: 6 # Order in the sidebar
 :construction: Under construction :construction:
 
 Sometimes you may want the resulting value of an expression to be dependent on a *condition*.
-In BoGL you can write a *conditional expression*, which can also be refered to as an if/else statement.
+In BoGL you can write a *conditional expression*, which can also be refered to as an *if/else statement* or *conditional statement*.
 A conditional expression is composed of three sub-expressions.
 
 ![conditional expression anatomy](../imgs/conditional_logic-conditional-expression-anatomy.jpg)
