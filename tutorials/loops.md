@@ -1,6 +1,6 @@
 ---
 sort: 9 # Order in the sidebar
-#permalink: /tutorials/loops
+# permalink: /tutorials/loops
 ---
 
 # Loops

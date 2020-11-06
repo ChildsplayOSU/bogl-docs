@@ -1,6 +1,6 @@
 ---
 sort: 3 # Order in the sidebar
-#permalink: /tutorials/functions
+#permalink: /tutorials/values
 ---
  
 # Values

@@ -1,6 +1,6 @@
 ---
 sort: 8 # Order in the sidebar
-#permalink: /tutorials/loops
+# permalink: /tutorials/lets
 ---
 
 # Locally Defined Values
