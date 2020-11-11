@@ -87,7 +87,7 @@ a.caption {
   width: 65%;
   background: #fff;
   float: left;
-  overflow: scroll;
+  overflow-y: scroll;
   border-radius: 4px;
   padding: 4px;
   transition: 0.3s;
@@ -103,16 +103,21 @@ a.caption {
   height: 100%;
   width: 32%;
   float: right;
-  overflow: scroll;
   margin: 0;
   padding: 0;
   color: white;
 }
 
+
+/* Track */
+.bogl-repl-result::-webkit-scrollbar-track {
+  background: $primary-color;
+}
+
 .bogl-embed-editor .right div {
   height: 80%;
   border-radius: 4px;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 4px;
 }
 
