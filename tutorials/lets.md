@@ -1,5 +1,5 @@
 ---
-sort: 8 # Order in the sidebar
+sort: 6 # Order in the sidebar
 # permalink: /tutorials/lets
 ---
 
@@ -50,16 +50,33 @@ Since I am specifying the representation of :information_source: for just a sing
 
 ![let statement anatomy](/imgs/lets-let-statement-anatomy.jpg)
 
-You can write a let expression by first writing the key word `let` followed by the desired name of the value (must start with a lowercase letter), followed by an equals sign `=`. After the equals sign is where the expression of the locally defined value is defined. After this expression goes the keyword `in`, following this keyword is the expression that the locally defined value will be used in.
-
-**Example:**
+You can write a let expression by first writing the keyword `let` followed by the desired name of the value (must start with a lowercase letter), followed by an equals sign `=`. After the equals sign is where the expression of the locally defined value is defined. After this expression goes the keyword `in`, following this keyword is the expression that the locally defined value will be used in.
 
 {% highlight haskell %}
 game LetEx
 
 y : Int
-y = let x = 10 in
-    x / 5
+y = let x = 10 in x / 5 + x
+{% endhighlight %}
+
+In the example above, we are using the locally defined value `x` in the expression `x / 5 + x`.
+The expression in this example could also be written on a new line after the keyword `in`.
+
+{% highlight haskell %}
+game LetEx
+
+y : Int
+y = let x = 10
+in x / 5 + x
+{% endhighlight %}
+
+This kind of change can often increase the readability of our program, especially when it comes to writing more complicated expressions.
+
+{% highlight haskell %}
+game LetEx
+
+y : Int
+y = let x = 10 in x / 5
 {% endhighlight %}
 
 **Example:**
