@@ -16,6 +16,7 @@ For example, in the game of [Chess](https://en.wikipedia.org/wiki/Chess) the pie
 
 It is important to note that the *board* term is specific to BoGL. If you were to directly translate a program that uses a board in BoGL to a different language, you would likely implement the board as a two-dimensional array.
 
+<br/>
 ## Defining a Board
 
 To define our board, we must first write the keyword `type` followed by `Board` followed by an `=`.
@@ -42,6 +43,7 @@ type Board = Array(7, 6) of ConnectFourSquare -- Board definition
 
 Note that the board definition is a *type* definition. We will be using it to create board values (or *states*). 
 
+<br/>
 ## Creating a Board State
 
 Using our defined board, we can create a board state (or value representing the board).
@@ -104,7 +106,54 @@ initialTTTBoard!(x,y) = Unmarked -- Board equation defining the values for all p
 {% endhighlight %}
 
 
+<br/>
+## Boards as Function Parameters
+It can be useful to pass our board into functions and access certain positions of it. A board can be specified as a parameter by giving `Board` as one of the function's parameter types.
 
+The function below takes a board as a parameter and returns the same board.
+{% highlight haskell %}
+boardFunc : Board -> Board
+boardFunc(b) = b
+{% endhighlight %}
+
+We can retrieve the values of the specific positions of a board that has been passed to a function as an argument by typing the argument's name followed by an `!`, followed by an `(Int,Int)` tuple value (which represents the position of the board we are accessing).
+
+The function below takes a board and returns the top left value of the board.
+{% highlight haskell %}
+boardFunc : Board -> TicTacToeSquare
+boardFunc(b) = b!(1,1)
+{% endhighlight %}
+
+:dart: **Excercise:**  
+Modify the `getBoardValue` function below so that it returns the value located at position (**posX**, **posY**) on the board (**posX** and **posY** are the names given to the arguments of the function).
+
+{% include exercise_module_template.html
+content = "game BoardExcercise
+
+type TicTacToeSquare = {O, X, Unmarked} -- Board square type
+
+type Board = Array(3, 3) of TicTacToeSquare -- Board definition
+
+exampleBoard : Board
+exampleBoard!(x,y) = Unmarked
+exampleBoard!(1,1) = O
+exampleBoard!(2,2) = X
+exampleBoard!(3,3) = X
+
+getBoardValue : (Board, Int, Int) -> TicTacToeSquare
+getBoardValue(b, posX, posY) = b!(1,1)
+"
+
+checks="getBoardValue(exampleBoard, 1, 2)
+getBoardValue(exampleBoard, 2, 2)
+getBoardValue(exampleBoard, 3, 3)"
+
+expects="Unmarked
+X
+X"
+%}
+
+<br/>
 ## Built-in Board Functions
 BoGL has a few built-in functions for some common board procedures. Each of these functions has a parameter of type *Content*. The *Content* type is set to be a synonym of the type you define your board to be made up of. That is, if you define your board like this:
 {% highlight haskell %}
@@ -120,13 +169,13 @@ So make sure that the value you give as an argument to the *Content* type parame
 ### place
 The `place` function allows you to place something on a board.
 
-The `place` function takes 3 arguments: A *Content* value which is what is going to be placed on the board, the board the *Content* will be placed on, and a tuple of integers which represents the location of where on the board the *Content* value will be placed.  
-
+The function takes 3 arguments: A *Content* value which is what is going to be placed on the board, the board the *Content* will be placed on, and a tuple of integers which represents the location of where on the board the *Content* value will be placed.
 The return value of a `Place` function call is the board value that was passed to the function updated with the `Content` placed at the specified position. 
 
-What gets returned when you call the value `initialTTTBoard` in the interpreter below?
 
-What gets returned when you enter the function call `place(X, initialTTTBoard, (2,2))` in the interpreter below?
+:dart: **Excercise:**
+1. Call the value `initialTTTBoard` in the interpreter below. What is the return value?
+2. Enter the function call `place(X, initialTTTBoard, (2,2))` into the interpreter below. What is the return value?
 {% include code_module_template.html
 content = "game PlaceExample
 type TicTacToeSquare = {O, X, U} -- Board square type (U stands for Unmarked)
@@ -142,17 +191,13 @@ initialTTTBoard!(x,y) = U
 ### inARow
 The `inARow` function will tell you if there is a row of values on a board.
 
-The `inARow` function takes 3 arguments: An integer which is the length of the row we are looking for, a *Content* value which is the value we are looking to see if there is a row of, and the board we are looking for a row in.
+The function takes 3 arguments: An integer which is the length of the row we are looking for, a *Content* value which is the value we are looking to see if there is a row of, and the board we are looking for a row in. The return value of an `inARow` function call is a Bool which will be **True** if the specified row exists and **False** if it does not. 
 
-The return value of an `inARow` function call is a Bool which will be **True** if the specified row exists and **False** if it does not. 
-
-What gets returned when you call the value `noRowBoard` in the interpreter below?
-
-What gets returned when you enter the function call `inARow(3, X, noRowBoard)` in the interpreter below?
-
-What gets returned when you call the value `rowBoard` in the interpreter below?
-
-What gets returned when you enter the function call `inARow(3, X, rowBoard)` in the interpreter below?
+:dart: **Excercise:**  
+1. Call the value `noRowBoard` in the interpreter below? What gets returned?
+2. Enter the function call `inARow(3, X, noRowBoard)` into the interpreter below. What gets returned?
+3. Call the value `rowBoard` in the interpreter below. What gets returned?
+4. Enter the function call `inARow(3, X, rowBoard)` in the interpreter below? What gets returned?
 {% include code_module_template.html
 content = "game PlaceExample
 type TicTacToeSquare = {O, X, U} -- Board square type (U stands for Unmarked)
@@ -179,17 +224,13 @@ rowBoard!(3,3) = X
 ### countBoard
 The `countBoard` function will count the occurances of a value on a board.
 
-The `countBoard` function takes 2 arguments: A *Content* value which is what we are counting the occurances of, and the board we are counting the occurances in.
+The function takes 2 arguments: A *Content* value which is what we are counting the occurances of, and the board we are counting the occurances in. The return value of `countBoard` is the occurances of the specified value on the board.
 
-The return value of `countBoard` is the occurances of the specified value on the board.
-
-What gets returned when you call the value `tttBoard` in the interpreter below?
-
-What gets returned when you enter the function call `countBoard(U, tttBoard)` into the interpreter below?
-
-What gets returned when you enter the function call `countBoard(X, tttBoard)` into the interpreter below?
-
-What gets returned when you enter the function call `countBoard(O, tttBoard)` into the interpreter below?
+:dart: **Excercise:**  
+1. Call the value `tttBoard` in the interpreter below. What is the return value?
+2. Enter the function call `countBoard(U, tttBoard)` into the interpreter below. What gets returned?
+3. Enter the function call `countBoard(X, tttBoard)` into the interpreter below. What gets returned?
+4. Enter the function call `countBoard(O, tttBoard)` into the interpreter below. What gets returned?
 
 {% include code_module_template.html
 content = "game PlaceExample
