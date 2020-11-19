@@ -15,14 +15,16 @@ For example, in the game of [Chess](https://en.wikipedia.org/wiki/Chess) the pie
 It is important to note that the *board* term is specific to BoGL. If you were to directly translate a program that uses a board in BoGL to a different language, you would likely implement the board as a two-dimensional array.
 
 <br/>
-## Defining a Board
+## Defining the Board Type
 
-To define our board, we must first write the keyword `type` followed by `Board` followed by an `=`.
+To create a board value, or board state, we must first create a type for our board.
+BoGL only allows for one board type definition in a program, and it must be defined before any value and function definitions.
+To define our board type, we must first write the keyword `type` followed by `Board` followed by an `=`.
 After the `=` we write the keyword `Array` followed by parenthesis `()`.
 Within the parenthesis are where the board dimensions are specified with two integer values seperated by a comma.
 These integer values correspond to the width and length of our board respectively.
 Following the parenthesis containing the board dimensions we write the keyword `of` followed by the desired
-type for each square on our board. Below are a few examples of defining a board.
+type for each square on our board. Below are a few examples of board type definitions.
 
 
 Shown below is how we might define a 3 by 3 [Tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) board.
@@ -38,8 +40,6 @@ type ConnectFourSquare = {Red, Yellow, Empty} -- Board square type
 
 type Board = Array(7, 6) of ConnectFourSquare -- Board definition
 {% endhighlight %}
-
-Note that the board definition is a *type* definition. We will be using it to create board values (or *states*). 
 
 <br/>
 ## Creating a Board State
