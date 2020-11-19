@@ -5,8 +5,6 @@ sort: 10 # Order in the sidebar
 
 # Boards
 
-:construction: Under construction :construction:
-
 ## Background: What is a BoGL Board?
 BoGL wouldn't be a board game language if there weren't a way to create a board!
 *Board* is the name that *arrays* are given in BoGL.
