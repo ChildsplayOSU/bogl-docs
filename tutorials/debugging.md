@@ -12,9 +12,11 @@ This guide is here to give advice on strategies one might use to prevent and res
 BoGL programs and bugs are used as examples in this guide, but the techniques and strategies discussed can be used in other contexts as well.
 
 ## Background: What is a Software Bug?
-The term *bug*, in the fields of software developement and computer science, is a term that is commonly used to describe an issue or problem with a program. An example of this could be the program not working the way you expected (i.e. a function returning x when it should return y). It could also be that the code just doesn't work at all due to something being undefined or an instruction being written incorrectly. In general we can separate bugs into two separate categories: *Syntactic* errors and *semantic* errors. 
+The term *bug*, in the fields of software developement and computer science, is a term that is commonly used to describe an issue or problem with a program. An example of this could be the program not working the way you expected (i.e. a function returning x when it should return y). It could also be that the code just doesn't work at all due to something being undefined or an instruction being written incorrectly. There are several ways to classify bugs. In this tutorial we will separate bugs into two categories: *Language errors* and *runtime errors*. 
 
-### Syntactic Errors
+### Language Errors
+Before you code is allowed to run, the interpreter will examine it. During this examination the interpreter will try to detect any *syntax* errors and even some *semantic* errors. We will refer to these errors, that were caught by the interpreter, as *language errors*.
+
 The BoGL language has many rules that determine what is and isn't BoGL code. These rules, as a whole, are refered to as BoGL's *syntax*. *Syntax* can be thought of as the rules that determine how a language is structured.
 
 **Examples of BoGL syntax rules:**
@@ -32,9 +34,16 @@ The BoGL language has many rules that determine what is and isn't BoGL code. The
 
 If your code breaks a BoGL syntax rule, the interpreter will prevent your code from runnning and return an error.
 
-### Semantic Errors
-*Semantic errors*, also commonly referred to as *logic errors*, refer to issues with how your code runs and the logic of what your code is doing.
-These kinds of bugs will not prevent your program from running, at least not initially, but can cause unexpected behavior and potentially break your program.
+The interpreter can also detect some semantic (meaning) errors.
+These are not syntax errors, but would cause problems if they were allowed to occur.
+An example of this is the expression `False + False`. There is nothing in the BoGL syntax that prevents you from writing this, but in practice this expression does not make any sense (It is unclear what this expression would evaluate to; There is no defined meaning) so the interpreter will detect and prevent it. 
+
+It is important to note that not all semantic errors are detected by the interpreter before you run your code. An example of this is the expression `1 / 0`. This is also a valid expression according to the BoGL syntax, but there is no defined meaning for it (the result of dividing by zero is undefined in mathematics). The BoGL interpreter does not detect this error before running the code, so it will break a program at the time it gets evaluated during *runtime*. 
+
+### Runtime Errors
+Runtime errors are errors that occur in the program while it is running, or in other words, errors that were not detected by the interpreter before program runtime.
+These could be pieces of logic within your program that don't make sense or cause desired behavior. A common term used for these kinds of issues are *logic errors*.
+These kind of issues are usually much harder to detect because there is oftentimes no error message.
 
 <br/>
 ## Preventing Bugs
@@ -66,11 +75,7 @@ Creating a solution in the form of pseudocode or a flowchart can help you find i
 
 **Design tests or evaluation criteria.**  
 It is a good idea to create tests or some other evaluation criteria that you can use to assess your solution.
-This could be in the form of a *testing table* (see example below) or list of testable behaviors that the program will be expected to follow.
-
-
-
-:construction: Under construction :construction:
+This could be in the form of a *testing table* (see failsafe division example below) or list of testable behaviors that the program will be expected to follow.
 
 ### :alembic: Testing as you Code
 
@@ -84,6 +89,72 @@ If you find that the first functions you define are ones that call upon other fu
 You can come back to these functions after you have defined and tested the other functions that it is composed of.
 In BoGL it is best to first define and test functions that are independent of other functions. 
 
+**Example: Testing a Failsafe Division Function**  
+In BoGL, I might want to make a division function that would avoid runtime errors.
+Here are some behaviors I would expect from such a function:
+- If the user attempts to divide the numerator by zero, then the function will return the value "RestrictedCalculation". 
+- If the user attempts to give arguments that may be too big for BoGL to compute properly (we'll say over a quadrillion), the value returned will be "RestrictedCalculation".
+- If the arguments are not greater than a quadrillion and the denominator is not 0, then the function will return the integer quotient of the arguments. 
+
+Here is what the testing table might look like for this function:
+
+| Argument 1 (numerator) | Argument 2 (denominator) | Expected return value | Reasoning                                         |
+|------------------------|--------------------------|-----------------------|---------------------------------------------------|
+| 10                     | 2                        | 5                     | Valid integer division                            |
+| 8                      | 4                        | 2                     | Valid integer division                            |
+| 50                     | 30                       | 1                     | Valid integer division (quotient is rounded down) |
+| 60                     | 0                        | RestrictedCalculation | Cannot divide by zero                             |
+| 1000000000000000       | 1                        | RestrictedCalculation | Numerator argument is above the allowed threshold |
+| 1  					 | 1000000000000000         | RestrictedCalculation | Denominator argument is above the allowed threshold |
+
+:dart: **Excercise:**  
+With the above information kept in mind, try writing a failsafe division function called "failsafeDivide" in the editor below.
+If you click the **Check** button, the tests shown in the testing table will be run. 
+
+{% include exercise_module_template.html
+content = "game FailsafeDivision
+
+type MaybeInt = Int & {RestrictedCalculation}
+
+failsafeDivide : (Int, Int) -> MaybeInt
+failsafeDivide(n, d) = -- WRITE DEFINING EXPRESSION HERE
+"
+
+checks="failsafeDivide(10, 2)
+failsafeDivide(8, 4)
+failsafeDivide(50, 30)
+failsafeDivide(60, 0)
+failsafeDivide(1000000000000000, 1)
+failsafeDivide(1, 1000000000000000)"
+
+expects="5
+2
+1
+RestrictedCalculation 
+RestrictedCalculation 
+RestrictedCalculation"
+%}
+
+<details><summary>:eyes: Click to see a solution (but try yourself first!)</summary>
+<p>
+
+{% highlight haskell %}
+game Test
+
+type MaybeInt = Int & {RestrictedCalculation}
+
+failsafeDivide : (Int, Int) -> MaybeInt
+failsafeDivide(n, d) = if d == 0 then RestrictedCalculation
+                       else if n > 1000000000000000 then RestrictedCalculation
+                       else if d > 1000000000000000 then RestrictedCalculation
+                       else n / d
+{% endhighlight %}
+
+</p>
+</details>
+
+
+
 <br/>
 ## Resolving Bugs
 
@@ -95,13 +166,13 @@ This section will go over a few methods that can be used when trying to resolve 
 Before you go searching for the solution to your problem, first try to understand how and why it is occuring.
 Here are a few questions you can ask yourself when attempting to understand a bug:
 
-Questions for Syntax Errors: 
+Questions for language errors: 
 - Which terms in the error message am I unfamiliar with?
 - Does the logic of the error message make sense?
 - Where in the program code is the error message referring to?
 - Does the code that comes before the place of error look error-free? 
 
-Questions for Semantic Errors:
+Questions for runtime errors:
 - What have I changed/added since I last tested my code?
 - How do I expect my program to behave, and in what ways does its current behavior differ?
 - If I give my functions specific inputs, do I get the outputs I expect?
