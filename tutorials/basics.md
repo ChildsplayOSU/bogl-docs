@@ -15,7 +15,7 @@ game SimplestProgram
 ## Running your Code
 BoGL code can be created and executed using a BoGL interface. The main interface can be found by following the link listed below. 
 
-[:link: Link to main interpreter ](https://bogl.engr.oregonstate.edu/)
+[:link: Link to main interface ](https://bogl.engr.oregonstate.edu/)
 
 There are also smaller BoGL interfaces that can be found in these tutorial pages, like the one shown below. 
 

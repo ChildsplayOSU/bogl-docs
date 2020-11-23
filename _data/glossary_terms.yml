@@ -38,7 +38,7 @@
   definition: An error that is caught by the interpreter before the code is allowed to run.
 
 - term: runtime error
-  definition: An error that occurs during runtime.
+  definition: An error that occurs while the program is running.
 
 - term: while loop
   definition: "An expression that consists of two expressions: One is repeated as long as the other (condition) evaluates to True."
