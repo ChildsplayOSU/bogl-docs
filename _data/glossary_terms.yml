@@ -1,0 +1,44 @@
+- term: BoGL
+  definition: A domain specific teaching language developed by a team of researchers at Oregon State University. The name "BoGL" is an acronym for "Board Game Language". 
+
+- term: comment
+  definition: Text within program code that has been marked to be ignored by the interpreter.
+
+- term: expression
+  definition: Code that evaluates to a value.
+
+- term: conditional expression
+  definition: "An expression that consists of three expressions: One is a condition, the value of which determines which of the other two to evaluate."
+
+- term: Int
+  definition: A data type whose possible values are any integer. 
+
+- term: if/else statement
+  definition: Synonym of a conditional expression.
+
+- term: synonym
+  definition: A word/name with the same meaning.
+
+- term: editor
+  definition: The textbox in which BoGL code can be written.
+
+- term: definition
+  definition: A statement giving meaning to a name.
+
+- term: bug
+  definition: An error in the program.
+
+- term: type
+  definition: A set of possible values.
+
+- term: value definition
+  definition: A statement that assigns a type and a value of that type to a name.
+
+- term: language error
+  definition: An error that is caught by the interpreter before the code is allowed to run.
+
+- term: runtime error
+  definition: An error that occurs during runtime.
+
+- term: while loop
+  definition: "An expression that consists of two expressions: One is repeated as long as the other (condition) evaluates to True."
