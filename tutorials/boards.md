@@ -41,16 +41,24 @@ type ConnectFourSquare = {Red, Yellow, Empty} -- Board square type
 type Board = Array(7, 6) of ConnectFourSquare -- Board definition
 {% endhighlight %}
 
-<br/>
-## Creating a Board State
+We can also create the board without first naming the board's content type.
+{% highlight haskell %}
+type Board = Array(7, 6) of {Red, Yellow, Empty} -- Board definition
+{% endhighlight %}
 
-Using our defined board, we can create a board state (or value representing the board).
+![board type definition anatomy](../imgs/boards-board-type-anatomy.jpg)
+
+<br/>
+## Creating a Board Value
+
+Using our defined board type, we can create board values.
 Doing this is similiar to how we would create a value normally.
-We start by creating a name for our board state (must be lowercase) followed by a `:`, followed by the word `Board`.
-After this we may then define *board equations*, which are the expressions that specify which parts of the board should be defined as which values.
+We start by creating a name for our board value (must be lowercase) followed by a `:`, followed by the type name `Board`.
+After this we may then define *board equations*, which are used to specify which parts of the board should be defined as which values.
+Board equations consist of a name, position, and an expression.
 
 To create a board equation we must first write the name we chose for the board state, immediately followed by an `!` followed by parenthesis that contain the position values for which part of the board is being defined.
-Following the parenthesis is an expression that should evaluate to the same type that the board is made up of.
+Following the parenthesis is an `=` which is then followed by an expression that should evaluate to the same type that the board is made up of.
 The board equation(s) must define a value for each part of the board.
 If you leave a part of the board undefined, you will get an error.
 
@@ -65,12 +73,26 @@ boardState!(1,1) = True -- Board equation defining the value for position (1, 1)
 
 Below is the code for a 1 by 2 board that holds Bool values. 
 {% highlight haskell %}
-type Board = Array(1, 1) of Bool -- Board definition
+type Board = Array(1, 2) of Bool -- Board definition
 
 -- Board state
 boardState : Board
 boardState!(1,1) = True  -- Board equation defining the value for position (1, 1)
 boardState!(1,2) = False -- Board equation defining the value for position (1, 2)
+{% endhighlight %}
+
+There is no limit to the amount of board equations you can write.
+You can even create board equations that reference the same position.
+These board equations will overwrite the value for the position that was defined by an earlier equation. 
+
+{% highlight haskell %}
+type Board = Array(1, 2) of Bool -- Board definition
+
+-- Board state
+boardState : Board
+boardState!(1,1) = True  -- Define the value for position (1, 1)
+boardState!(1,2) = False -- Define the value for position (1, 2)
+boardState!(1,1) = False -- Overwrite the value given for position (1, 1)
 {% endhighlight %}
 
 ### Generalizing a Board Equation
@@ -167,8 +189,8 @@ So make sure that the value you give as an argument to the *Content* type parame
 ### place
 The `place` function allows you to place something on a board.
 
-The function takes 3 arguments: A *Content* value which is what is going to be placed on the board, the board the *Content* will be placed on, and a tuple of integers which represents the location of where on the board the *Content* value will be placed.
-The return value of a `Place` function call is the board value that was passed to the function updated with the `Content` placed at the specified position. 
+The function takes 3 arguments: A *Content* value which is what is going to be placed on the board, the board the *Content* will be placed on, and a pair of integers which represents the location of where on the board the *Content* value will be placed.
+The return value of a `place` function call is the board value that was passed to the function updated with the `Content` placed at the specified position. 
 
 
 :dart: **Excercise:**
@@ -195,7 +217,7 @@ The function takes 3 arguments: An integer which is the length of the row we are
 1. Call the value `noRowBoard` in the interpreter below? What gets returned?
 2. Enter the function call `inARow(3, X, noRowBoard)` into the interpreter below. What gets returned?
 3. Call the value `rowBoard` in the interpreter below. What gets returned?
-4. Enter the function call `inARow(3, X, rowBoard)` in the interpreter below? What gets returned?
+4. Enter the function call `inARow(3, X, rowBoard)` in the interpreter below. What gets returned?
 {% include code_module_template.html
 content = "game PlaceExample
 type TicTacToeSquare = {O, X, U} -- Board square type (U stands for Unmarked)
@@ -220,9 +242,9 @@ rowBoard!(3,3) = X
 %}
 
 ### countBoard
-The `countBoard` function will count the occurances of a value on a board.
+The `countBoard` function will count the occurrences of a value on a board.
 
-The function takes 2 arguments: A *Content* value which is what we are counting the occurances of, and the board we are counting the occurances in. The return value of `countBoard` is the occurances of the specified value on the board.
+The function takes 2 arguments: A *Content* value which is what we are counting the occurrences of, and the board we are counting the occurrences in. The return value of `countBoard` is the occurrences of the specified value on the board.
 
 :dart: **Excercise:**  
 1. Call the value `tttBoard` in the interpreter below. What is the return value?
