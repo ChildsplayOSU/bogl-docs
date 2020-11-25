@@ -125,18 +125,22 @@ initialTTTBoard : Board
 initialTTTBoard!(x,y) = Unmarked -- Board equation defining the values for all positions on the board 
 {% endhighlight %}
 
+We can also give a non-integer value for just one of the position values.
+This allows us to generalize a specific column or row of our board.
 
-<br/>
-## Boards as Function Parameters
-It can be useful to pass our board into functions and access certain positions of it. A board can be specified as a parameter by giving `Board` as one of the function's parameter types.
-
-The function below takes a board as a parameter and returns the same board.
 {% highlight haskell %}
-boardFunc : Board -> Board
-boardFunc(b) = b
+-- Initial board state
+initialTTTBoard : Board
+initialTTTBoard!(x,y) = Unmarked -- Set all values to Unmarked
+initialTTTBoard!(1,y) = X -- Set the first column of values to X 
+initialTTTBoard!(x,3) = O -- Set the third row of values to O 
 {% endhighlight %}
 
-We can retrieve the values of the specific positions of a board that has been passed to a function as an argument by typing the argument's name followed by an `!`, followed by an `(Int,Int)` tuple value (which represents the position of the board we are accessing).
+
+
+<br/>
+## Accessing Board Contents
+We can retrieve the values stored at the specific positions of a board value by typing the board value's name, followed by an `!`, followed by an `(Int,Int)` tuple value (which represents the position of the board we are accessing).
 
 The function below takes a board and returns the top left value of the board.
 {% highlight haskell %}
@@ -192,6 +196,10 @@ The `place` function allows you to place something on a board.
 The function takes 3 arguments: A *Content* value which is what is going to be placed on the board, the board the *Content* will be placed on, and a pair of integers which represents the location of where on the board the *Content* value will be placed.
 The return value of a `place` function call is the board value that was passed to the function updated with the `Content` placed at the specified position. 
 
+**Function Signature:**
+{% highlight haskell %}
+place : (Content, Board, (Int, Int)) -> Board 
+{% endhighlight %}
 
 :dart: **Excercise:**
 1. Call the value `initialTTTBoard` in the interpreter below. What is the return value?
@@ -212,6 +220,11 @@ initialTTTBoard!(x,y) = U
 The `inARow` function will tell you if there is a row of values on a board.
 
 The function takes 3 arguments: An integer which is the length of the row we are looking for, a *Content* value which is the value we are looking to see if there is a row of, and the board we are looking for a row in. The return value of an `inARow` function call is a Bool which will be **True** if the specified row exists and **False** if it does not. 
+
+**Function Signature:**
+{% highlight haskell %}
+inARow : (Int, Content, Board) -> Bool 
+{% endhighlight %}
 
 :dart: **Excercise:**  
 1. Call the value `noRowBoard` in the interpreter below? What gets returned?
@@ -245,6 +258,11 @@ rowBoard!(3,3) = X
 The `countBoard` function will count the occurrences of a value on a board.
 
 The function takes 2 arguments: A *Content* value which is what we are counting the occurrences of, and the board we are counting the occurrences in. The return value of `countBoard` is the occurrences of the specified value on the board.
+
+**Function Signature:**
+{% highlight haskell %}
+countBoard : (Content, Board) -> Int 
+{% endhighlight %}
 
 :dart: **Excercise:**  
 1. Call the value `tttBoard` in the interpreter below. What is the return value?

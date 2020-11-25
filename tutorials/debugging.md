@@ -90,7 +90,7 @@ You can come back to these functions after you have defined and tested the other
 In BoGL it is best to first define and test functions that are independent of other functions. 
 
 **Example: Testing a Failsafe Division Function**  
-In BoGL, I might want to make a division function that would avoid runtime errors.
+If I were to create a calculator in BoGL, I might want to make a division function that would avoid runtime errors.
 Here are some behaviors I would expect from such a function:
 - If the user attempts to divide the numerator by zero, then the function will return the value "RestrictedCalculation". 
 - If the user attempts to give arguments that may be too big for BoGL to compute properly (we'll say over a quadrillion), the value returned will be "RestrictedCalculation".
