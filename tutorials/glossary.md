@@ -1,4 +1,5 @@
 ---
+# Add new glossary terms by editing _data/glossary_terms.yml
 sort: 12 # Order in the sidebar
 # permalink: /tutorials/glossary
 # published: false
@@ -6,9 +7,7 @@ sort: 12 # Order in the sidebar
 
 # Glossary
 
-:construction: Under construction :construction:
-
-This page is a list of terms and how they are defined in the context of the BoGL language.
+This page is a list of terms and their definitions in the context of the BoGL language.
 
 <!-- Sort the glossary terms alphabetically -->
 {% assign sorted-terms = site.data.glossary_terms | sort_natural: 'term' %}

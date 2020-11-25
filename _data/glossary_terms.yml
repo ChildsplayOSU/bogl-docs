@@ -1,3 +1,28 @@
+# Add new glossary terms here.
+
+- term: tuple
+  definition: A data type that consists of a pair (or trio, tetrad, pentad, etc...) of types. 
+
+- term: extended type
+  definition: A data type whose possible values have been extended to include the possible values of another type. 
+
+- term: if/else statement
+
+- term: bug
+  definition: Synonym of error.
+
+- term: board
+  definition: Synonym of array.
+
+- term: Bool
+  definition: A data type whose possible values are True or False.
+
+- term: built-in
+  definition: Already defined in the BoGL language.
+
+- term: array
+  definition: A common data structure that is often used to implement a fixed size list or, in the case of a two dimensional array, grid.
+
 - term: BoGL
   definition: A domain specific teaching language developed by a team of researchers at Oregon State University. The name "BoGL" is an acronym for "Board Game Language". 
 
@@ -8,7 +33,7 @@
   definition: Code that evaluates to a value.
 
 - term: conditional expression
-  definition: "An expression that consists of three expressions: One is a condition, the value of which determines which of the other two to evaluate."
+  definition: "An expression that consists of three expressions. One is a condition, the value of which determines which of the other two to evaluate."
 
 - term: Int
   definition: A data type whose possible values are any integer. 
@@ -17,7 +42,7 @@
   definition: Synonym of a conditional expression.
 
 - term: synonym
-  definition: A word/name with the same meaning.
+  definition: A name with the same meaning as another name.
 
 - term: editor
   definition: The textbox in which BoGL code can be written.
@@ -25,8 +50,8 @@
 - term: definition
   definition: A statement giving meaning to a name.
 
-- term: bug
-  definition: An error in the program.
+- term: error
+  definition: An issue that causes undesired behavior or failure in a program.
 
 - term: type
   definition: A set of possible values.
@@ -41,4 +66,4 @@
   definition: An error that occurs while the program is running.
 
 - term: while loop
-  definition: "An expression that consists of two expressions: One is repeated as long as the other (condition) evaluates to True."
+  definition: "An expression that consists of two expressions. One is repeated as long as the other (condition) evaluates to True."
