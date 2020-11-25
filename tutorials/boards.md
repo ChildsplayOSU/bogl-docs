@@ -7,17 +7,16 @@ sort: 10 # Order in the sidebar
 
 ## Background: What is a BoGL Board?
 BoGL wouldn't be a board game language if there weren't a way to create a board!
-*Board* is the name that *arrays* are given in BoGL.
+In BoGL the type *Board* is a name we use to describe *arrays*. 
 An [*array*](https://en.wikipedia.org/wiki/Array_data_structure) in computer science is a [*data structure*](https://en.wikipedia.org/wiki/Data_structure), which is a term used to describe an organization of stored data.
 Arrays are one of the simpler data structures to understand because they are often used to describe organizations that resemble lists (with one-dimensional arrays) or grids (with two-dimensional arrays).
 For example, in the game of [Chess](https://en.wikipedia.org/wiki/Chess) the pieces are organized on a grid of squares (the board), and in the game of [Candy Land](https://en.wikipedia.org/wiki/Candy_Land) the path that the players move upon can be described as a list of squares.
 
-It is important to note that the *board* term is specific to BoGL. If you were to directly translate a program that uses a board in BoGL to a different language, you would likely implement the board as a two-dimensional array.
 
 <br/>
 ## Defining the Board Type
 
-To create a board value, or board state, we must first create a type for our board.
+To create a board value we must first create a type for our board.
 BoGL only allows for one board type definition in a program, and it must be defined before any value and function definitions.
 To define our board type, we must first write the keyword `type` followed by `Board` followed by an `=`.
 After the `=` we write the keyword `Array` followed by parenthesis `()`.
@@ -48,58 +47,63 @@ type Board = Array(7, 6) of {Red, Yellow, Empty} -- Board definition
 
 ![board type definition anatomy](../imgs/boards-board-type-anatomy.jpg)
 
+:dart: **Excercise:**  
+Can you think of boards from other games that could have a type defined for them in BoGL?
+Write down a few you can think of, then try writing out a type definition for one of them.
+
 <br/>
 ## Creating a Board Value
 
 Using our defined board type, we can create board values.
 Doing this is similiar to how we would create a value normally.
 We start by creating a name for our board value (must be lowercase) followed by a `:`, followed by the type name `Board`.
-After this we may then define *board equations*, which are used to specify which parts of the board should be defined as which values.
-Board equations consist of a name, position, and an expression.
+After this we may then define *board equations*.
+These are used to define the spaces on the board by giving them values.
+Board equations consist of a name, a position, and an expression.
 
-To create a board equation we must first write the name we chose for the board state, immediately followed by an `!` followed by parenthesis that contain the position values for which part of the board is being defined.
+To create a board equation we must first write the name we chose for the board value, immediately followed by an `!` followed by parenthesis that contain the position values for which part of the board is being defined.
 Following the parenthesis is an `=` which is then followed by an expression that should evaluate to the same type that the board is made up of.
-The board equation(s) must define a value for each part of the board.
-If you leave a part of the board undefined, you will get an error.
+In order for a board value to be defined, the board equation(s) must define a value for each part of the board.
+Undefined values of any type (including Board) are not valid in BoGL, and will give you an error.
 
 Below is the code for one of the simplest boards we can make, which is a 1 by 1 board that holds a Bool. 
 {% highlight haskell %}
 type Board = Array(1, 1) of Bool -- Board definition
 
--- Board state
-boardState : Board
-boardState!(1,1) = True -- Board equation defining the value for position (1, 1)
+-- Board value
+boardValue : Board
+boardValue!(1,1) = True -- Board equation defining the value for position (1, 1)
 {% endhighlight %}
 
 Below is the code for a 1 by 2 board that holds Bool values. 
 {% highlight haskell %}
 type Board = Array(1, 2) of Bool -- Board definition
 
--- Board state
-boardState : Board
-boardState!(1,1) = True  -- Board equation defining the value for position (1, 1)
-boardState!(1,2) = False -- Board equation defining the value for position (1, 2)
+-- Board value
+boardValue : Board
+boardValue!(1,1) = True  -- Board equation defining the value for position (1, 1)
+boardValue!(1,2) = False -- Board equation defining the value for position (1, 2)
 {% endhighlight %}
 
 There is no limit to the amount of board equations you can write.
 You can even create board equations that reference the same position.
-These board equations will overwrite the value for the position that was defined by an earlier equation. 
+These board equations will overwrite the value for the position that was defined by an equation above it. 
 
 {% highlight haskell %}
 type Board = Array(1, 2) of Bool -- Board definition
 
--- Board state
-boardState : Board
-boardState!(1,1) = True  -- Define the value for position (1, 1)
-boardState!(1,2) = False -- Define the value for position (1, 2)
-boardState!(1,1) = False -- Overwrite the value given for position (1, 1)
+-- Board value
+boardValue : Board
+boardValue!(1,1) = True  -- Define the value for position (1, 1)
+boardValue!(1,2) = False -- Define the value for position (1, 2)
+boardValue!(1,1) = False -- Overwrite the value given for position (1, 1)
 {% endhighlight %}
 
 ### Generalizing a Board Equation
 
 If we wanted to initialize a Tic-tac-toe board with `Unmarked` values, we could do something like this:
 {% highlight haskell %}
--- Initial board state
+-- Initial board value
 initialTTTBoard : Board
 initialTTTBoard!(1,1) = Unmarked
 initialTTTBoard!(1,2) = Unmarked
@@ -120,7 +124,7 @@ We can write this same initialization by generalizing a board equation to refer 
 To create a board equation that refers to all board positions, we will write a board equation that has non-integer (lowercase) names instead of integers for the position values. This will tell the equation to refer to all board positions rather than just one. The example code shown below does the same thing as the code shown above (but in less lines)!
 
 {% highlight haskell %}
--- Initial board state
+-- Initial board value
 initialTTTBoard : Board
 initialTTTBoard!(x,y) = Unmarked -- Board equation defining the values for all positions on the board 
 {% endhighlight %}
@@ -129,7 +133,7 @@ We can also give a non-integer value for just one of the position values.
 This allows us to generalize a specific column or row of our board.
 
 {% highlight haskell %}
--- Initial board state
+-- Initial board value
 initialTTTBoard : Board
 initialTTTBoard!(x,y) = Unmarked -- Set all values to Unmarked
 initialTTTBoard!(1,y) = X -- Set the first column of values to X 
@@ -193,7 +197,7 @@ So make sure that the value you give as an argument to the *Content* type parame
 ### place
 The `place` function allows you to place something on a board.
 
-The function takes 3 arguments: A *Content* value which is what is going to be placed on the board, the board the *Content* will be placed on, and a pair of integers which represents the location of where on the board the *Content* value will be placed.
+The function takes 3 arguments: A *Content* value that will be placed on the board, the board the *Content* will be placed on, and a pair of integers which represents the location of where on the board the *Content* value will be placed.
 The return value of a `place` function call is the board value that was passed to the function updated with the `Content` placed at the specified position. 
 
 **Function Signature:**
@@ -210,7 +214,7 @@ type TicTacToeSquare = {O, X, U} -- Board square type (U stands for Unmarked)
 
 type Board = Array(3, 3) of TicTacToeSquare -- Board definition
 
--- Initial board state for a Tic-tac-toe board
+-- Initial board value for a Tic-tac-toe board
 initialTTTBoard : Board
 initialTTTBoard!(x,y) = U
 "
@@ -219,7 +223,7 @@ initialTTTBoard!(x,y) = U
 ### inARow
 The `inARow` function will tell you if there is a row of values on a board.
 
-The function takes 3 arguments: An integer which is the length of the row we are looking for, a *Content* value which is the value we are looking to see if there is a row of, and the board we are looking for a row in. The return value of an `inARow` function call is a Bool which will be **True** if the specified row exists and **False** if it does not. 
+The function takes 3 arguments: An integer which is the length of the row we are looking for, a *Content* value which is the value we are looking to see if there is a row of, and the board we are looking for a row in. The return value of an `inARow` function call is a Bool, which will be **True** if the specified row exists and **False** if it does not. 
 
 **Function Signature:**
 {% highlight haskell %}
