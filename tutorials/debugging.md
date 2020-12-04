@@ -6,8 +6,6 @@ sort: 11 # Order in the sidebar
 
 # Testing and Debugging
 
-:construction: Under construction :construction:
-
 This guide is here to give advice on strategies one might use to prevent and resolve issues with their programs.
 BoGL programs and bugs are used as examples in this guide, but the techniques and strategies discussed can be used in other contexts as well.
 
@@ -184,9 +182,19 @@ You may be able to paraphrase the issue in multiple ways, allowing you to obtain
 Going through the excercise of asking yourself questions will also help you learn and retain information about the issue, so that you may be able to better recall and apply it when encountering similiar bugs in the future.
 
 ### :crossed_swords: Divide and Conquer
-:construction: Under construction :construction: 
+If you have a bug, and you aren't sure which part of your program is causing the issue, try breaking your program apart and testing out individual pieces of it!  
 
-**Basic idea:** Isolate the issue by breaking your code down into smaller pieces until you find the piece where the bug is.
+If you have a runtime error, try calling all of your program's functions individually to see if they return expected outputs with the arguments you give them.
+You can start with the functions that you think seem the most related to the issue.
+Once you have found which function is behaving strangely, you can try running the expressions that are contained in the function seperately in the interpreter.
+Similiar to testing the functions, see if the expressions you run in the interpreter evaluate to what you expect them to.
+Following this process, you will eventually find something that may not be working in the same way you expected it to.
+
+You can follow a similiar process with language errors.
+If you have a language error, try commenting out the parts of your code that prevent your program from running.
+You can do this incrementally by repeatedly commenting out the function in which the issue takes place and running the program.
+Once the program runs, try running individual expressions in the interpreter that are from the last function you commented out. 
+Look for expressions that cause issues or evaluate to values you did not expect.
 
 ### :books: Strategic Research
 If you are attempting something that you haven't before, and encounter an error message or issue that you are not familiar with and don't understand, your best option may be to seek out resources that can help. Before seeking out resources, be sure to first check your understanding and ask yourself questions. This will help you come up with better questions you will be able to ask and use to search for information.
