@@ -6,8 +6,6 @@
 - term: extended type
   definition: A data type whose possible values have been extended to include the possible values of another type. 
 
-- term: if/else statement
-
 - term: bug
   definition: Synonym of error.
 
