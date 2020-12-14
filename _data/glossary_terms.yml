@@ -1,5 +1,11 @@
 # Add new glossary terms here.
 
+- term: parameter
+  definition: A specific variable within a function that will be assigned the value of an argument. 
+
+- term: argument
+  definition: A value passed to a function. 
+
 - term: tuple
   definition: A data type that consists of a pair (or trio, tetrad, pentad, etc...) of types. 
 
