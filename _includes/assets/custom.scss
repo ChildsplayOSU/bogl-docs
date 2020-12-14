@@ -20,6 +20,16 @@ a.caption {
   color: $primary-color !important;
 }
 
+/* icon class CSS from: 
+ * https://github.com/The-Code-In-Sheep-s-Clothing/bogl-editor/blob/master/src/Navbar/SpielNavbar.css
+ */
+.icon {
+	border-radius: 4px;
+	border: solid rgb(223,237,250) 2px;
+	//margin-top: -13px;
+	margin-right: 8px;
+}
+
 /*
  * Embedded BoGL Editor CSS
  * Written by Benjamin Wilson Friedman
