@@ -130,7 +130,7 @@ type IceCreamFlavor = ClassicIceCreamFlavor & NonClassicIceCreamFlavor -- Extend
 {% endhighlight %}
 
 <br/>
-#### Example: Canasta Card Game
+:hammer_and_wrench: **Example: Canasta Card Game**  
 Not all card games use Jokers, but some (like [Canasta](https://en.wikipedia.org/wiki/Canasta)) do. We can create a new type that allows for normal cards plus Jokers by extending a previously defined Card type.
 
 {% highlight haskell %}
@@ -138,7 +138,7 @@ type CanastaCard = Card & {Joker} -- Extended type
 {% endhighlight %}
 
 <br/>
-#### Example: A Hand of Cards
+:hammer_and_wrench: **Example: A Hand of Cards**  
 The Hand type shown below represents five cards held in a hand. Lets assume the game being played has a five card limit.
 {% highlight haskell %}
 type Hand = (Card, Card, Card, Card, Card) -- Tuple type that represents a five card hand. Consists of five Card types.
