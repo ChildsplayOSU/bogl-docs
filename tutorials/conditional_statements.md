@@ -5,9 +5,6 @@ sort: 7 # Order in the sidebar
  
 # If/Else Statements 
 
-
-:construction: Under construction :construction:
-
 Sometimes you may want the resulting value of an expression to be dependent on a *condition*.
 In BoGL you can write a *conditional expression*, also known as an *if/else statement* or *conditional statement*.
 A conditional expression is composed of three sub-expressions.
@@ -32,9 +29,10 @@ The <span style="color:#A60000">third</span> expression (located after the keywo
 :hammer_and_wrench: **Example: Coin Toss**
 
 Lets return to our example with Jack and Rosa, which we last visited in the [functions tutorial](./functions).  
+The goal of the program below is to determine a first player for a game using a coin toss result.
 
-{% include code_module_template.html 
-content = "game WhoGoesFirst
+{% highlight haskell %}
+game WhoGoesFirst
 
 type TossResult = {Heads, Tails}
 type Player = {Jack, Rosa}
@@ -44,20 +42,17 @@ coin = Heads
 
 determineFirstPlayer : TossResult -> Player
 determineFirstPlayer(coinSide) = Rosa
-"
-%}
-
-The goal of our program is to determine a first player for a game using a coin toss result.
+{% endhighlight %}
 
 The function *determineFirstPlayer* will return a *Player* value, and takes a *TossResult* value as an argument. Right now, no matter if the TossResult value is Heads or Tails, Rosa will always be returned by the determineFirstPlayer function. To change this function so that Jack or Rosa can be returned depending on the TossResult argument, we can use a conditional experssion.
 
-The modified function below will return Rosa or Jack depending on whether the value provided to it's TossResult parameter is Heads or Tails.
+The modified determineFirstPlayer function below will return Rosa or Jack depending on whether the value provided to it's TossResult parameter is Heads or Tails.
 {% highlight haskell %}
 determineFirstPlayer : TossResult -> Player
 determineFirstPlayer(coinSide) = if coinSide == Heads then Rosa else Jack
 {% endhighlight %}
 
-Try this out in the interpreter!
+The condition of the *conditional expression* within this function is `coinSide == Heads`. If this expression evaluates to True (which happens when the function's argument is Heads), then the entire conditional expression will evaluate to Rosa. If the condition evaluates to False (which happens when the function's argument is Tails), then the entire conditional expression will evaluate to Jack.
 
 :dart: **Excercise:**  
 
@@ -77,3 +72,4 @@ determineFirstPlayer : TossResult -> Player
 determineFirstPlayer(coinSide) = if coinSide == Heads then Rosa else Jack
 "
 %}
+
