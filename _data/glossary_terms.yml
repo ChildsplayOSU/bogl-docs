@@ -1,7 +1,16 @@
 # Add new glossary terms here.
 
+- term: nested let expression
+  definition: A let expression within another let expression.
+
+- term: let expression
+  definition: An expression that defines a value that will be used in a specific expression.
+
 - term: parameter
   definition: A specific variable within a function that will be assigned the value of an argument. 
+
+- term: nested conditional expression
+  definition: A conditional expression within another conditional expression.
 
 - term: argument
   definition: A value passed to a function. 
