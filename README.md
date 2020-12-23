@@ -1,102 +1,34 @@
-# jekyll-rtd-theme
+# BoGL Docs 
+BoGL Docs is the official tutorial website for BoGL (Board Game Language), a domain specific teaching language designed to introduce computer science concepts.
 
-![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=v2)
-![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
+## Site Structure
 
-Opinionated standard documentation theme, with few options, but everything!
+BoGL Docs was created with [Jekyll](https://jekyllrb.com/) and uses a modified version of the [rundocs](https://rundocs.io) theme.
 
-## What it does?
+### Directories
+- **_data:**  
+There is a single file in this directory named *glossary_terms.yml*. The glossary page is populated with the definitions that are written in this file.
+- **_includes:**  
+Several partials are contained here (like the footer and header, which are located in the *class* subdirectory). Inside this folder are also *code\_module\_template.html* and *excercise\_module\_template.html*, which are the modular BoGL interpreters that are used inside the tutorials.
+- **_layouts:**  
+Located in this directory is *default.liquid*, which uses the partials from *_includes/class*.
+- **assets:**  
+Site assets such as fonts and the favicon images are located here.
+- **imgs:**  
+The images used in the tutorials are located here.
+- **tutorials:**  
+This is where the tutorials are located. Each tutorial is written as a markdown (.md) file.
 
-This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
+### Files
+- **README.md:**  
+The file you are reading right now. Contains information about the repository for the website.
+- **_config.yml**  
+Configuration file. Contains various options for the site.
+- **index.md**  
+The BoGL Docs index page.
 
-- [@primer/css](https://github.com/primer/css)
-- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
 
-## Quick start
+## Source Info
 
-```yml
-remote_theme: rundocs/jekyll-rtd-theme
-```
-
-You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
-
-## Usage
-
-Documentation that can guide how to create with Github pages, please refer to [rundocs.io](https://rundocs.io) for details
-
-## Features
-
-- Shortcodes (Toasts card, mermaid)
-- Pages Plugins (emoji, gist, avatar, mentions)
-- Auto generate sidebar
-- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
-- Service worker (caches)
-- SEO (404, robots.txt, sitemap.xml)
-- Canonical Link (Open Graph, Twitter Card, Schema data)
-
-## Options
-
-| name          | default value        | description       |
-| ------------- | -------------------- | ----------------- |
-| `title`       | repo name            |                   |
-| `description` | repo description     |                   |
-| `url`         | user domain or cname |                   |
-| `baseurl`     | repo name            |                   |
-| `lang`        | `en`                 |                   |
-| `direction`   | `auto`               | `ltr` or `rtl`    |
-| `highlighter` | `rouge`              | Cannot be changed |
-
-```yml
-# folders sort
-readme_index:
-  with_frontmatter: true
-
-meta:
-  key1: value1
-  key2: value2
-  .
-  .
-  .
-
-google:
-  gtag:
-  adsense:
-
-mermaid:
-  custom: # mermaid link
-  initialize: # mermaid options, default: {}
-
-# also available via file: _include/assets/custom.scss
-scss:
-
-# also available via file: _include/assets/custom.js
-script:
-
-# also available via file: _data/translate.yml
-translate:
-  # shortcodes
-  danger:
-  note:
-  tip:
-  warning:
-  # 404
-  not_found:
-  # copyright
-  revision:
-  # search
-  searching:
-  search:
-  search_docs:
-  search_results:
-  search_results_found: # the "#" in this translate will replaced with results size!
-  search_results_not_found:
-
-plugins:
-  - jemoji
-  - jekyll-avatar
-  - jekyll-mentions
-```
-
-## The license
-
-The theme is available as open source under the terms of the MIT License
+This website was created from a fork of the [rundocs/starter-slim](https://github.com/rundocs/starter-slim/) jekyll theme, which is available as open source under the terms of the MIT License.
+Documentation for the rundocs theme can be found at [rundocs.io](https://rundocs.io).
