@@ -182,6 +182,11 @@ X"
 %}
 
 <br/>
+:exclamation: **Note about the `!` character in relation to the `=` character:**
+- The `!` is used on the **left** side of an `=` when we want to *assign* values to places on the board.  
+- The `!` is used on the **right** side of an `=` when we want to *access* values at places on the board.
+
+<br/>
 ## Built-in Board Functions
 BoGL has a few built-in functions for some common board procedures. Each of these functions has a parameter of type *Content*. The *Content* type is set to be a synonym of the type you define your board to be made up of. That is, if you define your board like this:
 {% highlight haskell %}
