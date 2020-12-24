@@ -64,7 +64,7 @@ x = let a = 1 + 1 in -- Evaluates first
     c * 4            -- Evaluates last
 {% endhighlight %}
 
-Shown below is a math equation that evaluates in a way similar to the program above.
+Shown below is a math equation that evaluates in an order that is identical to the program above.
 
 **x = (((1 + 1) * 2) + 3) * 4**
 
