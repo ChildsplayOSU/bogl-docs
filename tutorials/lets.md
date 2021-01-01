@@ -5,88 +5,69 @@ sort: 6 # Order in the sidebar
 
 # Locally Defined Values
 
-:construction: Under construction :construction:
+In the [values](values) tutorial we learned how to create values that we can use in our BoGL programs.
+Whereas normal values can be used throughout multiple parts of your program, a locally defined value can only be used in a single specified expression.
+This is useful if you know that a value is only needed for a single expression, or if you want to break an existing expression up into something more concise.
+In BoGL, we can create locally defined values by using *let expressions*.
 
-In the [values](values) tutorial we learned how to create values for use in BoGL programs.
+![let statement anatomy](../imgs/lets-let-statement-anatomy.jpg)
 
-For a quick recap, say I wanted to create a value that represented the length of a game board (in squares).
-I may want a value that holds the length so that I can use it in multiple parts of my program without needing to remember the represented value every time I need to use it. 
-
-We could use [Chess](https://en.wikipedia.org/wiki/Chess) as an example. The board in Chess has a length of 8 squares.
-I could define a value in BoGL to represent the length of a Chess board like so:
-
-{% highlight haskell %}
-boardLength : Int
-boardLength = 8
-{% endhighlight %}
-
-I could then use this value in other parts of my program. 
+You can write a let expression by first writing the keyword `let` followed by the desired name of the value (must start with a lowercase letter), followed by an equals sign `=`. After the equals sign is where the expression of the locally defined value is defined. After this expression you must write the keyword `in`, followed by the expression that the locally defined value will be used in.
 
 {% highlight haskell %}
-totalSquares : Int
-totalSquares = boardLength * boardLength
-{% endhighlight %}
-
-Thats fine and all, but what if I just need a value to use in just a single expression rather than in an entire program?
-This is where *locally defined values* can come in handy.
-A locally defined value is a value that is only to be used in a single specified expression. Lets look at an example of this idea.
-
-Say we wanted to decrease the amount of letters we had to write out in this nonsensical sentence: 
-
-*The incomprehensibilities of the situation are getting out of hand, and it is to the point where these incomprehensibilities are adding more incomprehensibilities to the incomprehensibilities that I perceive as incomprehensibilities.*
-
-We could define a symbol to represent the word with the most characters:
-
-**Let the symbol :information_source: be the word "incomprehensibilities" in the sentence**  
-*"The :information_source: of the situation are getting out of hand, and it is to the point where these :information_source: are adding more :information_source: to the :information_source: that I perceive as :information_source:."*
-
-Since I am specifying the representation of :information_source: for just a single sentence, I could potentially reuse it as a representation for a different word in a different sentence later on.
-
-**Let the symbol :information_source: be the word "carnivore" in the sentence**  
-*"The :information_source: of a :information_source: will eat a :information_source: when it is hungry because it is a :information_source:."*
-
-
-*Let expressions* are useful in BoGL when we need to refer to a specific expression/value multiple times within another specific expression.
-
-![let statement anatomy](/imgs/lets-let-statement-anatomy.jpg)
-
-You can write a let expression by first writing the keyword `let` followed by the desired name of the value (must start with a lowercase letter), followed by an equals sign `=`. After the equals sign is where the expression of the locally defined value is defined. After this expression goes the keyword `in`, following this keyword is the expression that the locally defined value will be used in.
-
-{% highlight haskell %}
-game LetEx
+game LetExample
 
 y : Int
-y = let x = 10 in x / 5 + x
+y = let x = 10 * 2 in x / 5 + x
 {% endhighlight %}
 
 In the example above, we are using the locally defined value `x` in the expression `x / 5 + x`.
 The expression in this example could also be written on a new line after the keyword `in`.
 
 {% highlight haskell %}
-game LetEx
+game LetExample
 
 y : Int
-y = let x = 10
-in x / 5 + x
+y = let x = 10 * 2 in
+    x / 5 + x
 {% endhighlight %}
 
 This kind of change can often increase the readability of our program, especially when it comes to writing more complicated expressions.
 
-{% highlight haskell %}
-game LetEx
-
-y : Int
-y = let x = 10 in x / 5
-{% endhighlight %}
-
-**Example:**
+<br/>
+## Nested Let Expressions
+The ending expression of a let expression can be another let expression.
+A let expression that uses a value that was defined in an earlier let expression is called a *nested let expression*.
+Nested let expressions can be useful if we want to define several values to use in an expression.
+Shown below is an example of this.
 
 {% highlight haskell %}
-game LetEx
+game LetExample
 
 x : Int
 x = let a = 1 in
     let b = 2 in
     let c = 3 in
-    a + b + c
+    let d = 4 in
+    a + b + c + d
 {% endhighlight %}
+
+The defining expression of a local value in the let expression will always be evaluated before the expression which uses the local value (which is the expression that comes after the `in` keyword). Below is an example that illustrates this.
+
+{% highlight haskell %}
+game SequentialLetExample
+
+x : Int
+x = let a = 1 + 1 in -- Evaluates first
+    let b = a * 2 in -- Evaluates second
+    let c = b + 3 in -- Evaluates third
+    c * 4            -- Evaluates last
+{% endhighlight %}
+
+Shown below is a math equation that evaluates in an order that is identical to the program above.
+
+**x = (((1 + 1) * 2) + 3) * 4**
+
+<br/>
+
+

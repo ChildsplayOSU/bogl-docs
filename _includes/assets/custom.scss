@@ -1,4 +1,4 @@
-$primary-color: #DF013A;
+$primary-color: #dc3545;
 
 .header {
   background: $primary-color;
@@ -18,6 +18,17 @@ input.form-control {
 
 a.caption {
   color: $primary-color !important;
+}
+
+/* icon class CSS from: 
+ * https://github.com/The-Code-In-Sheep-s-Clothing/bogl-editor/blob/master/src/Navbar/SpielNavbar.css
+ */
+.icon {
+	border-radius: 4px;
+	border: solid rgb(223,237,250) 2px;
+	margin-top: -4px;
+	margin-right: 8px;
+	vertical-align: middle;
 }
 
 /*

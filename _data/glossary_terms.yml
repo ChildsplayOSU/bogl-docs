@@ -1,0 +1,82 @@
+# Add new glossary terms here.
+
+- term: nested let expression
+  definition: A let expression within another let expression.
+
+- term: let expression
+  definition: An expression that defines a value that will be used in a specific expression.
+
+- term: parameter
+  definition: A specific variable within a function that will be assigned the value of an argument. 
+
+- term: nested conditional expression
+  definition: A conditional expression within another conditional expression.
+
+- term: argument
+  definition: A value passed to a function. 
+
+- term: tuple
+  definition: A data type that consists of a pair (or trio, tetrad, pentad, etc...) of types. 
+
+- term: extended type
+  definition: A data type whose possible values have been extended to include the possible values of another type. 
+
+- term: bug
+  definition: Synonym of error.
+
+- term: board
+  definition: Synonym of array.
+
+- term: Bool
+  definition: A data type whose possible values are True or False.
+
+- term: built-in
+  definition: Already defined in the BoGL language.
+
+- term: array
+  definition: A common data structure that is often used to implement a fixed size list or, in the case of a two dimensional array, grid.
+
+- term: BoGL
+  definition: A domain specific teaching language developed by a team of researchers at Oregon State University. The name "BoGL" is an acronym for "Board Game Language". 
+
+- term: comment
+  definition: Text within program code that has been marked to be ignored by the interpreter.
+
+- term: expression
+  definition: Code that evaluates to a value.
+
+- term: conditional expression
+  definition: "An expression that consists of three expressions. One is a condition, the value of which determines which of the other two to evaluate."
+
+- term: Int
+  definition: A data type whose possible values are any integer. 
+
+- term: if/else statement
+  definition: Synonym of a conditional expression.
+
+- term: synonym
+  definition: A name with the same meaning as another name.
+
+- term: editor
+  definition: The textbox in which BoGL code can be written.
+
+- term: definition
+  definition: A statement giving meaning to a name.
+
+- term: error
+  definition: An issue that causes undesired behavior or failure in a program.
+
+- term: type
+  definition: A set of possible values.
+
+- term: value definition
+  definition: A statement that assigns a type and a value of that type to a name.
+
+- term: language error
+  definition: An error that is caught by the interpreter before the code is allowed to run.
+
+- term: runtime error
+  definition: An error that occurs while the program is running.
+
+- term: while loop
+  definition: "An expression that consists of two expressions. One is repeated as long as the other (condition) evaluates to True."
