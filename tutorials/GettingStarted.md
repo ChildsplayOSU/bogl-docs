@@ -1,4 +1,8 @@
-# 1) Getting Started with BoGL
+---
+sort: 1 # Order in the sidebar
+---
+
+# Getting Started with BoGL
 
 Getting started with BoGL is straightforward, as you can start coding directly in our [online tool](https://bogl.engr.oregonstate.edu/).
 

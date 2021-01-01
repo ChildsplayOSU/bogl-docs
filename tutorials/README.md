@@ -1,8 +1,8 @@
 ---
-sort: 2 # Order in the sidebar
+sort: 3 # Order in the sidebar
 permalink: /tutorials/
 ---
- 
+
 # Tutorials
 
 Here is a list of the tutorials in the order that we recommend them.

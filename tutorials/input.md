@@ -1,7 +1,7 @@
 ---
-sort: 8 # Order in the sidebar
+sort: 9 # Order in the sidebar
 ---
- 
+
 # User Input
 
 You can make a program interactive by using the *input* statement.
@@ -45,7 +45,7 @@ addTwoNums = input + input
 :dart: **Excercise: Second Power**   
 Write the definition for a value that takes a single integer input from the user during runtime, and then returns the integer that was input multiplied by itself.
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game InputToSecondPower
 
 type Input = Int
@@ -88,7 +88,7 @@ type PlayerMove = {Rock, Paper, Scissors}
 type Input = PlayerMove
 
 playGame : GameOutcome
-playGame = 
+playGame =
 	let p1move = input in
 	let p2move = input in
 	if and(p1move == Rock, p2move == Scissors) then Player1Wins

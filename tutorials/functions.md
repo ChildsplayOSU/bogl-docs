@@ -1,8 +1,8 @@
 ---
-sort: 4 # Order in the sidebar
+sort: 5 # Order in the sidebar
 #permalink: /tutorials/functions
 ---
- 
+
 # Functions
 
 :warning: Make sure that you have a solid understanding of [types](./types) and [values](./values) before jumping into this tutorial.:warning:
@@ -20,7 +20,7 @@ coin : TossResult
 coin = Heads
 {% endhighlight %}
 
-So far we have the name of our game `WhoGoesFirst`, a type that can describe who the first player is `Player`, a type for capturing a coin toss result `TossResult`, and a defined TossResult value `coin`. Now we need a way to determine a FirstPlayer value using a TossResult value. Since BoGL is largely a [functional language](https://en.wikipedia.org/wiki/Functional_programming) we will do this by creating a _function_ that takes a TossResult value as input and returns a FirstPlayer value. 
+So far we have the name of our game `WhoGoesFirst`, a type that can describe who the first player is `Player`, a type for capturing a coin toss result `TossResult`, and a defined TossResult value `coin`. Now we need a way to determine a FirstPlayer value using a TossResult value. Since BoGL is largely a [functional language](https://en.wikipedia.org/wiki/Functional_programming) we will do this by creating a _function_ that takes a TossResult value as input and returns a FirstPlayer value.
 
 Functions inside of BoGL are used to output, or return, some sort of value. The value that is returned from a function is often determined by the inputs that are provided to it. To illustrate the idea of a function in BoGL, let's first take a look at the math function below.
 
@@ -46,7 +46,7 @@ The defining expression for the function above is `2 * x`. An [expression](https
 #### Calling a Function
 To actually utilize this function we must _call_ it. To call a function you must first type the function's name, followed by parenthesis `()`. Inside of those parenthesis you must put a value that matches the type of the function's parameter. We call this value a *function argument*. Try typing the function call `f(3)` into the interpreter below (right side textbox) and press the `enter` key. It should return the value 6.
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game FunctionDemo
 
 f : Int -> Int
@@ -72,7 +72,7 @@ determineFirstPlayer(coin) = Rosa
 
 Try typing the function call `determineFirstPlayer(Heads)` into the interpreter below. It should return the value `Rosa`. You could also use `coin` as an argument for this function instead of `Heads`, since it's defined value is of type TossResult.
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game WhoGoesFirst
 
 type TossResult = {Heads, Tails}
@@ -87,7 +87,7 @@ determineFirstPlayer(coinSide) = Rosa
 %}
 
 
-You may notice that the _coinSide_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the argument is Heads or Tails. In the [if/else tutorial](./conditional_statements) we will revisit this example and look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the argument provided to the _coinSide_ parameter. 
+You may notice that the _coinSide_ parameter is not being utilized, and that the output of this function will always be _Rosa_, no matter if the argument is Heads or Tails. In the [if/else tutorial](./conditional_statements) we will revisit this example and look at how we can replace the value _Rosa_ with an expression that can evaluate to _Jack_ or _Rosa_ depending on the argument provided to the _coinSide_ parameter.
 
 <br/>
 ## Functions with Multiple Parameters
@@ -110,8 +110,5 @@ type NumPair = (Int, Int)
 
 -- The function below adds the two numbers inside of a NumPair together.
 f : NumPair -> Int
-f(a, b) = a + b; -- Still need to specify parameter names a and b 
+f(a, b) = a + b; -- Still need to specify parameter names a and b
 {% endhighlight %}
-
-
-

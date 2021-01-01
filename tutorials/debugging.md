@@ -1,5 +1,5 @@
 ---
-sort: 11 # Order in the sidebar
+sort: 12 # Order in the sidebar
 # permalink: /tutorials/debugging
 # published: false
 ---
@@ -10,7 +10,7 @@ This guide is here to give advice on strategies one might use to prevent and res
 BoGL programs and bugs are used as examples in this guide, but the techniques and strategies discussed can be used in other contexts as well.
 
 ## Background: What is a Software Bug?
-The term *bug*, in the fields of software developement and computer science, is a term that is commonly used to describe an issue or problem with a program. An example of this could be the program not working the way you expected (i.e. a function returning x when it should return y). It could also be that the code just doesn't work at all due to something being undefined or an instruction being written incorrectly. There are several ways to classify bugs. In this tutorial we will separate bugs into two categories: *Language errors* and *runtime errors*. 
+The term *bug*, in the fields of software developement and computer science, is a term that is commonly used to describe an issue or problem with a program. An example of this could be the program not working the way you expected (i.e. a function returning x when it should return y). It could also be that the code just doesn't work at all due to something being undefined or an instruction being written incorrectly. There are several ways to classify bugs. In this tutorial we will separate bugs into two categories: *Language errors* and *runtime errors*.
 
 ### Language Errors
 Before you code is allowed to run, the interpreter will examine it. During this examination the interpreter will try to detect any *syntax* errors and even some *semantic* errors. We will refer to these errors, that were caught by the interpreter, as *language errors*.
@@ -27,16 +27,16 @@ The BoGL language has many rules that determine what is and isn't BoGL code. The
 
 **Examples of English syntax rules:**
 - The first letter of a sentence must start with a capital letter.
-- A proper noun must start with a capital letter. 
+- A proper noun must start with a capital letter.
 - A sentence must end with a question mark, exclamation mark, or period.
 
 If your code breaks a BoGL syntax rule, the interpreter will prevent your code from runnning and return an error.
 
 The interpreter can also detect some semantic (meaning) errors.
 These are not syntax errors, but would cause problems if they were allowed to occur.
-An example of this is the expression `False + False`. There is nothing in the BoGL syntax that prevents you from writing this, but in practice this expression does not make any sense (It is unclear what this expression would evaluate to; There is no defined meaning) so the interpreter will detect and prevent it. 
+An example of this is the expression `False + False`. There is nothing in the BoGL syntax that prevents you from writing this, but in practice this expression does not make any sense (It is unclear what this expression would evaluate to; There is no defined meaning) so the interpreter will detect and prevent it.
 
-It is important to note that not all semantic errors are detected by the interpreter before you run your code. An example of this is the expression `1 / 0`. This is also a valid expression according to the BoGL syntax, but there is no defined meaning for it (the result of dividing by zero is undefined in mathematics). The BoGL interpreter does not detect this error before running the code, so it will break a program at the time it gets evaluated during *runtime*. 
+It is important to note that not all semantic errors are detected by the interpreter before you run your code. An example of this is the expression `1 / 0`. This is also a valid expression according to the BoGL syntax, but there is no defined meaning for it (the result of dividing by zero is undefined in mathematics). The BoGL interpreter does not detect this error before running the code, so it will break a program at the time it gets evaluated during *runtime*.
 
 ### Runtime Errors
 Runtime errors are errors that occur in the program while it is running, or in other words, errors that were not detected by the interpreter before program runtime.
@@ -61,12 +61,12 @@ This section goes over some planning steps that you can take before you start co
 **Understand the problem.**  
 It is important to make sure that you understand the problem best you can before attempting to solve it. One method you can use to think more deeply about a problem is to ask yourself questions about it. These might include:
 - What are the ways in which I can restate the problem?
-- What knowledge do I already have that may help me solve this? 
-- What knowledge don't I have which might help me solve this? 
+- What knowledge do I already have that may help me solve this?
+- What knowledge don't I have which might help me solve this?
 - What is gained by solving this problem?
 
 **Devise a plan.**  
-Once you understand the problem, you can then try to solve it. 
+Once you understand the problem, you can then try to solve it.
 It need not be with code though, at least not to begin with.
 While coding you can often introduce many errors if you do not have a clear idea of what you are attempting to do.
 Creating a solution in the form of pseudocode or a flowchart can help you find issues before you get to the coding step.
@@ -81,18 +81,18 @@ This could be in the form of a *testing table* (see failsafe division example be
 Whenever you write a *unit* of code that can be tested, test it! All functions in BoGL are testable, meaning that after you define it in the editor you can call it in the interpreter. After you write a function, try calling it. Does it run? Does it return the value you expected? Try giving it different arguments. It is incredibly useful to find these bugs sooner than later.
 
 More complicated functions may call upon other functions, meaning that a function could potentially break due to a bug that is located in a different function.
-This can be difficult to debug, but it is easy to prevent by testing your functions before encorporating them. 
+This can be difficult to debug, but it is easy to prevent by testing your functions before encorporating them.
 
 If you find that the first functions you define are ones that call upon other functions, it may be best to leave placeholder code and a comment that references the functions that this one will be calling.
 You can come back to these functions after you have defined and tested the other functions that it is composed of.
-In BoGL it is best to first define and test functions that are independent of other functions. 
+In BoGL it is best to first define and test functions that are independent of other functions.
 
 **Example: Testing a Failsafe Division Function**  
 If I were to create a calculator in BoGL, I might want to make a division function that would avoid runtime errors.
 Here are some behaviors I would expect from such a function:
-- If the user attempts to divide the numerator by zero, then the function will return the value "RestrictedCalculation". 
+- If the user attempts to divide the numerator by zero, then the function will return the value "RestrictedCalculation".
 - If the user attempts to give arguments that may be too big for BoGL to compute properly (we'll say over a quadrillion), the value returned will be "RestrictedCalculation".
-- If the arguments are not greater than a quadrillion and the denominator is not 0, then the function will return the integer quotient of the arguments. 
+- If the arguments are not greater than a quadrillion and the denominator is not 0, then the function will return the integer quotient of the arguments.
 
 Here is what the testing table might look like for this function:
 
@@ -107,7 +107,7 @@ Here is what the testing table might look like for this function:
 
 :dart: **Excercise:**  
 With the above information kept in mind, try writing a failsafe division function called "failsafeDivide" in the editor below.
-If you click the **Check** button, the tests shown in the testing table will be run. 
+If you click the **Check** button, the tests shown in the testing table will be run.
 
 {% include exercise_module_template.html
 content = "game FailsafeDivision
@@ -128,8 +128,8 @@ failsafeDivide(1, 1000000000000000)"
 expects="5
 2
 1
-RestrictedCalculation 
-RestrictedCalculation 
+RestrictedCalculation
+RestrictedCalculation
 RestrictedCalculation"
 %}
 
@@ -164,11 +164,11 @@ This section will go over a few methods that can be used when trying to resolve 
 Before you go searching for the solution to your problem, first try to understand how and why it is occuring.
 Here are a few questions you can ask yourself when attempting to understand a bug:
 
-Questions for language errors: 
+Questions for language errors:
 - Which terms in the error message am I unfamiliar with?
 - Does the logic of the error message make sense?
 - Where in the program code is the error message referring to?
-- Does the code that comes before the place of error look error-free? 
+- Does the code that comes before the place of error look error-free?
 
 Questions for runtime errors:
 - What have I changed/added since I last tested my code?
@@ -177,7 +177,7 @@ Questions for runtime errors:
 
 Asking yourself questions about your issue can be useful in a multitude of ways.
 First, by asking yourself questions you may wind up finding the solution on your own.
-Second, by allowing yourself time to understand exactly what you don't know, you will be better able to ask intelligent and focused questions. 
+Second, by allowing yourself time to understand exactly what you don't know, you will be better able to ask intelligent and focused questions.
 You may be able to paraphrase the issue in multiple ways, allowing you to obtain answers that are more relevant.
 Going through the excercise of asking yourself questions will also help you learn and retain information about the issue, so that you may be able to better recall and apply it when encountering similiar bugs in the future.
 
@@ -193,7 +193,7 @@ Following this process, you will eventually find something that may not be worki
 You can follow a similiar process with language errors.
 If you have a language error, try commenting out the parts of your code that prevent your program from running.
 You can do this incrementally by repeatedly commenting out the function in which the issue takes place and running the program.
-Once the program runs, try running individual expressions in the interpreter that are from the last function you commented out. 
+Once the program runs, try running individual expressions in the interpreter that are from the last function you commented out.
 Look for expressions that cause issues or evaluate to values you did not expect.
 
 ### :books: Strategic Research
@@ -206,12 +206,12 @@ Presenting your bug to another person will force you to explain your problem and
 **If you know what you don't know, take time to know it.**   
 If you encounter a bug while working with a command, tool, or concept that you don't entirely understand, take time to review documentation on how it works.
 Learning through trail and error isn't a bad thing, but it oftentimes leaves gaps in understanding that will result in more bugs in the future.
-Many documentation and tutorial websites have a handy search feature (including this one), which can allow you to quickly find information about a topic you wish to learn more about. 
+Many documentation and tutorial websites have a handy search feature (including this one), which can allow you to quickly find information about a topic you wish to learn more about.
 
 **Search online with the intent to learn.**  
 The unfortunate truth is that you can often resolve bugs in your program without understanding what went wrong, and how you fixed it.
 On the internet, there is an unccountable amount of answers to an uncountable amount of questions.
-It is incredibly easy to search, find, and implement a solution for a bug without learning why it occured in the first place and how the solution works. 
+It is incredibly easy to search, find, and implement a solution for a bug without learning why it occured in the first place and how the solution works.
 Before trying to search for a solution to your issue online, try to come up with a solution on your own.
 Try using strategies mentioned earlier.
 When searching online for a solution to a bug, try to understand what is being said about the underlying issue. Why is it occuring? How does the proposed solution fix it?
