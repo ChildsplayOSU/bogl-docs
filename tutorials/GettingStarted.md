@@ -6,6 +6,7 @@ sort: 1 # Order in the sidebar
 
 Getting started with BoGL is straightforward, as you can start coding directly in our [online tool](https://bogl.engr.oregonstate.edu/).
 
+You can also watch our [Getting Started with BoGL video](https://media.oregonstate.edu/media/1_d5w6ypwr), which goes over this same material, and quickly gets you writing your first BoGL program.
 
 Once you have access to the tool you should see the page as follows:
 ![The BoGL online tool.](../imgs/editor-blank.png)
