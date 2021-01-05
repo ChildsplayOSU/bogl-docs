@@ -1,5 +1,5 @@
 ---
-sort: 11 # Order in the sidebar
+sort: 12 # Order in the sidebar
 # permalink: /tutorials/debugging
 # published: false
 ---
