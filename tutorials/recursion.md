@@ -50,10 +50,11 @@ The function shown above counts to 100, and will make 100 - x recursive function
 In this function, the argument of every recursive call is the argument of the last call plus one.
 The function will keep making these recursive calls until it reaches its base case, which is the argument being equal to or greater than 100.
 
-IMAGE HERE
+![count from x to 100 example](../imgs/recursion-countfromxto100.jpg)
 
-Once a recursive call reaches it's base case, the function will return a value to the last call, which then returns a value to the call before it and so on until a value is returned from the initial function call.
+Once a recursive call reaches the base case, the function will return a value to the last call, which then returns a value to the call before it and so on until a value is returned from the initial function call.
 
+<br/>
 :dart: **Excercise:**  
 Write a function that takes an integer value as an argument, and makes an equivalent amount of recursive calls.  
 The initial call to the function is not a recursive call. 
@@ -75,8 +76,9 @@ xRecursiveCalls(x) = if x == 0 then x
 </p>
 </details>
 
+<br/>
 :dart: **Excercise:**   
-A factorial operation is denoted in math using the exclamation point, and means to multiply the number by every integer that is less than itself and greater than zero. Shown below are a few examples.
+A factorial operation is denoted in math using the exclamation point after an integer. This operation means to multiply the number by every integer that is less than itself and greater than zero. Shown below are a few examples.
 ```
 4! = 4 * 3 * 2 * 1 = 24
 3! = 3 * 2 * 1 = 6
@@ -122,3 +124,30 @@ factorial(x) = if x <= 1 then 1
 </details>
 
 <br/>
+
+## Examples
+
+Here are a couple of guessing games that utilize recursion.
+
+:hammer_and_wrench: **Example: Guess My Favorite Color**  
+Ever try to guess a friend's favorite color?
+Running the BoGL code shown in the example below will start a "Guess My Favorite Color" game.
+The argument `favoriteColor` represents the color to be guessed.
+Calling the function `playGame` (from the example below) will result in the user being repeatly asked for a color until the input matches the argument that was originally provided to `playGame`.
+{% highlight haskell %}
+game GuessMyFavoriteColor
+
+type Color = {Blue, Red, Brown, Green,
+              Black, Grey, White, Pink,
+              Purple, Orange, Yellow}
+
+type Input = Color
+
+playGame : Color -> Color
+playGame(favoriteColor) =
+    let guess = input in
+    if guess == favoriteColor then guess
+    else playGame(favoriteColor)
+{% endhighlight %}
+
+In this example, recursion is used to repeatedly prompt the user for input until the correct input is provided.
