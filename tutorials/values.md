@@ -1,8 +1,8 @@
 ---
-sort: 3 # Order in the sidebar
+sort: 4 # Order in the sidebar
 #permalink: /tutorials/values
 ---
- 
+
 # Values
 
 :warning: Make sure that you have a solid understanding of [types](./types) before jumping into this tutorial.:warning:
@@ -33,12 +33,12 @@ The second line of a value definition is where the value itself is defined. This
 
 ![Anatomy of a value definition](../imgs/values-value-definition-anatomy.jpg)
 
-Once a value definition is created, the name of the value that was defined will evaluate to it's defined value. Try typing `x` into the interpreter (right side text box) below and press the `enter` key. It will return the value defined for **x**. 
+Once a value definition is created, the name of the value that was defined will evaluate to it's defined value. Try typing `x` into the interpreter (right side text box) below and press the `enter` key. It will return the value defined for **x**.
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game ValueDemo
 
-x : Int 
+x : Int
 x = 4
 "
 %}
@@ -46,18 +46,18 @@ x = 4
 Now lets utilize what we have learned about values and [types](./types) to define a value for a coin toss result.
 We will call this value _coin_. We will define it's type as `TossResult` and define it's value to be `Heads`. Here is it's definition:
 {% highlight haskell %}
-coin : TossResult 
+coin : TossResult
 coin = Heads
 {% endhighlight %}
 
 Try typing `coin` into the interpreter below. It should return the value `Heads`.
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game ValueDemo
 
 type TossResult = {Heads, Tails}
 
-coin : TossResult 
+coin : TossResult
 coin = Heads
 "
 %}

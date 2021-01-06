@@ -1,5 +1,5 @@
 ---
-sort: 10 # Order in the sidebar
+sort: 11 # Order in the sidebar
 # permalink: /tutorials/boards
 ---
 
@@ -7,7 +7,7 @@ sort: 10 # Order in the sidebar
 
 ## Background: What is a BoGL Board?
 BoGL wouldn't be a board game language if there weren't a way to create a board!
-In BoGL the type *Board* is a name we use to describe *arrays*. 
+In BoGL the type *Board* is a name we use to describe *arrays*.
 An [*array*](https://en.wikipedia.org/wiki/Array_data_structure) in computer science is a [*data structure*](https://en.wikipedia.org/wiki/Data_structure), which is a term used to describe an organization of stored data.
 Arrays are one of the simpler data structures to understand because they are often used to describe organizations that resemble lists (with one-dimensional arrays) or grids (with two-dimensional arrays).
 For example, in the game of [Chess](https://en.wikipedia.org/wiki/Chess) the pieces are organized on a grid of squares (the board), and in the game of [Candy Land](https://en.wikipedia.org/wiki/Candy_Land) the path that the players move upon can be described as a list of squares.
@@ -66,7 +66,7 @@ Following the parenthesis is an `=` which is then followed by an expression that
 In order for a board value to be defined, the board equation(s) must define a value for each part of the board.
 Undefined values of any type (including Board) are not valid in BoGL, and will give you an error.
 
-Below is the code for one of the simplest boards we can make, which is a 1 by 1 board that holds a Bool. 
+Below is the code for one of the simplest boards we can make, which is a 1 by 1 board that holds a Bool.
 {% highlight haskell %}
 type Board = Array(1, 1) of Bool -- Board definition
 
@@ -75,7 +75,7 @@ boardValue : Board
 boardValue!(1,1) = True -- Board equation defining the value for position (1, 1)
 {% endhighlight %}
 
-Below is the code for a 1 by 2 board that holds Bool values. 
+Below is the code for a 1 by 2 board that holds Bool values.
 {% highlight haskell %}
 type Board = Array(1, 2) of Bool -- Board definition
 
@@ -87,7 +87,7 @@ boardValue!(1,2) = False -- Board equation defining the value for position (1, 2
 
 There is no limit to the amount of board equations you can write.
 You can even create board equations that reference the same position.
-These board equations will overwrite the value for the position that was defined by an equation above it. 
+These board equations will overwrite the value for the position that was defined by an equation above it.
 
 {% highlight haskell %}
 type Board = Array(1, 2) of Bool -- Board definition
@@ -126,7 +126,7 @@ To create a board equation that refers to all board positions, we will write a b
 {% highlight haskell %}
 -- Initial board value
 initialTTTBoard : Board
-initialTTTBoard!(x,y) = Unmarked -- Board equation defining the values for all positions on the board 
+initialTTTBoard!(x,y) = Unmarked -- Board equation defining the values for all positions on the board
 {% endhighlight %}
 
 We can also give a non-integer value for just one of the position values.
@@ -136,8 +136,8 @@ This allows us to generalize a specific column or row of our board.
 -- Initial board value
 initialTTTBoard : Board
 initialTTTBoard!(x,y) = Unmarked -- Set all values to Unmarked
-initialTTTBoard!(1,y) = X -- Set the first column of values to X 
-initialTTTBoard!(x,3) = O -- Set the third row of values to O 
+initialTTTBoard!(1,y) = X -- Set the first column of values to X
+initialTTTBoard!(x,3) = O -- Set the third row of values to O
 {% endhighlight %}
 
 
@@ -203,11 +203,11 @@ So make sure that the value you give as an argument to the *Content* type parame
 The `place` function allows you to place something on a board.
 
 The function takes 3 arguments: A *Content* value that will be placed on the board, the board the *Content* will be placed on, and a pair of integers which represents the location of where on the board the *Content* value will be placed.
-The return value of a `place` function call is the board value that was passed to the function updated with the `Content` placed at the specified position. 
+The return value of a `place` function call is the board value that was passed to the function updated with the `Content` placed at the specified position.
 
 **Function Signature:**
 {% highlight haskell %}
-place : (Content, Board, (Int, Int)) -> Board 
+place : (Content, Board, (Int, Int)) -> Board
 {% endhighlight %}
 
 :dart: **Excercise:**
@@ -228,11 +228,11 @@ initialTTTBoard!(x,y) = U
 ### inARow
 The `inARow` function will tell you if there is a row of values on a board.
 
-The function takes 3 arguments: An integer which is the length of the row we are looking for, a *Content* value which is the value we are looking to see if there is a row of, and the board we are looking for a row in. The return value of an `inARow` function call is a Bool, which will be **True** if the specified row exists and **False** if it does not. 
+The function takes 3 arguments: An integer which is the length of the row we are looking for, a *Content* value which is the value we are looking to see if there is a row of, and the board we are looking for a row in. The return value of an `inARow` function call is a Bool, which will be **True** if the specified row exists and **False** if it does not.
 
 **Function Signature:**
 {% highlight haskell %}
-inARow : (Int, Content, Board) -> Bool 
+inARow : (Int, Content, Board) -> Bool
 {% endhighlight %}
 
 :dart: **Excercise:**  
@@ -270,7 +270,7 @@ The function takes 2 arguments: A *Content* value which is what we are counting 
 
 **Function Signature:**
 {% highlight haskell %}
-countBoard : (Content, Board) -> Int 
+countBoard : (Content, Board) -> Int
 {% endhighlight %}
 
 :dart: **Excercise:**  

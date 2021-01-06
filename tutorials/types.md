@@ -1,8 +1,8 @@
 ---
-sort: 2 # Order in the sidebar
+sort: 3 # Order in the sidebar
 #permalink: /tutorials/types
 ---
- 
+
 # Understanding Types
 
 Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.
@@ -28,7 +28,7 @@ Next we will capture the coin toss result. For this we are going to create a typ
 
 
 There are currently no defined types for a coin toss result, so we will make one ourselves!
-The pieces of information we need to create our own type are: 
+The pieces of information we need to create our own type are:
 
 * The name we want to call our type
 * The possible values of our type
@@ -58,7 +58,7 @@ type PlayerColor = {Blue, Red, Green, Yellow}
 type DiceResult = {One, Two, Three, Four, Five, Six}
 type ChessPiece = {Pawn, Bishop, Knight, Rook, Queen, King}
 type ClueCharacter = {MissScarlett, ColonelMustard, MrsWhite, ReverendGreen, MrsPeacock, ProfessorPlum}
- 
+
 -- non board game themed types
 type ClassicIceCreamFlavor = {Vanilla, Chocolate, Strawberry}
 type WaterValveState = {Open, Closed}
@@ -178,16 +178,16 @@ type Score = Int -- Possible values are any integer
 
 -- Tuple types
 type Coordinate = (Int, Int)
-type Card = (Rank, Suit) 
-type Hand = (Card, Card, Card, Card, Card) 
-type Player = (PlayerColor, Hand, Score) 
+type Card = (Rank, Suit)
+type Hand = (Card, Card, Card, Card, Card)
+type Player = (PlayerColor, Hand, Score)
 
 -- Extended types
 type IceCreamFlavor = ClassicIceCreamFlavor & {Mint, BirthdayCake, BubbleGum, Coffee} -- Extended type
 type CanastaCard = Card & {Joker} -- Extended type
 type GamePiece = ChessPiece & ClueCharacter -- Type extended with another type.
 {% endhighlight %}
- 
+
 Here are some of the things you are <span style="color:red">**not allowed**</span> to do with types in BoGL:
 {% highlight haskell %}
 type pastaSauce = {Alfredo, Marinara, Pesto} -- A type name must start with a capital letter.

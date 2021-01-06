@@ -32,7 +32,7 @@ This page is a list of terms and their definitions in the context of the BoGL la
 <!-- Create list of terms -->
 <ul style="list-style: none;">
 {% for term in sorted-terms %}
-	
+
 	<!-- If this is a term with a new starting letter create a header -->
 	{% assign first-letter = term.term | slice: 0 | capitalize %}
 	{% if first-letter != prev-letter %}  
@@ -49,4 +49,3 @@ This page is a list of terms and their definitions in the context of the BoGL la
 	</li>
 {% endfor %}
 </ul>
-

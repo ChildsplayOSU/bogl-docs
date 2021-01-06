@@ -1,8 +1,8 @@
 ---
-sort: 5 # Order in the sidebar
+sort: 6 # Order in the sidebar
 #permalink: /tutorials/expressions
 ---
- 
+
 # Understanding Expressions
 
 An *expression* is something that must be evaluated in order to determine its value. An expression in BoGL can consist of [values](values), [operators](expressions#arithmetic-operators), [functions](./functions), [if/else statements](./conditional_statements), [local value definitions](./lets), and [loops](./loops) that together evaluate to some value. Not knowing what all of those things are is okay, it is still a good idea to get an early start on understanding the concept of an expression before completely comprehending all that it can be. Let's look at an example to illustrate the idea of an expression.
@@ -15,7 +15,7 @@ The expression above consists of values (`2`, `3`, `4`) and operators (`+`, `-`)
 
 Expressions in BoGL are usually found inside of [value](./values) and [function](./functions) definitions, however, you may still evaluate one by typing it directly into the interpreter. This is useful for experimentation and practice. Try typing the expression `2 + 3 - 4` into the interpreter. It should return 1.
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game ExpressionsDemo
 -- Do not put code here.
 -- Type your expression in the interpreter to the right and press enter.
@@ -29,7 +29,7 @@ not(True)
 
 The expression above consists of a built-in function `not` and a value `True`. We may not know what this function does yet, but we do know that it will evaluate to some value. Try entering this expression into the interpreter to see the resulting value.
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game ExpressionsDemo
 -- Do not put code here.
 -- Type your expression in the interpreter to the right and press enter.
@@ -81,7 +81,7 @@ Relational operators always evaluate to a **Bool**. They are commonly used as co
 | Equal to                              | ==     | 5 == 5             | True                 |
 | Not equal to                          | /=     | 5 != 5             | False                |
 
-:warning: The relational operators in the table below can only be used with **Int** operands. 
+:warning: The relational operators in the table below can only be used with **Int** operands.
 
 | Integer Specific Relational Operator  | Symbol | Example Expression | Example's Evaluation |
 |---------------------------------------|--------|--------------------|----------------------|

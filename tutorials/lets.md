@@ -1,5 +1,5 @@
 ---
-sort: 6 # Order in the sidebar
+sort: 7 # Order in the sidebar
 # permalink: /tutorials/lets
 ---
 
@@ -69,5 +69,3 @@ Shown below is a math equation that evaluates in an order that is identical to t
 **x = (((1 + 1) * 2) + 3) * 4**
 
 <br/>
-
-

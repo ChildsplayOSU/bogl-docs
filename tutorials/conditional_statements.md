@@ -1,8 +1,8 @@
 ---
-sort: 7 # Order in the sidebar
+sort: 8 # Order in the sidebar
 #permalink: /tutorials/expressions
 ---
- 
+
 # Conditional Expressions (If/Else)
 
 Sometimes you may want the resulting value of an expression to be dependent on a *condition*.
@@ -57,7 +57,7 @@ The condition of the *conditional expression* within this function is `coinSide 
 What happens when you type `determineFirstPlayer(Heads)` into the interpreter below?  
 What happens when you type `determineFirstPlayer(Tails)` into the interpreter below?
 
-{% include code_module_template.html 
+{% include code_module_template.html
 content = "game WhoGoesFirst
 
 type TossResult = {Heads, Tails}
@@ -78,8 +78,8 @@ A conditional expression contained within another conditional expression is refe
 These are useful for creating conditional expressions that can evaluate to more than two possible values.
 
 :hammer_and_wrench: **Example: Dice Toss**  
-Jack and Rosa decide to play a game that involves four more players: Husein, Amanda, Stanley, and Ursa. 
-Since there are now six players, they decide to use a six-sided die result to determine a first player. 
+Jack and Rosa decide to play a game that involves four more players: Husein, Amanda, Stanley, and Ursa.
+Since there are now six players, they decide to use a six-sided die result to determine a first player.
 Shown below is a program that takes a die roll result as input and outputs the name of the chosen first player.
 
 {% highlight haskell %}
@@ -100,8 +100,8 @@ determineFirstPlayer(dieResult) = if dieResult == One then Jack
 
 
 :dart: **Excercise:**   
-Jack and Rosa decide they want to determine who goes first in their game based off of three coin toss results instead of one. 
-If there are more heads than tails, then Rosa will be first player, otherwise (if there are more tails than heads) Jack will be first player. 
+Jack and Rosa decide they want to determine who goes first in their game based off of three coin toss results instead of one.
+If there are more heads than tails, then Rosa will be first player, otherwise (if there are more tails than heads) Jack will be first player.
 Using nested conditional expressions, modify the `determineFirstPlayer` function in the editor below so that all three TossResult parameters are used to determine a first player.
 
 {% include exercise_module_template.html
@@ -112,7 +112,7 @@ type Player = {Jack, Rosa}
 
 determineFirstPlayer : (TossResult, TossResult, TossResult) -> Player
 determineFirstPlayer(toss1, toss2, toss3) =
-	if toss1 == Heads then Rosa else Jack -- MODIFY THIS DEFINING EXPRESSION 
+	if toss1 == Heads then Rosa else Jack -- MODIFY THIS DEFINING EXPRESSION
 "
 
 checks="determineFirstPlayer(Heads, Heads, Heads)

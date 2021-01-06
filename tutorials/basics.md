@@ -1,5 +1,5 @@
 ---
-sort: 1 # Order in the sidebar
+sort: 2 # Order in the sidebar
 #permalink: /tutorials/basics
 ---
 
@@ -13,11 +13,11 @@ game SimplestProgram
 {% endhighlight %}
 
 ## Running your Code
-BoGL code can be created and executed using a BoGL interface. The main interface can be found by following the link listed below. 
+BoGL code can be created and executed using a BoGL interface. The main interface can be found by following the link listed below.
 
 [:link: Link to main interface ](https://bogl.engr.oregonstate.edu/)
 
-There are also smaller BoGL interfaces that can be found in these tutorial pages, like the one shown below. 
+There are also smaller BoGL interfaces that can be found in these tutorial pages, like the one shown below.
 
 {% include code_module_template.html
 content = "game SimplestProgram
