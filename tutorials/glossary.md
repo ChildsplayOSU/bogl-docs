@@ -1,6 +1,6 @@
 ---
 # Add new glossary terms by editing _data/glossary_terms.yml
-sort: 13 # Order in the sidebar
+sort: 14 # Order in the sidebar
 # permalink: /tutorials/glossary
 # published: false
 ---
