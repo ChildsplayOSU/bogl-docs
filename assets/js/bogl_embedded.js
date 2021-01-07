@@ -1,7 +1,8 @@
 "use strict";
-//
-// Embedded BoGL Editor JS
-//
+/*
+ * bogl_embedded.js
+ * Embedded BoGL Editor in JS
+*/
 
 (function() {
 
@@ -193,7 +194,8 @@
 
   // Pushes item to command's input
   function input(next) {
-      commandInput.push({"input":next});
+      //commandInput.push({"input":next});
+      commandInput.push(next);
       return;
   }
 
@@ -229,6 +231,8 @@
     // replae &gt; and &lt; w/ > & < respectively
     code = code.replaceAll(/&gt;/gi, '>');
     code = code.replaceAll(/&lt;/gi, '<');
+    // update &amp; -> &
+    code = code.replaceAll(/&amp;/gi, '&');
     return code;
   }
 
@@ -516,6 +520,6 @@
 
   });
 
-  console.info("> 🤖 BoGL Embedded Editor Version 0.2.0");
+  console.info("> 🤖 BoGL Embedded Editor Version 0.3.0. Last updated Jan. 7th, 2021");
 
 })();
