@@ -127,7 +127,7 @@ factorial(x) = if x <= 1 then 1
 
 ## Examples
 
-Here are a couple of guessing games that utilize recursion.
+Here are a couple of BoGL programs that utilize recursion.
 
 :hammer_and_wrench: **Example: Guess My Favorite Color**  
 Ever try to guess a friend's favorite color?
@@ -150,4 +150,39 @@ playGame(favoriteColor) =
     else playGame(favoriteColor)
 {% endhighlight %}
 
-In this example, recursion is used to repeatedly prompt the user for input until the correct input is provided.
+In this example, recursion is used to repeatedly prompt the user for input until the correct input (which was the argument progided to the *playGame* function) is provided.
+
+<br/>
+:hammer_and_wrench: **Example: Find the Goose**  
+Imagine we would like to find the location of the first goose in a line of 5 birds. 
+
+| Spot in line | 1    | 2    | 3    | 4     | 5    |
+|--------------|------|------|------|-------|------|
+| **Bird**     | Duck | Duck | Duck | Goose | Duck |
+
+The `findGoose` function shown below will search each spot in a line of birds (starting at the spot given as argument) until it finds a spot that holds a goose. 
+
+{% highlight haskell %}
+game DuckDuckGoose
+
+type Bird = {Duck, Goose}
+type Location = Int
+
+-- The board is a line of Ducks and Geese
+type Board = Array(5, 1) of Bird
+
+type Input = Location
+
+birdLine : Board
+birdLine!(x, 1) = Duck
+birdLine!(3, 1) = Goose -- Goose at spot 3 in line
+
+-- The intitial argument of the findGoose function is 
+--  the first spot we check for in the line.
+findGoose : Location -> Location
+findGoose(lineSpot) =
+    if birdLine!(lineSpot, 1) == Goose then lineSpot
+    else findGoose(lineSpot + 1)
+{% endhighlight %}
+
+In this example, recursion is used to iterate through the line of birds until the first goose is encountered.
