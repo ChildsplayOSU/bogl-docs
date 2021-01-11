@@ -159,7 +159,7 @@ Imagine we would like to find the location of the first goose in a line of 5 bir
 |--------------|------|------|------|-------|------|
 | **Bird**     | Duck | Duck | Duck | Goose | Duck |
 
-The `findGoose` function shown below will search each spot in a line of birds (starting at the spot given as argument) until it finds a spot that holds a goose. 
+The `findGoose` function shown below will check each spot in a line of birds (starting at the spot given as argument) until it finds a spot that holds a goose. 
 
 {% highlight haskell %}
 game DuckDuckGoose
