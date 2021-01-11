@@ -1,6 +1,5 @@
 ---
-sort: 7 # Order in the sidebar
-# permalink: /tutorials/lets
+sort: 6 # Order in the sidebar
 ---
 
 # Locally Defined Values

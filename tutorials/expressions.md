@@ -1,6 +1,5 @@
 ---
-sort: 6 # Order in the sidebar
-#permalink: /tutorials/expressions
+sort: 5 # Order in the sidebar
 ---
 
 # Understanding Expressions

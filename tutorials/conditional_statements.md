@@ -1,6 +1,5 @@
 ---
-sort: 8 # Order in the sidebar
-#permalink: /tutorials/expressions
+sort: 7 # Order in the sidebar
 ---
 
 # Conditional Expressions (If/Else)

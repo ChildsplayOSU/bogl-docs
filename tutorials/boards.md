@@ -1,6 +1,5 @@
 ---
-sort: 11 # Order in the sidebar
-# permalink: /tutorials/boards
+sort: 10 # Order in the sidebar
 ---
 
 # Boards

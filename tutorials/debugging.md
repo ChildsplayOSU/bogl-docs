@@ -1,7 +1,5 @@
 ---
-sort: 13 # Order in the sidebar
-# permalink: /tutorials/debugging
-# published: false
+sort: 12 # Order in the sidebar
 ---
 
 # Testing and Debugging

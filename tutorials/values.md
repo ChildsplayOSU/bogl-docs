@@ -1,6 +1,5 @@
 ---
-sort: 4 # Order in the sidebar
-#permalink: /tutorials/values
+sort: 3 # Order in the sidebar
 ---
 
 # Values

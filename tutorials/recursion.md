@@ -1,6 +1,5 @@
 ---
-sort: 12 # Order in the sidebar
-# permalink: /tutorials/recursion
+sort: 11 # Order in the sidebar
 ---
 
 # Recursion

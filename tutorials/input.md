@@ -1,5 +1,5 @@
 ---
-sort: 9 # Order in the sidebar
+sort: 8 # Order in the sidebar
 ---
 
 # User Input

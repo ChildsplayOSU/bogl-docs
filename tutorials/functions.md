@@ -1,6 +1,5 @@
 ---
-sort: 5 # Order in the sidebar
-#permalink: /tutorials/functions
+sort: 4 # Order in the sidebar
 ---
 
 # Functions
