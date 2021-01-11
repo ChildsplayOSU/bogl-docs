@@ -1,5 +1,8 @@
 # Add new glossary terms here.
 
+- term: runtime
+  definition: The time in which the program is running.
+
 - term: interpreter
   definition: A tool/program that interprets and executes code.
 

@@ -4,9 +4,13 @@ sort: 8 # Order in the sidebar
 
 # User Input
 
-You can make a program interactive by using the *input* statement.
+By this point, you already know that you can interact with your BoGL programs by using the *interpreter*, and that you can provide input to your [functions](./functions) by specifying their arguments.
+In addition to this, there is yet another way to make your programs interactive and allow user input.
+In this tutorial we will be going over the *input* statement.
+
 The keyword `input` acts as a placeholder that will be replaced with a value provided by the user during runtime.
-Using this can allow users to make decisions while the program is running (like what move they would like to make during a turn).
+You can use this inside a program to enable it to pause for input, then resume after that input is recieved. 
+This is helpful for making programs that allow users to make multiple decisions (such as a game that requires a player to take multiple turns).
 
 When the `input` keyword is evaluated, the interpreter will prompt the user to provide input to the program (giving the message seen below).  
 ```
