@@ -94,7 +94,7 @@ This is done in order to check if the code in the editor is correct.
 You'll find these interfaces in some of the excercise sections of these tutorials.
 
 :dart: **Excercise:**  
-Inside of the editor of the tool above, replace the code `-- PUT EXPRESSION HERE` with an expression that evaluates to the value `5`.
+Inside of the editor of the tool above, replace the code `-- PUT EXPRESSION HERE` with an expression that evaluates to `5`.
 
 <br/>
 ## Comments

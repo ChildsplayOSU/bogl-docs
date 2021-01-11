@@ -4,7 +4,7 @@ sort: 3 # Order in the sidebar
 
 # Values
 
-:warning: Make sure that you have a solid understanding of [types](./types) before jumping into this tutorial.:warning:
+:warning: Make sure that you have a solid understanding of [types](./types) before jumping into this tutorial.
 
 Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.
 
