@@ -1,5 +1,11 @@
 # Add new glossary terms here.
 
+- term: interpreter
+  definition: A tool/program that interprets and executes code.
+
+- term: recursion
+  definition: The act of a function calling itself. 
+
 - term: nested let expression
   definition: A let expression within another let expression.
 
