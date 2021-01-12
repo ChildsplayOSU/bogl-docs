@@ -228,11 +228,13 @@
     code = code.replaceAll(/(?:<div>)|(?:<\/div>)/gi, '\n');
     // cleanup leftover <br> tags
     code = code.replaceAll(/<br>/gi, '\n');
-    // replae &gt; and &lt; w/ > & < respectively
+    // replace &gt; and &lt; w/ > & < respectively
     code = code.replaceAll(/&gt;/gi, '>');
     code = code.replaceAll(/&lt;/gi, '<');
     // update &amp; -> &
     code = code.replaceAll(/&amp;/gi, '&');
+	// replace &nbsp; with spaces
+    code = code.replaceAll(/&nbsp;/gi, ' ');
     return code;
   }
 
