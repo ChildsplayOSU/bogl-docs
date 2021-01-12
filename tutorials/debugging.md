@@ -100,8 +100,8 @@ Here is what the testing table might look like for this function:
 | 8                      | 4                        | 2                     | Valid integer division                            |
 | 50                     | 30                       | 1                     | Valid integer division (quotient is rounded down) |
 | 60                     | 0                        | RestrictedCalculation | Cannot divide by zero                             |
-| 1000000000000000       | 1                        | RestrictedCalculation | Numerator argument is above the allowed threshold |
-| 1  					 | 1000000000000000         | RestrictedCalculation | Denominator argument is above the allowed threshold |
+| 1000000000000001       | 1                        | RestrictedCalculation | Numerator argument is above the allowed threshold |
+| 1  					 | 1000000000000001         | RestrictedCalculation | Denominator argument is above the allowed threshold |
 
 :dart: **Excercise:**  
 With the above information kept in mind, try writing a failsafe division function called "failsafeDivide" in the editor below.
@@ -120,8 +120,8 @@ checks="failsafeDivide(10, 2)
 failsafeDivide(8, 4)
 failsafeDivide(50, 30)
 failsafeDivide(60, 0)
-failsafeDivide(1000000000000000, 1)
-failsafeDivide(1, 1000000000000000)"
+failsafeDivide(1000000000000001, 1)
+failsafeDivide(1, 1000000000000001)"
 
 expects="5
 2
@@ -135,7 +135,7 @@ RestrictedCalculation"
 <p>
 
 {% highlight haskell %}
-game Test
+game FailsafeDivision
 
 type MaybeInt = Int & {RestrictedCalculation}
 
