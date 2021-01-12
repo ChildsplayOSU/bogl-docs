@@ -3,7 +3,7 @@
 <!--The embedded editor START-->
 <div class="bogl-embed-editor">
   <div class="bogl"></div>
-  <div class="left bogl-code" contenteditable="true">
+  <div class="left bogl-code" contenteditable="true" spellcheck="false">
 	  {% if page.content %}
 	  	{{ include.content | newline_to_br }}
 	  {% endif %}
@@ -11,7 +11,7 @@
   </div>
   <div class="right">
     <div class="bogl-repl-result"></div>
-    <input class="bogl-repl-run" placeholder=">" type="text"/>
+    <input class="bogl-repl-run" placeholder=">" type="text" spellcheck="false"/>
   </div>
 </div>
 <br/>
