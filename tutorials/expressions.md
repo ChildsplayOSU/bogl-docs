@@ -54,7 +54,7 @@ If we instead wanted the expression to evaluate `4 / 2` first, we can wrap it in
 {% endhighlight %}
 
 
-Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learing these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements) and [loops](loops), which we will cover in further tutorials.
+Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements) and [loops](loops), which we will cover in further tutorials.
 
 <br/>
 ## Arithmetic Operators
