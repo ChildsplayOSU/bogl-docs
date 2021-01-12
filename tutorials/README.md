@@ -9,7 +9,7 @@ Welcome to BoGL, the Board Game Language! These tutorials will teach you the too
 
 Shown below are the tutorials listed in the order that we recommend them.
 
-1. [Getting Started with BoGL](getting_started)
+1. [Getting Started with BoGL](GettingStarted)
 1. [Understanding Types](types)
 1. [Values](values)
 1. [Functions](functions)
