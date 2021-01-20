@@ -19,7 +19,7 @@ When you access the [online tool](https://bogl.engr.oregonstate.edu/) you should
 
 On this page there are 2 main areas of focus: the **editor** (to the left) and the **interpreter** (to the right).
 
-The white screen on the left is **editor**, this is where you can type in your code to run. A simple BoGL program might be written as follows in the white portion of the screen:
+The white screen on the left is the **editor**, this is where you can type in your code to run. A simple BoGL program might be written as follows in the white portion of the screen on the left:
 ```
 game Example
 
@@ -78,7 +78,7 @@ Some of the tutorials on this site will have a tool with a fixed interpreter, li
 {% include exercise_module_template.html
 content = "game FixedInterpreterExample
 
-five : Int 
+five : Int
 five = -- PUT EXPRESSION HERE
 "
 

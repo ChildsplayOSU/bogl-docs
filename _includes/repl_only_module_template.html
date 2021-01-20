@@ -1,0 +1,18 @@
+<script src="{{site.baseurl}}/assets/js/bogl_embedded.js" defer></script>
+
+<!--The embedded editor START-->
+<div class="bogl-embed-editor">
+  <div class="bogl"></div>
+  <!--keep but hide this div, so the 'haskell' easter egg works-->
+  <div class="bogl-code" style="display:none">game Interactive</div>
+  <div class="right" style="width:100%">
+    <div class="bogl-repl-result">
+      {% if page.content %}
+  	  	{{ include.content | newline_to_br }}
+  	  {% endif %}
+    </div>
+    <input class="bogl-repl-run" placeholder=">" type="text" spellcheck="false"/>
+  </div>
+</div>
+<br/>
+<!--END-->
