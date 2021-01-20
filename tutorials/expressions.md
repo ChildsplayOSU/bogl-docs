@@ -1,5 +1,5 @@
 ---
-sort: 5 # Order in the sidebar
+sort: 4 # Order in the sidebar
 ---
 
 # Understanding Expressions

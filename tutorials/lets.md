@@ -1,5 +1,5 @@
 ---
-sort: 6 # Order in the sidebar
+sort: 5 # Order in the sidebar
 ---
 
 # Locally Defined Values

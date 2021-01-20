@@ -4,6 +4,23 @@ sort: 1 # Order in the sidebar
 
 # Getting Started with BoGL
 
+:leaves: **This tutorial covers:**
+- The BoGL basics
+- The BoGL Online Tool
+- The interpreter
+- The editor
+- Games
+- Comments
+
+:deciduous_tree: **At the end, you should be able to:**
+- Describe the editor and interpreter
+- Write a simple expression
+- Run an expression in the interpreter
+- Define a game
+- Write comments
+
+## BoGL Basics
+
 Getting started with BoGL is straightforward, as you can start coding directly in our [online tool](https://bogl.engr.oregonstate.edu/).
 
 You can also watch our [Getting Started with BoGL video](https://media.oregonstate.edu/media/1_d5w6ypwr) (shown below), which goes over this same material, and quickly gets you writing your first BoGL program.

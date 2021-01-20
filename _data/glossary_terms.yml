@@ -1,5 +1,20 @@
 # Add new glossary terms here.
 
+- term: loop
+  definition: Synonym of repeat.
+
+- term: input (statement)
+  definition: A BoGL keyword that, when encountered in a program, pauses execution until a value is entered by the user. The value entered by the user replaces the keyword in the program.
+
+- term: input (to a function)
+  definition: Synonym of argument.
+
+- term: testing
+  definition: The process of ensuring a program works the way it is intended to.
+
+- term: debugging 
+  definition: The process of fixing bugs in a program. 
+
 - term: runtime
   definition: The time in which the program is running.
 

@@ -4,7 +4,30 @@ sort: 3 # Order in the sidebar
 
 # Values
 
-:warning: Make sure that you have a solid understanding of [types](./types) before jumping into this tutorial.
+:leaves: **This tutorial covers:**
+- Defining values
+- Calling values
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Write a value definition
+- Call a value from the interpreter
+
+
+## Creating Values
+
+Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.
+
+In these first few tutorials, we will create a program using the BoGL language that will take the result of a coin toss and choose who gets to go first based on that result.
+
+In order to do this, our program must be able to...
+
+1. Capture the inputted value of the coin toss result.
+2. Output whether Jack or Rosa gets to go first based off of the result value.
+
 
 Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.
 

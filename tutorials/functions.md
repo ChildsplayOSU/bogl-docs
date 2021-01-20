@@ -1,10 +1,26 @@
 ---
-sort: 4 # Order in the sidebar
+sort: 6 # Order in the sidebar
 ---
 
 # Functions
 
-:warning: Make sure that you have a solid understanding of [types](./types) and [values](./values) before jumping into this tutorial.
+:leaves: **This tutorial covers:**
+- Defining values
+- Calling values
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Functions](./values)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Describe the difference between a function parameter and a function argument
+- Describe a function's return value
+- Create a function with a single parameter
+- Create a function with multiple parameters
+- Provide arguments to a function 
+- Call a function from the interpreter
+
 
 ## Introduction
 Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.

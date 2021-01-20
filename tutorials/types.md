@@ -4,6 +4,25 @@ sort: 2 # Order in the sidebar
 
 # Understanding Types
 
+:leaves: **This tutorial covers:**
+- Enumerated types
+- Built-in types (Ints and Bools)
+- Tuples
+- Extended types
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Write a type definition
+- Create an enumerated type
+- Describe the set of possible values for a Bool
+- Describe the set of possible values for an Int
+- Create an extended type
+- Create a tuple type
+
+## Basic Types
+
 Jack and Rosa want to play a board game. They decide that who gets to go first should be determined by the result of a coin toss.
 
 In these first few tutorials, we will create a program using the BoGL language that will take the result of a coin toss and choose who gets to go first based on that result.
