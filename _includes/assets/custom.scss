@@ -20,7 +20,7 @@ a.caption {
   color: $primary-color !important;
 }
 
-/* icon class CSS from: 
+/* icon class CSS from:
  * https://github.com/The-Code-In-Sheep-s-Clothing/bogl-editor/blob/master/src/Navbar/SpielNavbar.css
  */
 .icon {
@@ -235,4 +235,9 @@ a.caption {
   border-radius: 4px;
   margin-bottom: 4px;
   margin-top: 4px;
+}
+
+.bogl-repl-result cmd {
+  font-weight: bold;
+  color: #3c454e;
 }

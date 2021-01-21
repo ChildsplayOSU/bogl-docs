@@ -15,7 +15,7 @@ The expression above consists of values (`2`, `3`, `4`) and operators (`+`, `-`)
 Expressions in BoGL are usually found inside of [value](./values) and [function](./functions) definitions, however, you may still evaluate one by typing it directly into the interpreter. This is useful for experimentation and practice. Try typing the expression `2 + 3 - 4` into the interpreter. It should return 1.
 
 {% include repl_only_module_template.html
-content = "> Type '2 + 3 - 4' in the interpreter below and press enter.
+content = "Type <cmd>2 + 3 - 4</cmd> in the interpreter below and press enter.
 "%}
 
 Lets look at some more examples!
@@ -27,7 +27,7 @@ not(True)
 The expression above consists of a built-in function `not` and a value `True`. We may not know what this function does yet, but we do know that it will evaluate to some value. Try entering this expression into the interpreter to see the resulting value.
 
 {% include repl_only_module_template.html
-content = "> Type 'not(True)' in the interpreter below and press enter.
+content = "Type <cmd>not(True)</cmd> in the interpreter below and press enter.
 "%}
 
 An expression can be passed as an argument to a function as long as it evaluates to the function's parameter type. We saw in the example above that the function `not` takes a **Bool** parameter and returns a **Bool**. Try and see what happens when you enter the expression `not(not(True))` into the interpreter.
