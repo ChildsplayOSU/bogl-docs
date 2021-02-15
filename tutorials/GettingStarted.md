@@ -34,6 +34,8 @@ When you access the [online tool](https://bogl.engr.oregonstate.edu/) you should
 
 ![The BoGL online tool.](../imgs/editor-blank.png)
 
+If your page isn't blank then BoGL has probably been used on your computer sometime in the past!
+
 On this page there are 2 main areas of focus: the **editor** (to the left) and the **interpreter** (to the right).
 
 The white screen on the left is the **editor**, this is where you can type in your code to run. A simple BoGL program might be written as follows in the white portion of the screen on the left:
