@@ -72,7 +72,15 @@ If the cert was outdated, this should immediately rectify the issue. In most cas
 
 ## Updating the Documentation
 
-The documentation you're reading now is also held on the same site, but in a different location under `nelsonai`'s account. You can update the documentation by running `update_docs.sh` as that user.
+The documentation you're reading now is also held on the same site, but in a different location under `nelsonai`'s account. You can update the documentation by running the following commands as that user in their home folder.
+```bash
+# specifically use the following ruby version
+# does not work from a script...
+rvm use 2.7.1
+
+# update the docs normally
+./update_docs.sh
+```
 
 Since the docs are cloned via git, this repo is locked to only working with that user locally, but if the reader has the time this could be moved to ubuntu as well (and the nginx config would need to be changed too).
 
