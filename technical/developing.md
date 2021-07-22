@@ -20,7 +20,7 @@ stack build
 
 Once BoGL has been successfully built, you can choose to work with either the command line (`stack ghci Bogl-Lang:exe:bogl`) or the server (`stack ghci Bogl-Lang:exe:boglserver`). The only difference between the two is the forward facing interface, with the first providing a standalone command line that works on a given file and the server having only a REST interface.
 
-You can run `stack ghci` and enter `1` or `2` to select between either the command line or server variants. It's worth noting that any language features can be observed using either variant, so it may be up to your development preference.
+You can run `stack ghci` and enter `1` or `2` to select between either the command line or server variants. It's worth noting that any language features can be observed using either variant, so it's up to your development preference.
 
 ## Installing the BoGL Website
 
@@ -32,7 +32,6 @@ git clone https://github.com/The-Code-In-Sheep-s-Clothing/bogl-editor.git
 cd bogl-editor
 
 # make sure your 'node' version is recent, version 14 or so should be good.
-
 npm install
 ```
 
@@ -47,7 +46,7 @@ stack ghci Bogl-Lang:exe:boglserver
 # start the server on port 5174
 > startServer 5174
 ```
-You can also run `stack build` and `stack install` to make `boglserver` accessible from the terminal. In that case, you can then run `boglserver 5174` instead.
+You can also run `stack build` and `stack install` to make the executable `boglserver` accessible from the terminal. In that case, you can then run `boglserver 5174` instead.
 
 For the editor.
 ```bash
@@ -55,7 +54,7 @@ npm start
 ```
 This will open up a new tab in your browser that will show the editor. If your BoGL server is running locally on the same network, you'll be able to write programs and evaluate expressions just like you would normally.
 
-If you want to test things with the BoGL command line run `stack build` and `stack install` to setup `bogl`. This executable expects a BoGL file as its sole argument, like `bogl MyProgram.bgl`, and will start a REPL to evaluate expressions within the context of that program. Typing `exit` or `:q` will close the REPL.
+If you want to test things with the BoGL command line run `stack build` and `stack install` to setup `bogl` (this installs the same executable from before as well). This executable expects a BoGL file as its sole argument, like `bogl MyProgram.bgl`, and will start a REPL to evaluate expressions within the context of that program. Typing `exit` or `:q` will close the REPL.
 
 ## Testing
 
@@ -68,6 +67,6 @@ When working on any part of the language (addition or a bug-fix).
 - Start up the web editor, and verify that your changes work as expected from there as well.
     - this can reveal subtle issues that only arise from the server-client setup
 
-When working on the editor it's similar to the later part of the normal testing step. Testing is slightly more difficult to setup on the editor given that it has to work with `React`, but when possible add tests in advance to verify your functionality before you add it in. You can always check these via `npm run test`.
+When working on the editor it's similar to the later part of the normal testing step. Testing is slightly more difficult to setup on the editor given that it has to work with `React`, but when possible add tests in the appropriate **YourFile.test.tsx** testing file (unless it exists already) to verify your functionality before you add it in. These tests are written using Jasmine, so it may help to double check their documentation. You can always check these tests via `npm run test`.
 
-As a final note, whenever you making changes to any part of the API, or to how the editor talks to the server, you should always verify that your changes do not break the server-client structure. There are no complete tests to verify that the server and client boot and run together as expected, so you will need to test these aspects yourself by running them through the web editor itself. On the brightside, you shouldn't have to check too many programs if you know what you're looking for in advance.
+As a final note, whenever you making changes to any part of the API, or to how the editor talks to the server, you should always verify that your changes do not break the server-client structure. There are no complete tests to verify that the server and client boot and run together as expected, so you will need to test these aspects manually by running them through the web editor itself. On the brightside, you shouldn't have to check too many programs if you know what you're looking for in advance.
