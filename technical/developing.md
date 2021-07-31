@@ -18,9 +18,9 @@ cd bogl
 stack build
 ```
 
-Once BoGL has been successfully built, you can choose to work with either the command line (`stack ghci Bogl-Lang:exe:bogl`) or the server (`stack ghci Bogl-Lang:exe:boglserver`). The only difference between the two is the forward facing interface, with the first providing a standalone command line that works on a given file and the server having only a REST interface.
+Once BoGL has been successfully built, you can choose to work with either the command line (`stack ghci Bogl-Lang:exe:bogl`) or the server (`stack ghci Bogl-Lang:exe:boglserver`). The difference between the two is the forward facing interface, with the first (bogl) providing a standalone command line that works on a given file and the second (boglserver) having only a REST interface. If you want to run BoGL expressions in the command line you want to use the first option, `stack ghci Bogl-Lang:exe:bogl`. For details on this, please read the section [For the Command Line](#for-the-command-line) below.
 
-You can run `stack ghci` and enter `1` or `2` to select between either the command line or server variants. It's worth noting that any language features can be observed using either variant, so it's up to your development preference.
+You can also run `stack ghci` by itself and you'll be prompted to enter `1` or `2` to select between either the command line or server variants. It's worth noting that most language features can be observed using either variant, so it's up to your development preference.
 
 ## Installing the BoGL Website
 
@@ -39,7 +39,8 @@ npm install
 
 To verify that changes you've made don't break anything, and that the server and the editor work as expected, you can run them as follows.
 
-For the server.
+### For the server
+
 ```bash
 stack ghci Bogl-Lang:exe:boglserver
 
@@ -54,7 +55,40 @@ npm start
 ```
 This will open up a new tab in your browser that will show the editor. If your BoGL server is running locally on the same network, you'll be able to write programs and evaluate expressions just like you would normally.
 
-If you want to test things with the BoGL command line run `stack build` and `stack install` to setup `bogl` (this installs the same executable from before as well). This executable expects a BoGL file as its sole argument, like `bogl MyProgram.bgl`, and will start a REPL to evaluate expressions within the context of that program. Typing `exit` or `:q` will close the REPL.
+### For the Command Line
+
+If you want to test things with the BoGL command line you can start a simple repl as follows.
+
+```bash
+stack ghci Bogl-Lang:exe:bogl
+> repl
+```
+
+or
+
+```bash
+> main
+```
+
+`main` will check to see if there are any command-line arguments present. In the case where there aren't any arguments present, the repl will be started without loading a file, essentially the same as running `repl`.
+
+Both these options start a repl without loading a file. If you want to start a repl in the context of BoGL program you can use this instead.
+
+```bash
+> load "MyProgram.bgl"
+```
+
+As a side-note, in ghci the delete key can add characters instead of removing the last character while typing expressions in. The standalone binary does not have this problem. To rectify this you can install `bogl` as a local executable by running `stack build` and `stack install` to setup `bogl` (this installs the same executable from before as well). This executable expects an optional BoGL file as its sole argument, like `bogl "MyProgram.bgl"`, and will start a REPL to evaluate expressions within the context of that program. Typing `exit` or `:q` will close the REPL.
+
+```bash
+# starts a repl w/out a file
+bogl
+
+# loads a file and starts a repl
+bogl "MyProgram.bgl"
+```
+
+While the repl is running expressions can be entered and evaluated; much the same as is done on the website. In the case you loaded a file (and you want to reload the file to factor in new changes) you can enter `:r` to reload the file's contents.
 
 ## Testing
 
