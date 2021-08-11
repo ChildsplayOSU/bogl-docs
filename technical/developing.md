@@ -6,6 +6,16 @@ sort: 4 # Order in the sidebar
 
 This section is intended for developers that will be working on the BoGL stack. Regardless of whether you are working on the language, the server, or the website, it is helpful to have a development environment setup that allows running them all together.
 
+## Prerequisites
+
+The following software & tools are required to develop with BoGL.
+
+- [Git](https://git-scm.com/)
+- [stack - for Haskell](https://docs.haskellstack.org/en/stable/README/)
+- [Node.JS and npm, installed together - for the online editor](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+Most unix flavor systems should work nicely with these tools and instructions. A Windows system will also work as well, but it's advisable to have a terminal emulator of some sort to work with.
+
 ## Installing BoGL (language & server)
 
 BoGL can be installed via git.
