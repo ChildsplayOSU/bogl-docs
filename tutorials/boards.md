@@ -4,6 +4,31 @@ sort: 10 # Order in the sidebar
 
 # Boards
 
+:leaves: **This tutorial covers:**
+- What the type 'board' is
+- What an array is
+- How to create a board & a board value
+- Initializing a board
+- How to access points on a board
+- All the built in functions inside the type 'board'
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Values](./values)
+- [Understanding Expressions](./expressions)
+- [Locally Defined Values](./lets)
+- [Functions](./functions)
+- [Conditional Expressions (If/Else)](./conditional_statements)
+- [User Input](./input)
+- [Loops](./loops)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Use a board in anyway you want
+- Understand how to use all the features that come with 'board'
+
+
+
 ## Background: What is a BoGL Board?
 BoGL wouldn't be a board game language if there weren't a way to create a board!
 In BoGL the type *Board* is a name we use to describe *arrays*.

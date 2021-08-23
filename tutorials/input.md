@@ -4,6 +4,23 @@ sort: 8 # Order in the sidebar
 
 # User Input
 
+:leaves: **This tutorial covers:**
+- What input statements are
+- What the 'input' & 'clear' keywords do
+- Example of input and clear being used
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Values](./values)
+- [Understanding Expressions](./expressions)
+- [Locally Defined Values](./lets)
+- [Functions](./functions)
+- [Conditional Expressions (If/Else)](./conditional_statements)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Use the 'input' and 'clear' keywords
+
 By this point, you already know that you can interact with your BoGL programs by using the *interpreter*, and that you can provide input to your [functions](./functions) by specifying their arguments.
 In addition to this, there is yet another way to make your programs interactive and allow user input.
 In this tutorial we will be going over the *input* statement.

@@ -4,6 +4,27 @@ sort: 9 # Order in the sidebar
 
 # Loops
 
+:leaves: **This tutorial covers:**
+- The 'while' and 'do' expression
+- How to write a loop using while
+- When to use a loop
+- Using a tuple with loops
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Values](./values)
+- [Understanding Expressions](./expressions)
+- [Locally Defined Values](./lets)
+- [Functions](./functions)
+- [Conditional Expressions (If/Else)](./conditional_statements)
+- [User Input](./input)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Write a loop using 'while' and 'do'
+- Understand when to use loops in an algorithm
+
+
 ## What are While Loops?
 
 A while loop is an expression in BoGL that takes two other expressions, a condition and a body. The condition is an expression that evaluates to a result of `Bool`. The body is an expression that is evaluated every time the condition evaluates to `True`. A while loop repeatedly evaluates the condition, and for each time that it is `True` it evaluates the body again. If the condition evaluates to `False`, the while loop returns the last value produced by the body. If the condition evaluates to `False` on the first check, the body is never evaluated, and the value that was passed into the while loop is returned unchanged.

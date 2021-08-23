@@ -4,6 +4,27 @@ sort: 7 # Order in the sidebar
 
 # Conditional Expressions (If/Else)
 
+:leaves: **This tutorial covers:**
+- What an 'if then else' statement is
+- How to write conditional expressions
+- Example of how conditional expressions work
+- What a nested conditional expression is
+- How to write a nested conditional expression
+- Example of a nested conditional expression
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Values](./values)
+- [Understanding Expressions](./expressions)
+- [Locally Defined Values](./lets)
+- [Functions](./functions)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Understand what an 'if-then-else' statement is
+- Use an 'if-then-else' statement
+- Use a nested 'if-then-else' statement
+
 Sometimes you may want the resulting value of an expression to be dependent on a *condition*.
 In BoGL you can write a *conditional expression*, also known as an *if/else statement* or *conditional statement*.
 A conditional expression is composed of three sub-expressions.
