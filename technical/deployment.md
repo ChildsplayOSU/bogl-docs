@@ -63,7 +63,7 @@ nginx -s stop
 
 You may have been wondering why we have *two* web servers, boglserver and nginx. We have both so we can secure the communication between the client and our AWS instance, especially since the users of BoGL are a mix of students and teachers. There are two connections, one from the client to NGINX, and another from NGINX to boglserver. Given that the connection from NGINX to boglserver is conducted locally on the same machine, the connection we need to secure is the one that exists from the client to NGINX; the one over the internet and outside our AWS box. Additionally, implementing SSL/TLS support via Servant by hand is unlikely to be as reliable as trusting a well established and dedicated web server application. This is *especially* critical considering that users may be minors, and as such their data needs to be protected.
 
-The SSL certificate used to secure the connection to bogl.engr.oregonstate.edu is issued from [Lets Encrypt](https://letsencrypt.org/), a non-profit CA that has been issuing quality certificates for some time now. They have a command line utility that we use periodically to update our certs, which is done automatically. However, in the event that the cert is not renewed on time, you can also renew it by hand.
+The SSL certificate used to secure the connection to bogl.engr.oregonstate.edu is issued from [Lets Encrypt](https://letsencrypt.org/), a non-profit CA that has been issuing quality certificates for some time now. They have a command line utility that we use periodically to update our certs, which is done automatically via a cronjob under the `root` account. However, in the event that the cert is not renewed on time, you can also renew it by hand running as `root`.
 ```bash
 # renew any local certs via 'certbot'
 # this should renew our issued cert for bogl.engr.oregonstate.edu
@@ -73,6 +73,8 @@ certbot renew
 nginx -s reload
 ```
 If the cert was outdated, this should immediately rectify the issue. In most cases, this should not be a problem, but it is important to keep in mind how to do this.
+
+If you plan on moving the directory for the website frontend (located in `/home/ubuntu/bogl-editor/build/`), you'll also need to update the letsencrypt certificate renewal configuration held within `/etc/letsencrypt/renewal/bogl.engr.oregonstate.edu.conf`. The directory towards the end of the file indicates where a challenge can be uploaded using the existing webroot through NGINX without disrupting service to the site itself. This allows letsencrypt to verify our certificate renewal requests.
 
 ## Updating the Documentation
 
