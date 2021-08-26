@@ -4,6 +4,23 @@ sort: 5 # Order in the sidebar
 
 # Locally Defined Values
 
+:leaves: **This tutorial covers:**
+- What a Let expressions is
+- How to write a let expression
+- What Nested let expressions are
+- How to write a nested let expression
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Values](./values)
+- [Understanding Expressions](./expressions)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Write a let and nest let expression
+- Understand how let and nested let expressions work
+
+
 In the [values](values) tutorial we learned how to create values that we can use in our BoGL programs.
 Whereas normal values can be used throughout multiple parts of your program, a locally defined value can only be used in a single specified expression.
 This is useful if you know that a value is only needed for a single expression, or if you want to break an existing expression up into something more concise.

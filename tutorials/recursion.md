@@ -4,6 +4,27 @@ sort: 11 # Order in the sidebar
 
 # Recursion
 
+:leaves: **This tutorial covers:**
+- What recursion is
+- Example of when & how to use recursion
+- What a base case is & it's importance
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Values](./values)
+- [Understanding Expressions](./expressions)
+- [Locally Defined Values](./lets)
+- [Functions](./functions)
+- [Conditional Expressions (If/Else)](./conditional_statements)
+- [User Input](./input)
+- [Loops](./loops)
+- [Boards](./boards)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Use recursion in any algorithm
+- Understand how recursion works
+
 ## What is Recursion?
 Recursion is the act of a function making a call to itself. This technique is used to repeat computations, and can be used as an alternative to the [*while loop*](./loops).
 

@@ -4,6 +4,30 @@ sort: 12 # Order in the sidebar
 
 # Testing and Debugging
 
+:leaves: **This tutorial covers:**
+- What bugs are
+- Advice on how to solve issues within a program
+- What the different types of errors are
+- How to identify what error a program has
+- Tips on how to prevent bugs
+
+:seedling: **Before starting, you should be familiar with:**
+- [The BoGL basics](./GettingStarted.md)
+- [Types](./types)
+- [Values](./values)
+- [Understanding Expressions](./expressions)
+- [Locally Defined Values](./lets)
+- [Functions](./functions)
+- [Conditional Expressions (If/Else)](./conditional_statements)
+- [User Input](./input)
+- [Loops](./loops)
+- [Boards](./boards)
+- [Recursion](./recursion)
+
+:deciduous_tree: **At the end, you should be able to:**
+- Solve any bugs a program has
+- Understand how a bug occurs & how to try and prevent them for the future.
+
 This guide is here to give advice on strategies one might use to prevent and resolve issues with their programs.
 BoGL programs and bugs are used as examples in this guide, but the techniques and strategies discussed can be used in other contexts as well.
 
