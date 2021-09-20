@@ -5,10 +5,8 @@ sort: 5 # Order in the sidebar
 # Locally Defined Values
 
 :leaves: **This tutorial covers:**
-- What a Let expressions is
-- How to write a let expression
-- What Nested let expressions are
-- How to write a nested let expression
+- Let expressions
+- Nested let expressions
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -17,8 +15,9 @@ sort: 5 # Order in the sidebar
 - [Understanding Expressions](./expressions)
 
 :deciduous_tree: **At the end, you should be able to:**
-- Write a let and nest let expression
-- Understand how let and nested let expressions work
+- Illustrate what let and nested let expressions are
+- Write a let and nested let expression
+- Express how let and nested let expressions work
 
 
 In the [values](values) tutorial we learned how to create values that we can use in our BoGL programs.

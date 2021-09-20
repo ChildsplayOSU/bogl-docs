@@ -5,11 +5,9 @@ sort: 4 # Order in the sidebar
 # Understanding Expressions
 
 :leaves: **This tutorial covers:**
-- What an expression is
-- How to identify an expression
-- Examples of expressions
-- The 3 types of operators
-- How to use the operators in BoGL
+- Expression Identification
+- Expression Examples
+- Operator Types
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -19,6 +17,7 @@ sort: 4 # Order in the sidebar
 :deciduous_tree: **At the end, you should be able to:**
 - Identify what an expression is
 - Write out math equations using operators
+- How to use the operators in BoGL
 
 
 
