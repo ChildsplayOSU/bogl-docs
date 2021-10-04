@@ -21,7 +21,7 @@ sort: 4 # Order in the sidebar
 
 
 
-An *expression* is something that must be evaluated in order to determine its value. An expression in BoGL can consist of [values](values), [operators](expressions#arithmetic-operators), [functions](./functions), [if/else statements](./conditional_statements), [local value definitions](./lets), and [loops](./loops) that together evaluate to some value. Not knowing what all of those things are is okay, it is still a good idea to get an early start on understanding the concept of an expression before completely comprehending all that it can be. Let's look at an example to illustrate the idea of an expression.
+An *expression* is something that must be evaluated in order to determine its value. An expression in BoGL can consist of [values](values), [operators](expressions#arithmetic-operators), [functions](./functions), [if/else statements](./conditional_statements), and [local value definitions](./lets) that together evaluate to some value. Not knowing what all of those things are is okay, it is still a good idea to get an early start on understanding the concept of an expression before completely comprehending all that it can be. Let's look at an example to illustrate the idea of an expression.
 
 {% highlight haskell %}
 2 + 3 - 4
