@@ -7,7 +7,7 @@ sort: 9 # Order in the sidebar
 :leaves: **This tutorial covers:**
 - Type 'board'
 - Arrays
-- Creating board & board values
+- Creating board and board values
 - Initializing a board
 - Accessing points within a board
 - Board's built in functions
