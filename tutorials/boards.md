@@ -1,5 +1,5 @@
 ---
-sort: 10 # Order in the sidebar
+sort: 9 # Order in the sidebar
 ---
 
 # Boards
@@ -21,7 +21,6 @@ sort: 10 # Order in the sidebar
 - [Functions](./functions)
 - [Conditional Expressions (If/Else)](./conditional_statements)
 - [User Input](./input)
-- [Loops](./loops)
 
 :deciduous_tree: **At the end, you should be able to:**
 - Use a board within algorithms
