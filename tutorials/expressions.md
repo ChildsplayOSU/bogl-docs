@@ -67,7 +67,7 @@ If we instead wanted the expression to evaluate `4 / 2` first, we can wrap it in
 {% endhighlight %}
 
 
-Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements) and [loops](loops), which we will cover in further tutorials.
+Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements), which we will cover in further tutorials.
 
 <br/>
 ## Arithmetic Operators
@@ -86,7 +86,7 @@ Since integers cannot be fractional values, the result of a division in BoGL wil
 
 <br/>
 ## Relational Operators
-Relational operators always evaluate to a **Bool**. They are commonly used as conditions for [conditional expressions](conditional_statements) and [loops](loops). You can think of these operators as evaluating a *relationship* between two values. For example, the relational operator `==` will check to see whether the operands are equal to eachother. If the operands are equal, then the expression will evaluate to **True**, otherwise it will evaluate to **False**. This operator is evaluating whether a relationship of equivalence exists between the two operands.
+Relational operators always evaluate to a **Bool**. They are commonly used as conditions for [conditional expressions](conditional_statements). You can think of these operators as evaluating a *relationship* between two values. For example, the relational operator `==` will check to see whether the operands are equal to eachother. If the operands are equal, then the expression will evaluate to **True**, otherwise it will evaluate to **False**. This operator is evaluating whether a relationship of equivalence exists between the two operands.
 
 | Integer Specific Relational Operator  | Symbol | Example Expression | Example's Evaluation |
 |---------------------------------------|--------|--------------------|----------------------|
