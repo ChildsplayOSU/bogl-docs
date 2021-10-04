@@ -1,5 +1,5 @@
 ---
-sort: 12 # Order in the sidebar
+sort: 11 # Order in the sidebar
 ---
 
 # Testing and Debugging
@@ -19,7 +19,6 @@ sort: 12 # Order in the sidebar
 - [Functions](./functions)
 - [Conditional Expressions (If/Else)](./conditional_statements)
 - [User Input](./input)
-- [Loops](./loops)
 - [Boards](./boards)
 - [Recursion](./recursion)
 
