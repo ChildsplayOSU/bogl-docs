@@ -21,7 +21,7 @@ sort: 10 # Order in the sidebar
 
 :deciduous_tree: **At the end, you should be able to:**
 - Use recursion in any algorithm
-- Ullustrate how recursion works
+- Illustrate how recursion works
 - Explain what a base case is & it's importance
 
 ## What is Recursion?
