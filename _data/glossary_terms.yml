@@ -1,5 +1,8 @@
 # Add new glossary terms here.
 
+- term: condition
+  definition: An expression that determines the evaluation of a control structure.
+
 - term: loop
   definition: Synonym of repeat.
 

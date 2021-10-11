@@ -1,16 +1,16 @@
 ---
-sort: 10 # Order in the sidebar
+sort: 9 # Order in the sidebar
 ---
 
 # Boards
 
 :leaves: **This tutorial covers:**
-- What the type 'board' is
-- What an array is
-- How to create a board & a board value
+- Type 'board'
+- Arrays
+- Creating board and board values
 - Initializing a board
-- How to access points on a board
-- All the built in functions inside the type 'board'
+- Accessing points within a board
+- Board's built in functions
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -21,11 +21,11 @@ sort: 10 # Order in the sidebar
 - [Functions](./functions)
 - [Conditional Expressions (If/Else)](./conditional_statements)
 - [User Input](./input)
-- [Loops](./loops)
 
 :deciduous_tree: **At the end, you should be able to:**
-- Use a board in anyway you want
-- Understand how to use all the features that come with 'board'
+- Use a board within algorithms
+- Express how to use all the features that come with 'board'
+- Explain why the type Board is unique
 
 
 

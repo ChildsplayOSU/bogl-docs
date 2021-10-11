@@ -5,11 +5,9 @@ sort: 4 # Order in the sidebar
 # Understanding Expressions
 
 :leaves: **This tutorial covers:**
-- What an expression is
-- How to identify an expression
-- Examples of expressions
-- The 3 types of operators
-- How to use the operators in BoGL
+- Expression Identification
+- Expression Examples
+- Operator Types
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -19,10 +17,11 @@ sort: 4 # Order in the sidebar
 :deciduous_tree: **At the end, you should be able to:**
 - Identify what an expression is
 - Write out math equations using operators
+- How to use the operators in BoGL
 
 
 
-An *expression* is something that must be evaluated in order to determine its value. An expression in BoGL can consist of [values](values), [operators](expressions#arithmetic-operators), [functions](./functions), [if/else statements](./conditional_statements), [local value definitions](./lets), and [loops](./loops) that together evaluate to some value. Not knowing what all of those things are is okay, it is still a good idea to get an early start on understanding the concept of an expression before completely comprehending all that it can be. Let's look at an example to illustrate the idea of an expression.
+An *expression* is something that must be evaluated in order to determine its value. An expression in BoGL can consist of [values](values), [operators](expressions#arithmetic-operators), [functions](./functions), [if/else statements](./conditional_statements), and [local value definitions](./lets) that together evaluate to some value. Not knowing what all of those things are is okay, it is still a good idea to get an early start on understanding the concept of an expression before completely comprehending all that it can be. Let's look at an example to illustrate the idea of an expression.
 
 {% highlight haskell %}
 2 + 3 - 4
@@ -68,7 +67,7 @@ If we instead wanted the expression to evaluate `4 / 2` first, we can wrap it in
 {% endhighlight %}
 
 
-Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements) and [loops](loops), which we will cover in further tutorials.
+Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements), which we will cover in further tutorials.
 
 <br/>
 ## Arithmetic Operators
@@ -87,7 +86,7 @@ Since integers cannot be fractional values, the result of a division in BoGL wil
 
 <br/>
 ## Relational Operators
-Relational operators always evaluate to a **Bool**. They are commonly used as conditions for [conditional expressions](conditional_statements) and [loops](loops). You can think of these operators as evaluating a *relationship* between two values. For example, the relational operator `==` will check to see whether the operands are equal to eachother. If the operands are equal, then the expression will evaluate to **True**, otherwise it will evaluate to **False**. This operator is evaluating whether a relationship of equivalence exists between the two operands.
+Relational operators always evaluate to a **Bool**. They are commonly used as conditions for [conditional expressions](conditional_statements). You can think of these operators as evaluating a *relationship* between two values. For example, the relational operator `==` will check to see whether the operands are equal to eachother. If the operands are equal, then the expression will evaluate to **True**, otherwise it will evaluate to **False**. This operator is evaluating whether a relationship of equivalence exists between the two operands.
 
 | Integer Specific Relational Operator  | Symbol | Example Expression | Example's Evaluation |
 |---------------------------------------|--------|--------------------|----------------------|

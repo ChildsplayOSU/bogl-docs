@@ -1,6 +1,6 @@
 ---
 # Add new glossary terms by editing _data/glossary_terms.yml
-sort: 13 # Order in the sidebar
+sort: 12 # Order in the sidebar
 ---
 
 # Glossary

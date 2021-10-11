@@ -1,13 +1,12 @@
 ---
-sort: 11 # Order in the sidebar
+sort: 10 # Order in the sidebar
 ---
 
 # Recursion
 
 :leaves: **This tutorial covers:**
-- What recursion is
-- Example of when & how to use recursion
-- What a base case is & it's importance
+- Recursion & Examples
+- Base Cases
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -18,15 +17,15 @@ sort: 11 # Order in the sidebar
 - [Functions](./functions)
 - [Conditional Expressions (If/Else)](./conditional_statements)
 - [User Input](./input)
-- [Loops](./loops)
 - [Boards](./boards)
 
 :deciduous_tree: **At the end, you should be able to:**
 - Use recursion in any algorithm
-- Understand how recursion works
+- Illustrate how recursion works
+- Explain what a base case is & it's importance
 
 ## What is Recursion?
-Recursion is the act of a function making a call to itself. This technique is used to repeat computations, and can be used as an alternative to the [*while loop*](./loops).
+Recursion is the act of a function making a call to itself. This technique is used to repeat computations.
 
 Below is an example of what we would call a *recursive function*.
 
@@ -56,7 +55,6 @@ content = "game RecursionExcercise
 To prevent a recursive function from recurring forever, you must add a *base case*. The base case is described as when the argument provided to the function **will not** trigger another recurrence, and the function will instead return without calling itself again.
 
 Reaching the base case in a recursive function often means an end to the repetition.
-In this way, the base case acts similiarly to a while loop's condition.
 
 Shown below is a recursive function that includes a base case.
 

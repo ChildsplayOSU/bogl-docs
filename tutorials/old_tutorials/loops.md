@@ -5,10 +5,9 @@ sort: 9 # Order in the sidebar
 # Loops
 
 :leaves: **This tutorial covers:**
-- The 'while' and 'do' expression
-- How to write a loop using while
-- When to use a loop
-- Using a tuple with loops
+- 'while' and 'do' expression
+- While loops
+- Loops using Tuples
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -22,8 +21,8 @@ sort: 9 # Order in the sidebar
 
 :deciduous_tree: **At the end, you should be able to:**
 - Write a loop using 'while' and 'do'
-- Understand when to use loops in an algorithm
-
+- Distinguish when to use loops in an algorithm
+- The importance of loops
 
 ## What are While Loops?
 

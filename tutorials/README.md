@@ -17,7 +17,6 @@ Shown below are the tutorials listed in the order that we recommend them.
 1. [Locally Defined Values](lets)
 1. [Conditional Expressions (If/Else)](conditional_statements)
 1. [User Input](input)
-1. [Loops](loops)
 1. [Boards](boards)
 1. [Recursion](recursion)
 1. [Testing and Debugging](debugging)

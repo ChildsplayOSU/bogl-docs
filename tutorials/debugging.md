@@ -1,15 +1,14 @@
 ---
-sort: 12 # Order in the sidebar
+sort: 11 # Order in the sidebar
 ---
 
 # Testing and Debugging
 
 :leaves: **This tutorial covers:**
-- What bugs are
-- Advice on how to solve issues within a program
-- What the different types of errors are
-- How to identify what error a program has
-- Tips on how to prevent bugs
+- Bugs explanation
+- Identifying bugs
+- Fixing bugs
+- Different kinds of bugs
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -20,13 +19,13 @@ sort: 12 # Order in the sidebar
 - [Functions](./functions)
 - [Conditional Expressions (If/Else)](./conditional_statements)
 - [User Input](./input)
-- [Loops](./loops)
 - [Boards](./boards)
 - [Recursion](./recursion)
 
 :deciduous_tree: **At the end, you should be able to:**
 - Solve any bugs a program has
-- Understand how a bug occurs & how to try and prevent them for the future.
+- Explain how a bug occurs 
+- Illustrate how to prevent bugs in future programing.
 
 This guide is here to give advice on strategies one might use to prevent and resolve issues with their programs.
 BoGL programs and bugs are used as examples in this guide, but the techniques and strategies discussed can be used in other contexts as well.
