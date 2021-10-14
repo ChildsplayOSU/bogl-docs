@@ -5,7 +5,7 @@ sort: 10 # Order in the sidebar
 # Recursion
 
 :leaves: **This tutorial covers:**
-- Recursion & Examples
+- Recursion and Examples
 - Base Cases
 
 :seedling: **Before starting, you should be familiar with:**
