@@ -1,5 +1,5 @@
 ---
-sort: 4 # Order in the sidebar
+sort: 3 # Order in the sidebar
 ---
 
 # Understanding Expressions
@@ -12,7 +12,6 @@ sort: 4 # Order in the sidebar
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
 - [Types](./types)
-- [Value](./values)
 
 :deciduous_tree: **At the end, you should be able to:**
 - Identify what an expression is

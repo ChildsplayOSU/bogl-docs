@@ -13,8 +13,8 @@ sort: 11 # Order in the sidebar
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
 - [Types](./types)
-- [Values](./values)
 - [Understanding Expressions](./expressions)
+- [Values](./values)
 - [Locally Defined Values](./lets)
 - [Functions](./functions)
 - [Conditional Expressions (If/Else)](./conditional_statements)

@@ -11,7 +11,9 @@ sort: 6 # Order in the sidebar
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
 - [Types](./types)
+- [Understanding Expressions](./expressions)
 - [Values](./values)
+- [Locally Defined Values](./lets)
 
 :deciduous_tree: **At the end, you should be able to:**
 - Describe the difference between a function parameter and a function argument
