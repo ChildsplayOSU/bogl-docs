@@ -67,11 +67,11 @@ If we instead wanted the expression to evaluate `4 / 2` first, we can wrap it in
 {% endhighlight %}
 
 
-Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements), which we will cover in further tutorials.
+Something that we have been using in these expression examples are *operators*. The integer operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements), which we will cover in further tutorials.
 
 <br/>
-## Arithmetic Operators
-Expressions will often contain arithmetic logic (addition, multiplication, etc...). The BoGL language provides basic operators that can be used with **Int** values. The arithmetic operators in BoGL are *binary operators* because they have two *operands*. *Operands* are the values/expressions on each side of the operator.
+## Integer Operators
+Expressions will often contain arithmetic logic (addition, multiplication, etc...). The BoGL language provides basic operators that can be used with **Int** values. The Integer operators in BoGL are *binary operators* because they have two *operands*. *Operands* are the values/expressions on each side of the operator.
 
 | Operator       | Symbol | Example Expression | Example's Evaluation |
 |----------------|--------|--------------------|----------------------|
@@ -103,12 +103,12 @@ Relational operators always evaluate to a **Bool**. They are commonly used as co
 | Less than or equal to                 | >=     | 4 >= 5             | False                |
 
 <br/>
-## Logical Operators
-Logical operators are similiar to relational operators in that they always evaluate to a **Bool**. Where logical operators differ is that they can *only* be used on operands that evaluate to **Bool**. These operators can be used to combine two expressions or invert one. There are three logical operators in BoGL, and they are technically implemented as built-in [functions](functions). The parameter and return types for these functions are type **Bool**.
+## Boolean Operators
+Boolean operators are similiar to relational operators in that they always evaluate to a **Bool**. Where Boolean operators differ is that they can *only* be used on operands that evaluate to **Bool**. These operators can be used to combine two expressions or invert one. There are three Boolean operators in BoGL, and they are technically implemented as built-in [functions](functions). The parameter and return types for these functions are type **Bool**.
 
 :exclamation: The word *expr* in the table below is short for *expression*.
 
-| Logical Operator | Function             | Evaluation                                                                                                |
+| Boolean Operator | Function             | Evaluation                                                                                                |
 |------------------|----------------------|-----------------------------------------------------------------------------------------------------------|
 | and              | and(*expr*, *expr*)  | True when both of the *expr* evaluate to True.<br>False when one or both of the *expr* evaluate to False. |
 | or               | or(*expr*, *expr*)   | True when one or both of the *expr* evaluate to True.<br>False when both of the *expr* evaluate to False. |
