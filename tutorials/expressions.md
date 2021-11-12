@@ -8,6 +8,7 @@ sort: 3 # Order in the sidebar
 - Expression Identification
 - Expression Examples
 - Operator Types
+- Parenthesis
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
@@ -17,6 +18,7 @@ sort: 3 # Order in the sidebar
 - Identify what an expression is
 - Write out math equations using operators
 - How to use the operators in BoGL
+
 
 
 
@@ -47,6 +49,9 @@ content = "Type <cmd>not(True)</cmd> in the interpreter below and press enter.
 "%}
 
 An expression can be passed as an argument to a function as long as it evaluates to the function's parameter type. We saw in the example above that the function `not` takes a **Bool** parameter and returns a **Bool**. Try and see what happens when you enter the expression `not(not(True))` into the interpreter.
+
+<br/>
+## Parenthesis 
 
 The order in which parts of an expression evaluate first can be very consequential to the resulting value.
 We can have some control over which parts of an expression are evaluated first by using parenthesis `()`.
@@ -100,6 +105,71 @@ Relational operators always evaluate to a **Bool**. They are commonly used as co
 | Less than                             | <      | 10 < 1             | False                |
 | Greater than or equal to              | <=     | 5 <= 5             | True                 |
 | Less than or equal to                 | >=     | 4 >= 5             | False                |
+
+:hammer_and_wrench: **Example: Parenthesis, Integer Operators, and Relational Operators**
+
+Let's do an example using Parenthesis and Integer Operators.
+
+The goal of the Program below is to determine how parenthesis can change integer and relational operators.
+
+Referencing the example above, we've already established adding parenthesis changes the order in which math operations are executed, just as PEMDAS does.
+
+{% highlight haskell %}
+12 / 4 / 2
+{% endhighlight %}
+This evaluates to **1** but,
+
+{% highlight haskell %}
+12 / (4 / 2)
+{% endhighlight %}
+evaluates to **6**.
+
+The parenthesis made `4 / 2` be evaluated first and left the `12 / 2` to be the final operation.
+
+<br />
+:dart: **Excercise:**  
+What happens when add parenthesis to Integer and Relational Operators?
+
+Think where you would add parenthesis to make the below mathematical operations equal the desired value
+ - Make the first expression equal 4
+ - Make the second expression equal 5
+ - Make the third expression equal 7
+ - Make the fourth expression equal 3
+ - Make the fifth expression equal 8
+
+{% highlight haskell %}
+
+20 / 2 + 3
+
+4 + 16 / 4 - 3
+
+11 + 10 / 5 - 2
+
+6 * 5 / 3 + 7
+
+4 * 6 / 3 + 3 * 4 - 2
+
+{% endhighlight%}
+
+<details><summary>:eyes: Click to see a solution (but try yourself first!)</summary>
+<p>
+{% highlight haskell %}
+
+20 / (2 + 3)
+
+4 + (16 / 4) - 3
+
+(11 + 10) / (5 - 2)
+
+6 * 5 / (3 + 7)
+
+4 * 6 / (3 + 3) * (4 - 2)
+
+{% endhighlight %}
+</p>
+</details>
+
+
 
 <br/>
 ## Boolean Operators
