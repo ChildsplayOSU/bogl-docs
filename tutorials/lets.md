@@ -11,8 +11,9 @@ sort: 5 # Order in the sidebar
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
 - [Types](./types)
-- [Values](./values)
 - [Understanding Expressions](./expressions)
+- [Values](./values)
+
 
 :deciduous_tree: **At the end, you should be able to:**
 - Illustrate what let and nested let expressions are

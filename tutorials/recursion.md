@@ -5,14 +5,14 @@ sort: 10 # Order in the sidebar
 # Recursion
 
 :leaves: **This tutorial covers:**
-- Recursion & Examples
+- Recursion and Examples
 - Base Cases
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
 - [Types](./types)
-- [Values](./values)
 - [Understanding Expressions](./expressions)
+- [Values](./values)
 - [Locally Defined Values](./lets)
 - [Functions](./functions)
 - [Conditional Expressions (If/Else)](./conditional_statements)

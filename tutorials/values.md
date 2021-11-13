@@ -1,5 +1,5 @@
 ---
-sort: 3 # Order in the sidebar
+sort: 4 # Order in the sidebar
 ---
 
 # Values
@@ -11,6 +11,7 @@ sort: 3 # Order in the sidebar
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
 - [Types](./types)
+- [Understanding Expressions](./expressions)
 
 :deciduous_tree: **At the end, you should be able to:**
 - Write a value definition

@@ -1,5 +1,5 @@
 ---
-sort: 4 # Order in the sidebar
+sort: 3 # Order in the sidebar
 ---
 
 # Understanding Expressions
@@ -8,16 +8,17 @@ sort: 4 # Order in the sidebar
 - Expression Identification
 - Expression Examples
 - Operator Types
+- Parenthesis
 
 :seedling: **Before starting, you should be familiar with:**
 - [The BoGL basics](./GettingStarted.md)
 - [Types](./types)
-- [Value](./values)
 
 :deciduous_tree: **At the end, you should be able to:**
 - Identify what an expression is
 - Write out math equations using operators
 - How to use the operators in BoGL
+
 
 
 
@@ -49,6 +50,9 @@ content = "Type <cmd>not(True)</cmd> in the interpreter below and press enter.
 
 An expression can be passed as an argument to a function as long as it evaluates to the function's parameter type. We saw in the example above that the function `not` takes a **Bool** parameter and returns a **Bool**. Try and see what happens when you enter the expression `not(not(True))` into the interpreter.
 
+<br/>
+## Parenthesis 
+
 The order in which parts of an expression evaluate first can be very consequential to the resulting value.
 We can have some control over which parts of an expression are evaluated first by using parenthesis `()`.
 {% highlight haskell %}
@@ -67,11 +71,11 @@ If we instead wanted the expression to evaluate `4 / 2` first, we can wrap it in
 {% endhighlight %}
 
 
-Something that we have been using in these expression examples are *operators*. The arithmetic operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements), which we will cover in further tutorials.
+Something that we have been using in these expression examples are *operators*. The integer operators (+, -, /, \*) are fairly intuitve if you know basic arithmetic. There also exist other operators in BoGL that are not necessarily intuitive. Learning these operators and practicing by writing expressions with them will make it easier to work with more complicated expressions, like [conditional expressions](conditional_statements), which we will cover in further tutorials.
 
 <br/>
-## Arithmetic Operators
-Expressions will often contain arithmetic logic (addition, multiplication, etc...). The BoGL language provides basic operators that can be used with **Int** values. The arithmetic operators in BoGL are *binary operators* because they have two *operands*. *Operands* are the values/expressions on each side of the operator.
+## Integer Operators
+Expressions will often contain arithmetic logic (addition, multiplication, etc...). The BoGL language provides basic operators that can be used with **Int** values. The Integer operators in BoGL are *binary operators* because they have two *operands*. *Operands* are the values/expressions on each side of the operator.
 
 | Operator       | Symbol | Example Expression | Example's Evaluation |
 |----------------|--------|--------------------|----------------------|
@@ -102,13 +106,78 @@ Relational operators always evaluate to a **Bool**. They are commonly used as co
 | Greater than or equal to              | <=     | 5 <= 5             | True                 |
 | Less than or equal to                 | >=     | 4 >= 5             | False                |
 
+:hammer_and_wrench: **Example: Parenthesis, Integer Operators, and Relational Operators**
+
+Let's do an example using Parenthesis and Integer Operators.
+
+The goal of the Program below is to determine how parenthesis can change integer and relational operators.
+
+Referencing the example above, we've already established adding parenthesis changes the order in which math operations are executed, just as PEMDAS does.
+
+{% highlight haskell %}
+12 / 4 / 2
+{% endhighlight %}
+This evaluates to **1** but,
+
+{% highlight haskell %}
+12 / (4 / 2)
+{% endhighlight %}
+evaluates to **6**.
+
+The parenthesis made `4 / 2` be evaluated first and left the `12 / 2` to be the final operation.
+
+<br />
+:dart: **Excercise:**  
+What happens when add parenthesis to Integer and Relational Operators?
+
+Think where you would add parenthesis to make the below mathematical operations equal the desired value
+ - Make the first expression equal 4
+ - Make the second expression equal 5
+ - Make the third expression equal 7
+ - Make the fourth expression equal 3
+ - Make the fifth expression equal 8
+
+{% highlight haskell %}
+
+20 / 2 + 3
+
+4 + 16 / 4 - 3
+
+11 + 10 / 5 - 2
+
+6 * 5 / 3 + 7
+
+4 * 6 / 3 + 3 * 4 - 2
+
+{% endhighlight%}
+
+<details><summary>:eyes: Click to see a solution (but try yourself first!)</summary>
+<p>
+{% highlight haskell %}
+
+20 / (2 + 3)
+
+4 + (16 / 4) - 3
+
+(11 + 10) / (5 - 2)
+
+6 * 5 / (3 + 7)
+
+4 * 6 / (3 + 3) * (4 - 2)
+
+{% endhighlight %}
+</p>
+</details>
+
+
+
 <br/>
-## Logical Operators
-Logical operators are similiar to relational operators in that they always evaluate to a **Bool**. Where logical operators differ is that they can *only* be used on operands that evaluate to **Bool**. These operators can be used to combine two expressions or invert one. There are three logical operators in BoGL, and they are technically implemented as built-in [functions](functions). The parameter and return types for these functions are type **Bool**.
+## Boolean Operators
+Boolean operators are similiar to relational operators in that they always evaluate to a **Bool**. Where Boolean operators differ is that they can *only* be used on operands that evaluate to **Bool**. These operators can be used to combine two expressions or invert one. There are three Boolean operators in BoGL, and they are technically implemented as built-in [functions](functions). The parameter and return types for these functions are type **Bool**.
 
 :exclamation: The word *expr* in the table below is short for *expression*.
 
-| Logical Operator | Function             | Evaluation                                                                                                |
+| Boolean Operator | Function             | Evaluation                                                                                                |
 |------------------|----------------------|-----------------------------------------------------------------------------------------------------------|
 | and              | and(*expr*, *expr*)  | True when both of the *expr* evaluate to True.<br>False when one or both of the *expr* evaluate to False. |
 | or               | or(*expr*, *expr*)   | True when one or both of the *expr* evaluate to True.<br>False when both of the *expr* evaluate to False. |
