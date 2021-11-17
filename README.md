@@ -33,9 +33,9 @@ The BoGL Docs index page.
 This website was created from a fork of the [rundocs/starter-slim](https://github.com/rundocs/starter-slim/) jekyll theme, which is available as open source under the terms of the MIT License.
 Documentation for the rundocs theme can be found at [rundocs.io](https://rundocs.io).
 
-## How to run the website locally
+# How to run the website locally
 
-# Mac
+## Mac
 ### 1) Install Ruby
   - If you don't have [homebrew](https://brew.sh/) already installed, install it
   - In terminal, use the command `brew install ruby` to install [ruby](https://jekyllrb.com/docs/installation/macos/)
