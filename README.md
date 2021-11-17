@@ -53,7 +53,10 @@ Documentation for the rundocs theme can be found at [rundocs.io](https://rundocs
 5) Clone bogl-docs to your local computer
   - Click the green code button on the home page & copy the https link
   - In terminal, find the directory you want bogl-docs to go to and use the command: git clone "PASTE HTTPS"
-6) Running a local version
+6) Adding webrick to gemfile
+  - Add this line of code into your gemfile: gem "webrick", "~>1.7"
+    - To do this, either vim into "Gemfile" or use a text editor and append the webrick line of code to the end of the file.
+7) Running a local version
   - To run a local version, use the command: bundle exec jekyll serve
   - There will be an IP address generated in your terminal, paste that into your browser
   - Use ctl+c to cancle the local server running
