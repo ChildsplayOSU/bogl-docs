@@ -38,26 +38,26 @@ Documentation for the rundocs theme can be found at [rundocs.io](https://rundocs
 # Mac
 1) Install Ruby
   - If you don't have [homebrew](https://brew.sh/) already installed, install it
-  - In terminal, use the command 'brew install ruby' to install [ruby](https://jekyllrb.com/docs/installation/macos/)
+  - In terminal, use the command `brew install ruby` to install [ruby](https://jekyllrb.com/docs/installation/macos/)
 2) Add ruby and gem baths to your shell configuration
-  - To find shell configuration type the command 'echo $SHELL'
-    - If you have Zsh enter the command: echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc
-    - If you have Bash enter the command: echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile
+  - To find shell configuration type the command `echo $SHELL`
+    - If you have Zsh enter the command: `echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.zshrc`
+    - If you have Bash enter the command: `echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile`
 3) Install Jekyll
-  - Relaunch terminal and type the command: gem install --user-install bundler jekyll
-  - Get your ruby version by using the command 'ruby -v'
+  - Relaunch terminal and type the command: `gem install --user-install bundler jekyll`
+  - Get your ruby version by using the command `ruby -v`
 4) Append ruby to path file
   - Depeding on shell, use the following command AND replace the X.X with the version of ruby
-    - Zsh: echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.zshrc
-    - Bash: echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.bash_profile
+    - Zsh: `echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.zshrc`
+    - Bash: `echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.bash_profile`
 5) Clone bogl-docs to your local computer
   - Click the green code button on the home page & copy the https link
   - In terminal, find the directory you want bogl-docs to go to and use the command: git clone "PASTE HTTPS"
 6) Adding webrick to gemfile
-  - Add this line of code into your gemfile: gem "webrick", "~>1.7"
+  - Add this line of code into your gemfile: `gem "webrick", "~>1.7"`
     - To do this, either vim into "Gemfile" or use a text editor and append the webrick line of code to the end of the file.
 7) Running a local version
-  - To run a local version, use the command: bundle exec jekyll serve
+  - To run a local version, use the command: `bundle exec jekyll serve`
   - There will be an IP address generated in your terminal, paste that into your browser
   - Use ctl+c to cancle the local server running
 
