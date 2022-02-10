@@ -23,6 +23,10 @@ ssh yourotheracct@bogl.engr.oregonstate.edu
 
 Generally, you'll want to have access to the server under **ubuntu** as well as having access to the AWS control panel (through the login link mentioned above). Once logged in, the AWS control panel is used to stop, start, and reconfigure instances. Since the account is shared there are other instances as well, so you will want to look for the instance tagged with the name **ACTIVE_BoGL_Box**, which i the live deployment. Another instance named **Dev_BoGL_Box** is a similar environment used for testing new changes that might be risky on the live environment. You shouldn't need to interact with any of the other boxes, and be considerate as there may be other students working on the same account!
 
+An alternative to using ssh to login to the EC2 instance is using EC2 Instance Connect through the AWS Console (see image below).
+
+![EC2 Instance Connect page](../imgs/ec2_instance_connect_page.png "EC2 Instance Connect page")
+
 If you're ever creating new instances or modifying things, make sure to tag whatever assets are used with 'bogl' or something similar so we can keep track of it.
 
 In the future, if issues of the server not being powerful enough to keep up with request volume come up, the instance can be stopped and reprovisioned at a larger size. As of writing this, the current instance is provisioned as **t2.small**, giving it **2 GiB** memory. This may not seem like much, but the server is very light, and doesn't require much to operate normally. Most requests are very quick to evaluate, and the memory pressure from evaluation is generally not very high, but it may be worthwhile considering a larger instance size later on.
